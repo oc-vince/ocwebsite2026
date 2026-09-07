@@ -1,0 +1,73 @@
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero hero--page hero--book hero--blog">
+  <div class="container hero__inner">
+    <nav class="crumbs" aria-label="Breadcrumb" data-reveal>
+      <a href="../index.html">Home</a><i>&rsaquo;</i><a href="../blog.html">Blog</a><i>&rsaquo;</i><span>__TITLE__</span>
+    </nav>
+    <p class="hero__eyebrow" data-reveal><span class="eyebrow-seg">__DATELONG__</span></p>
+    <h1 class="reveal-lines" id="heroTitle">__TITLE__</h1>
+  </div>
+</section>
+
+<!-- ============ ARTICLE ============ -->
+<section class="bp">
+  <div class="container">
+    <div class="bp__article">
+
+      <figure class="bp-figure" data-reveal>
+        <div class="bp-figure__shot">
+          <img src="featured-images/__IMG__" alt="__TITLE__" width="__IMGW__" height="__IMGH__">
+        </div>
+        <figcaption class="bp-figure__cap" id="bpCap">
+          <span class="bp-figure__kicker">What&rsquo;s inside</span>
+          <ol class="bp-figure__toc" id="bpToc"></ol>
+        </figcaption>
+      </figure>
+
+__POSTCONTENT__
+
+    </div>
+  </div>
+</section>
+
+<script>
+/* Builds the "What's inside" list in the featured-image caption from the
+   <ul><li><strong>…</strong></li></ul> sub-headings WordPress leaves in the
+   body. Read-only — the article markup is never modified. */
+(function(){
+  var pc  = document.querySelector('.post-content');
+  var toc = document.getElementById('bpToc');
+  var cap = document.getElementById('bpCap');
+  if (!pc || !toc || !cap) return;
+  var items = [];
+  Array.prototype.forEach.call(pc.querySelectorAll('ul'), function(ul){
+    if (ul.children.length !== 1) return;
+    var li = ul.children[0];
+    if (li.tagName !== 'LI' || li.children.length !== 1) return;
+    var st = li.children[0];
+    if (st.tagName !== 'STRONG') return;
+    var txt = st.textContent.trim();
+    if (!txt || li.textContent.trim() !== txt) return;
+    items.push(txt);
+  });
+  if (items.length < 2) {
+    /* posts that use real headings instead of the <ul><li><strong> pattern */
+    items = [];
+    Array.prototype.forEach.call(pc.querySelectorAll('h2, h3'), function(h){
+      var t = h.textContent.trim();
+      if (t) items.push(t);
+    });
+  }
+  items = items.filter(function(t){ return t.length <= 78; }).slice(0, 8);
+  if (items.length < 2) return;
+  toc.innerHTML = items.map(function(t){
+    return '<li>' + t.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</li>';
+  }).join('');
+  cap.classList.add('is-on');
+})();
+</script>
+
+__RELATED__
+</main>

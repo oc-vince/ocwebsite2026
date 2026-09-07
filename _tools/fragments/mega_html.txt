@@ -1,0 +1,58 @@
+      <div class="nav__item nav__item--mega">
+        <a class="nav__link" href="/managed-it-services/">Managed IT Services <i class="chev"></i></a>
+        <div class="mega" role="group" aria-label="Managed IT Services">
+          <div class="mega__panel">
+            <video class="mega__video" src="video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="mega__scrim" aria-hidden="true"></span>
+            <div class="mega__grid">
+
+              <div class="mega__intro">
+                <h3>Managed <span>IT Services</span></h3>
+                <p>Need reliable support for your business network, cybersecurity, devices, or day-to-day IT needs? Our managed IT services keep your technology secure, reliable, and running smoothly.</p>
+                <div class="mega__cta">
+                  <a class="btn btn--ghost" href="book.html" data-magnetic><span>Book a Free IT Review</span></a>
+                </div>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/it-support/index.html">
+                  <span class="mega__ico"><img src="images/submenus/IT-Support-in-Sydney-Icon.png" alt="" width="44" height="48" loading="lazy" decoding="async"></span>
+                  <span><b>IT Support in Sydney</b><span>Reliable IT support and expert assistance to keep your business running smoothly.</span></span>
+                </a>
+                <a class="mega__item" href="service/it-support/index.html#managed-cyber-security-support">
+                  <span class="mega__ico"><img src="images/submenus/Managed-Cyber-Security-Icon.png" alt="" width="44" height="43" loading="lazy" decoding="async"></span>
+                  <span><b>Managed Cyber Security &amp; Support</b><span>Protect your business with proactive security monitoring, threat detection, and support.</span></span>
+                </a>
+                <a class="mega__item" href="service/it-support/index.html#managed-network-packages">
+                  <span class="mega__ico"><img src="images/submenus/Managed-Network-Packages-Icon.png" alt="" width="46" height="50" loading="lazy" decoding="async"></span>
+                  <span><b>Managed Network Packages</b><span>Fast, secure, and reliable network solutions designed around your business needs.</span></span>
+                </a>
+                <a class="mega__item" href="service/it-support/index.html#robust-cloud-backup">
+                  <span class="mega__ico"><img src="images/submenus/Robust-Cloud-Backup-Icon.png" alt="" width="47" height="47" loading="lazy" decoding="async"></span>
+                  <span><b>Robust Cloud Backup</b><span>Securely protect your critical business data with reliable cloud backup and recovery.</span></span>
+                </a>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/it-support/index.html#ongoing-maintenance">
+                  <span class="mega__ico"><img src="images/submenus/Ongoing-Maintenance-Icon.png" alt="" width="42" height="42" loading="lazy" decoding="async"></span>
+                  <span><b>Ongoing Maintenance</b><span>Keep your systems performing at their best with proactive maintenance and monitoring.</span></span>
+                </a>
+                <a class="mega__item" href="service/google-workspace/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Google-Workspace-Icon.png" alt="" width="44" height="39" loading="lazy" decoding="async"></span>
+                  <span><b>Google Workspace</b><span>Streamline collaboration with cloud-based email, apps, and productivity tools.</span></span>
+                </a>
+                <a class="mega__item" href="service/computer-repairs/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Computer-Repairs-Icon.png" alt="" width="45" height="42" loading="lazy" decoding="async"></span>
+                  <span><b>Computer Repairs</b><span>Fast, professional computer repairs and troubleshooting to get you back on track.</span></span>
+                </a>
+                <a class="mega__item" href="service/va-recruitment-services/index.html">
+                  <span class="mega__ico"><img src="images/submenus/VA-Recruitment-Services-Icon.png" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>VA Recruitment Services</b><span>Find skilled virtual assistants to support your business and improve productivity.</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>

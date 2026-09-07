@@ -1,0 +1,80 @@
+<script>
+/* ---------- contact form: validation + optimistic success state ---------- */
+(function contactForm(){
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  var ok = document.getElementById('ctOk');
+
+  function fieldOf(input){ return input.closest('[data-field]'); }
+
+  function valid(input){
+    var v = input.value.trim();
+    if (!v) return false;
+    if (input.type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    if (input.type === 'tel')   return v.replace(/[^\d]/g, '').length >= 8;
+    if (input.tagName === 'TEXTAREA') return v.length >= 5;
+    return v.length >= 2;
+  }
+
+  var inputs = [].slice.call(form.querySelectorAll('input[required], textarea[required]'));
+  inputs.forEach(function(input){
+    input.addEventListener('blur', function(){
+      if (input.value.trim()) fieldOf(input).classList.toggle('is-bad', !valid(input));
+    });
+    input.addEventListener('input', function(){
+      if (fieldOf(input).classList.contains('is-bad') && valid(input)) fieldOf(input).classList.remove('is-bad');
+    });
+  });
+
+  form.addEventListener('submit', function(e){
+    var bad = null;
+    inputs.forEach(function(input){
+      var good = valid(input);
+      fieldOf(input).classList.toggle('is-bad', !good);
+      if (!good && !bad) bad = input;
+    });
+    if (bad){
+      e.preventDefault();
+      bad.focus();
+      bad.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      return;
+    }
+    /* No handler wired yet — show the success state rather than reloading the page.
+       Once action= points at a real endpoint, delete this block and let it post. */
+    if (!form.getAttribute('action')){
+      e.preventDefault();
+      if (ok) ok.classList.add('is-on');
+      form.querySelector('button[type="submit"]').disabled = true;
+      inputs.forEach(function(i){ i.setAttribute('readonly', 'readonly'); });
+    }
+  });
+})();
+
+/* ---------- office map toggle ---------- */
+(function officeMap(){
+  var wrap = document.getElementById('mapToggle');
+  var frame = document.getElementById('mapFrame');
+  var embed = document.getElementById('mapEmbed');
+  if (!wrap || !embed) return;
+  var btns = [].slice.call(wrap.querySelectorAll('.map-btn'));
+  var label = document.getElementById('mapPinLabel');
+  var sub = document.getElementById('mapPinSub');
+
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (btn.classList.contains('is-active')) return;
+      btns.forEach(function(b){ b.classList.remove('is-active'); b.removeAttribute('aria-current'); });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-current', 'true');
+      frame.classList.add('is-swapping');
+      setTimeout(function(){
+        embed.src = 'https://www.google.com/maps?q=' + encodeURIComponent(btn.getAttribute('data-q')) + '&output=embed';
+        embed.title = 'Map showing the Online Consulting ' + btn.getAttribute('data-label') + ' at ' + btn.getAttribute('data-sub');
+        label.textContent = btn.getAttribute('data-label');
+        sub.textContent = btn.getAttribute('data-sub');
+        frame.classList.remove('is-swapping');
+      }, 260);
+    });
+  });
+})();
+</script>

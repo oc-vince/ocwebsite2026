@@ -1,0 +1,147 @@
+<script>
+/* ---------- case study carousel ---------- */
+window.csx = (function caseCarousel(){
+  var track = document.getElementById('csxTrack');
+  if (!track) return null;
+  var viewport = document.getElementById('csxViewport');
+  var slides = [].slice.call(track.querySelectorAll('.csx__slide'));
+  if (!slides.length) return null;
+  var prev = document.getElementById('csxPrev'), next = document.getElementById('csxNext');
+  var dotsWrap = document.getElementById('csxDots'), rail = document.getElementById('csxRail');
+  var now = document.getElementById('csxNow'), total = document.getElementById('csxTotal');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0, dots = [];
+
+  if (total) total.textContent = slides.length;
+
+  slides.forEach(function(s, n){
+    var d = document.createElement('button');
+    d.className = 'csx-dot';
+    d.type = 'button';
+    d.setAttribute('role', 'tab');
+    d.setAttribute('aria-label', 'Case study ' + (n + 1) + ': ' + (s.querySelector('.cs__body h3') || {}).textContent);
+    d.addEventListener('click', function(){ go(n); });
+    dotsWrap.appendChild(d);
+    dots.push(d);
+  });
+
+  var rt, lastH = 0;
+  function fit(){
+    var live = slides[i];
+    if (!live) return;
+    var h = Math.round(live.getBoundingClientRect().height);
+    if (h <= 0 || Math.abs(h - lastH) < 4) return;       /* ignore sub-pixel churn */
+    lastH = h;
+    viewport.style.height = h + 'px';
+    /* Refresh only once the height has settled. Refreshing mid-scroll makes the header
+       trigger re-evaluate and drop .is-scrolled for a frame, which reads as a flicker. */
+    clearTimeout(rt);
+    rt = setTimeout(function(){
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      syncHeader();
+    }, 260);
+  }
+
+  /* Header state read straight off the real scroll position. ScrollTrigger sets this too,
+     but a refresh can briefly disagree, and that is what blanks the background mid-scroll. */
+  var hdr = document.getElementById('header');
+  function syncHeader(){
+    if (hdr) hdr.classList.toggle('is-scrolled', (window.pageYOffset || document.documentElement.scrollTop) > 40);
+  }
+  window.addEventListener('scroll', syncHeader, { passive: true });
+  if (window.__lenis && window.__lenis.on) window.__lenis.on('scroll', syncHeader);
+  syncHeader();
+
+  function paint(){
+    fit();
+    track.style.transform = 'translate3d(' + (-i * 100) + '%,0,0)';
+    slides.forEach(function(s, n){
+      s.classList.toggle('is-current', n === i);
+      s.setAttribute('aria-hidden', n === i ? 'false' : 'true');
+      /* keep offscreen slides out of the tab order */
+      [].slice.call(s.querySelectorAll('a,button')).forEach(function(el){
+        if (n === i) el.removeAttribute('tabindex'); else el.setAttribute('tabindex', '-1');
+      });
+    });
+    dots.forEach(function(d, n){
+      d.classList.toggle('is-active', n === i);
+      d.setAttribute('aria-selected', n === i ? 'true' : 'false');
+    });
+    if (rail) rail.style.transform = 'scaleX(' + ((i + 1) / slides.length) + ')';
+    if (now) now.textContent = i + 1;
+    if (prev) prev.disabled = (i === 0);
+    if (next) next.disabled = (i === slides.length - 1);
+  }
+
+  function go(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    paint();                                   /* paint -> fit -> debounced refresh */
+  }
+
+  if (prev) prev.addEventListener('click', function(){ go(i - 1); });
+  if (next) next.addEventListener('click', function(){ go(i + 1); });
+
+  /* keyboard, once the carousel has focus */
+  document.getElementById('csx').addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft')  { go(i - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { go(i + 1); e.preventDefault(); }
+  });
+
+  /* drag / swipe */
+  var down = false, startX = 0, dx = 0, w = 1;
+  function onDown(e){
+    if (e.button !== undefined && e.button !== 0) return;
+    if (e.target.closest('a,button')) return;
+    down = true; dx = 0;
+    startX = (e.touches ? e.touches[0].clientX : e.clientX);
+    w = viewport.getBoundingClientRect().width || 1;
+    track.classList.add('no-anim');
+    viewport.classList.add('is-dragging');
+  }
+  function onMove(e){
+    if (!down) return;
+    dx = (e.touches ? e.touches[0].clientX : e.clientX) - startX;
+    var pct = (-i * 100) + (dx / w) * 100;
+    track.style.transform = 'translate3d(' + pct + '%,0,0)';
+    if (e.cancelable && Math.abs(dx) > 8) e.preventDefault();
+  }
+  function onUp(){
+    if (!down) return;
+    down = false;
+    track.classList.remove('no-anim');
+    viewport.classList.remove('is-dragging');
+    if (Math.abs(dx) > w * 0.14) go(i + (dx < 0 ? 1 : -1));
+    else paint();
+  }
+  viewport.addEventListener('mousedown', onDown);
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onUp);
+  viewport.addEventListener('touchstart', onDown, { passive: true });
+  viewport.addEventListener('touchmove', onMove, { passive: false });
+  window.addEventListener('touchend', onUp);
+
+  window.addEventListener('resize', function(){ track.classList.add('no-anim'); paint();
+    setTimeout(function(){ track.classList.remove('no-anim'); }, 60); });
+
+  /* heroes have different natural heights, so re-measure as each one decodes */
+  [].slice.call(track.querySelectorAll('img')).forEach(function(img){
+    if (img.complete) return;
+    img.addEventListener('load', fit);
+    img.addEventListener('error', fit);
+  });
+  window.addEventListener('load', fit);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(slides[0].querySelector('.csx__inner') || slides[0]);
+
+  /* a #case-... link opens that slide */
+  function fromHash(){
+    if (!location.hash) return;
+    var n = slides.map(function(s){ return '#' + s.id; }).indexOf(location.hash);
+    if (n > -1) go(n);
+  }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+
+  paint();
+  return { go: go, count: slides.length };
+})();
+</script>

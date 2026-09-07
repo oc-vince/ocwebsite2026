@@ -1,0 +1,21 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+._*
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# python
+__pycache__/
+*.pyc
+
+# the dump folder lives outside this directory, but guard against it anyway
+dump/
+
+# local Netlify state
+.netlify/

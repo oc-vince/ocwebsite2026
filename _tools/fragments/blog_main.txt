@@ -1,0 +1,122 @@
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero hero--page hero--book hero--blogidx">
+  <div class="container hero__inner">
+    <nav class="crumbs" aria-label="Breadcrumb" data-reveal>
+      <a href="index.html">Home</a><i>&rsaquo;</i><span>Blog</span>
+    </nav>
+    <p class="hero__eyebrow" data-reveal><span class="eyebrow-seg">Insights</span><span class="eyebrow-sep"> &middot; </span><span class="eyebrow-seg">Ideas</span><span class="eyebrow-sep"> &middot; </span><span class="eyebrow-seg">How-tos</span></p>
+    <h1 class="reveal-lines" id="heroTitle">The <span class="accent">Blog</span></h1>
+    <p class="hero__sub" data-reveal>Practical notes from the team on managed IT, cyber security, websites, hosting and digital marketing &mdash; written for Australian business owners rather than for other agencies.</p>
+  </div>
+</section>
+
+<!-- ============ POSTS ============ -->
+<section class="bl">
+  <div class="container">
+
+    <!-- latest -->
+    <article class="bl-feat" data-reveal>
+      <a class="bl-feat__media" href="__F_HREF__" aria-label="__F_ALT__">
+        <img src="__F_IMG__" alt="" width="860" height="538">
+      </a>
+      <div class="bl-feat__body">
+        <p class="bl-feat__tag">Latest article</p>
+        <h2><a href="__F_HREF__">__F_TITLE__</a></h2>
+        <p class="bl-feat__ex">__F_EXCERPT__</p>
+        <p class="bl-feat__meta">__F_DATE__</p>
+        <a class="bl-feat__go" href="__F_HREF__" data-magnetic><span>Read the article</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
+      </div>
+    </article>
+
+    <!-- toolbar -->
+    <div class="bl-tools" data-reveal>
+      <span class="bl-tools__title">All articles</span>
+      <div class="bl-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.4"/><path d="M15.8 15.8L20.5 20.5"/></svg>
+        <label class="visually-hidden" for="blSearch">Search articles</label>
+        <input id="blSearch" type="search" placeholder="Search articles&hellip;" autocomplete="off">
+      </div>
+      <span class="bl-count"><b id="blCount">__TOTAL__</b> of __TOTAL__ articles</span>
+    </div>
+
+    <!-- grid -->
+    <div class="bl-grid" id="blGrid">
+__CARDS__
+    </div>
+
+    <p class="bl-empty" id="blEmpty">No articles match that search. Try a different word.</p>
+
+    <div class="bl-more" id="blMoreWrap">
+      <button class="btn btn--ghost" id="blMore" type="button" data-magnetic><span>Load more articles</span></button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* Blog index: progressive reveal, "load more" batching and a plain-text search
+   over the card index. No dependency on GSAP — works on its own. */
+(function(){
+  var STEP  = 12;
+  var grid  = document.getElementById('blGrid');
+  var more  = document.getElementById('blMore');
+  var wrap  = document.getElementById('blMoreWrap');
+  var empty = document.getElementById('blEmpty');
+  var count = document.getElementById('blCount');
+  var input = document.getElementById('blSearch');
+  if (!grid) return;
+
+  var cards   = Array.prototype.slice.call(grid.querySelectorAll('.bl-card'));
+  var matched = cards.slice();
+  var shown   = 0;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = ('IntersectionObserver' in window) && !reduced
+    ? new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(e){
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-shown');
+          obs.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px' })
+    : null;
+
+  function reveal(el, i){
+    if (!io) { el.classList.add('is-shown'); return; }
+    el.style.transitionDelay = Math.min(i, 5) * 60 + 'ms';
+    io.observe(el);
+  }
+
+  function render(reset){
+    if (reset) { shown = 0; cards.forEach(function(c){ c.hidden = true; c.classList.remove('is-shown'); }); }
+    var next = matched.slice(shown, shown + STEP);
+    next.forEach(function(c, i){ c.hidden = false; reveal(c, i); });
+    shown += next.length;
+    wrap.hidden = shown >= matched.length;
+    empty.classList.toggle('is-on', matched.length === 0);
+    count.textContent = matched.length;
+  }
+
+  more.addEventListener('click', function(){
+    var first = matched[shown];
+    render(false);
+    if (first) first.focus && first.focus();
+  });
+
+  var t = null;
+  input.addEventListener('input', function(){
+    clearTimeout(t);
+    t = setTimeout(function(){
+      var q = input.value.trim().toLowerCase();
+      matched = q ? cards.filter(function(c){ return c.getAttribute('data-t').indexOf(q) > -1; }) : cards.slice();
+      render(true);
+    }, 160);
+  });
+
+  render(true);
+})();
+</script>
+
+</main>

@@ -1,0 +1,42 @@
+
+/* ============================================================
+   RELATED ARTICLES — same card as the blog index
+   ============================================================ */
+.rel{padding:clamp(58px,7.5vh,96px) 0 clamp(64px,8vh,104px);background:var(--mist);}
+.rel__head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;
+  margin-bottom:clamp(26px,3.4vh,40px);padding-bottom:22px;border-bottom:1px solid var(--line);}
+.rel__head h2{font-size:clamp(22px,2.4vw,32px);font-weight:700;letter-spacing:-.02em;}
+.rel__all{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:600;
+  font-size:14.5px;color:var(--navy);transition:gap .3s var(--ease),color .3s var(--ease);}
+.rel__all svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;}
+.rel__all:hover{color:var(--blue);gap:15px;}
+
+.bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.4vw,34px);}
+.bl-card{display:flex;flex-direction:column;}
+.bl-card__media{position:relative;display:block;overflow:hidden;border-radius:16px;background:var(--mist);
+  aspect-ratio:16/10;}
+.bl-card__media img{width:100%;height:100%;object-fit:cover;filter:none;
+  transition:transform .5s var(--ease),filter .5s var(--ease);}
+.bl-card:hover .bl-card__media img{transform:scale(1.06);
+  filter:grayscale(1) brightness(.44) contrast(1.06);}
+.bl-card__date{position:absolute;left:14px;top:14px;z-index:2;font-size:11px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:rgba(255,255,255,.93);
+  border-radius:100px;padding:6px 12px;backdrop-filter:blur(6px);}
+.bl-card h3{margin-top:18px;font-size:19px;font-weight:600;line-height:1.28;letter-spacing:-.015em;}
+.bl-card h3 a{transition:color .3s var(--ease);}
+.bl-card:hover h3 a{color:var(--blue);}
+.bl-card p{margin-top:11px;font-size:14.5px;line-height:1.68;color:var(--grey);}
+.bl-card__rule{margin-top:16px;height:1.5px;width:34px;background:var(--blue);
+  transition:width .5s var(--ease);}
+.bl-card:hover .bl-card__rule{width:66px;}
+
+@media (max-width:1000px){
+  .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:640px){
+  .bl-grid{grid-template-columns:1fr;}
+  .bl-card{margin-bottom:3em;}
+  .bl-card:last-child{margin-bottom:0;}
+  .rel__head{flex-direction:column;align-items:flex-start;gap:10px;}
+}

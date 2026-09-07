@@ -1,0 +1,17 @@
+
+/* ---------- three teams shortcut cards ---------- */
+.op-short{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,24px);align-items:stretch;}
+.op-shortcard{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,2.8vw,38px);transition:transform .38s var(--ease),box-shadow .38s var(--ease),border-color .3s;}
+.op-shortcard:hover{transform:translateY(-6px);border-color:rgba(20,135,216,.38);box-shadow:0 44px 88px -46px rgba(12,27,42,.5);}
+.op-shortcard__idx{position:absolute;right:18px;top:4px;font-family:var(--font-display);font-size:clamp(58px,7vw,92px);font-weight:800;line-height:1;color:var(--mist);pointer-events:none;transition:color .35s;}
+.op-shortcard:hover .op-shortcard__idx{color:var(--blue-soft);}
+.op-shortcard__ico{position:relative;width:50px;height:50px;border-radius:15px;background:var(--blue-soft);display:grid;place-items:center;}
+.op-shortcard__ico svg{width:24px;height:24px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.op-shortcard h3{position:relative;font-family:var(--font-display);font-size:clamp(20px,2vw,27px);font-weight:700;margin-top:20px;}
+.op-shortcard__blurb{position:relative;margin-top:14px;color:var(--grey);font-size:15.2px;line-height:1.72;}
+.op-shortcard .op-chips{margin-top:22px;}
+.op-shortcard__more{margin-top:auto;padding-top:24px;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-size:14.5px;font-weight:600;color:var(--navy);align-self:flex-start;transition:color .3s,gap .3s var(--ease);}
+.op-shortcard__more svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+.op-shortcard:hover .op-shortcard__more,.op-shortcard__more:hover{color:var(--blue);gap:14px;}
+.op-short__note{margin-top:clamp(26px,3vw,38px);font-family:var(--font-display);font-size:clamp(16px,1.5vw,20px);font-weight:600;color:var(--navy);text-align:center;}
+@media (max-width:1000px){.op-short{grid-template-columns:1fr;}}

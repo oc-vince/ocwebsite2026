@@ -1,0 +1,13 @@
+
+<!-- ============ RELATED ARTICLES ============ -->
+<section class="rel">
+  <div class="container">
+    <div class="rel__head" data-reveal>
+      <h2>Related articles</h2>
+      <a class="rel__all" href="../blog.html" data-magnetic><span>All articles</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
+    </div>
+    <div class="bl-grid">
+__RELCARDS__
+    </div>
+  </div>
+</section>

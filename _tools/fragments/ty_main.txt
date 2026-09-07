@@ -1,0 +1,75 @@
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero hero--page hero--book hero--ty">
+  <div class="container hero__inner">
+    <div class="ty-mark" aria-hidden="true">
+      <span class="ty-mark__ring"></span>
+      <span class="ty-mark__ring"></span>
+      <span class="ty-mark__disc"><svg viewBox="0 0 24 24"><path d="M20 6.5L9.4 17.1 4 11.7"/></svg></span>
+    </div>
+    <p class="hero__eyebrow" data-reveal><span class="eyebrow-seg">__EYEBROW__</span></p>
+    <h1 class="reveal-lines" id="heroTitle">__H1__</h1>
+    <p class="hero__sub" data-reveal>__SUB__</p>
+    <div class="hero__cta ty-hero__cta" data-reveal>
+      <a class="btn btn--light" href="../index.html" data-magnetic><span>Return to homepage</span><span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+__NEXTSECTION__
+
+<!-- ============ CALL NOW ============ -->
+<section class="ty ty--tint">
+  <div class="container">
+    <div class="ty-call" data-reveal>
+      <div>
+        <p class="ty-call__eyebrow">In a hurry?</p>
+        <h2>Call us now!</h2>
+        <p>__CALLP__</p>
+      </div>
+      <div class="ty-call__num">
+        <a class="ty-phone" href="tel:+61284597882">
+          <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.4 16.9v2.5a1.6 1.6 0 0 1-1.8 1.6 15.6 15.6 0 0 1-6.8-2.4 15.4 15.4 0 0 1-4.8-4.8A15.6 15.6 0 0 1 4.6 6.9 1.6 1.6 0 0 1 6.2 5.1h2.5A1.6 1.6 0 0 1 10.3 6.5c.1.8.3 1.6.6 2.3a1.6 1.6 0 0 1-.4 1.7l-1 1a12.6 12.6 0 0 0 4.7 4.7l1-1a1.6 1.6 0 0 1 1.7-.4c.7.3 1.5.5 2.3.6a1.6 1.6 0 0 1 1.2 1.5z"/></svg></i>
+          <span>+61 2 8459 7882</span>
+        </a>
+        <span class="ty-call__hours">Monday to Friday, 8:30am &ndash; 5:30pm AEST</span>
+        <span class="ty-call__mail">Or email <a href="mailto:info@onlineconsulting.com.au">info@onlineconsulting.com.au</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHILE YOU WAIT ============ -->
+<section class="ty">
+  <div class="container">
+    <div class="ty__head" data-reveal>
+      <p class="section__kicker">While you&rsquo;re here</p>
+      <h2>A few things worth a look.</h2>
+    </div>
+    <div class="ty-explore">
+      <a class="ty-card" href="../work.html" data-reveal>
+        <span class="ty-card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="4.6" width="17.6" height="13" rx="2"/><path d="M3.2 8.4h17.6"/><path d="M8 20.4h8"/></svg></span>
+        <b>Our work</b>
+        <p>Case studies and a gallery of the websites, branding and video we&rsquo;ve produced for Australian businesses.</p>
+        <span class="go">See the work <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></span>
+      </a>
+      <a class="ty-card" href="../one-partner.html" data-reveal>
+        <span class="ty-card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
+        <b>Why one partner</b>
+        <p>Why keeping your IT, your website and your marketing with one Sydney team costs less and breaks less often.</p>
+        <span class="go">Read the case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></span>
+      </a>
+      <a class="ty-card" href="../blog.html" data-reveal>
+        <span class="ty-card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 3.6h9.2l4 4v12.8H5.4z"/><path d="M14.6 3.6v4h4"/><path d="M8.4 12h7.2M8.4 15.6h7.2"/></svg></span>
+        <b>The blog</b>
+        <p>Practical notes on managed IT, cyber security, hosting and digital marketing &mdash; written for business owners.</p>
+        <span class="go">Start reading <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>document.documentElement.classList.add('js-ty');</script>
+
+</main>

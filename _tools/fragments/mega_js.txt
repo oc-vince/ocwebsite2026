@@ -1,0 +1,21 @@
+<script>
+/* Mega menu: the background clip is only fetched the first time the panel opens,
+   so it costs nothing on page load. */
+(function megaMenu(){
+  var item = document.querySelector('.nav__item--mega');
+  if (!item) return;
+  var vid = item.querySelector('.mega__video');
+  if (!vid) return;
+  var started = false;
+  function start(){
+    if (started) return;
+    started = true;
+    if (!vid.getAttribute('src')) return;
+    vid.load();
+    var p = vid.play();
+    if (p && p.catch) p.catch(function(){ /* autoplay blocked — the scrim still reads fine */ });
+  }
+  item.addEventListener('mouseenter', start);
+  item.addEventListener('focusin', start);
+})();
+</script>

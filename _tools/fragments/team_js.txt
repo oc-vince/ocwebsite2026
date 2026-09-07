@@ -1,0 +1,118 @@
+<script>
+/* ---------- team: profile panels that expand under the row they belong to ---------- */
+(function teamAccordion(){
+  var grid = document.getElementById('teamGrid');
+  if (!grid) return;
+  var cards = [].slice.call(grid.querySelectorAll('[data-team]'));
+  if (!cards.length) return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var current = null;
+
+  function panelOf(card){ return document.getElementById(card.getAttribute('aria-controls')); }
+
+  /* portraits not yet in images/team/ fall back to a monogram tile */
+  function sweep(){
+    [].slice.call(document.querySelectorAll('[data-photo] img')).forEach(function(img){
+      if (img.complete && img.naturalWidth === 0) img.parentNode.classList.add('is-mono');
+    });
+  }
+  sweep();
+  window.addEventListener('load', sweep);
+
+  /* the panel belongs after the LAST card sharing this card's row */
+  function endOfRow(card){
+    var top = card.offsetTop, last = card;
+    for (var i = cards.indexOf(card) + 1; i < cards.length; i++){
+      if (Math.abs(cards[i].offsetTop - top) > 4) break;
+      last = cards[i];
+    }
+    return last;
+  }
+
+  function park(panel){
+    var owner = document.getElementById(panel.getAttribute('data-owner'));
+    if (owner && panel.previousElementSibling !== owner) owner.insertAdjacentElement('afterend', panel);
+  }
+
+  function close(card, instant){
+    var pn = panelOf(card);
+    if (!pn) return;
+    card.classList.remove('is-open');
+    card.setAttribute('aria-expanded','false');
+    pn.classList.remove('is-open');
+    if (current === card) current = null;
+    var done = function(){ pn.classList.remove('is-mounted'); park(pn);
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh(); };
+    if (instant || reduced) done(); else setTimeout(done, 620);
+  }
+
+  function open(card){
+    cards.forEach(function(o){ if (o !== card) close(o, true); });
+    var pn = panelOf(card);
+    if (!pn) return;
+    endOfRow(card).insertAdjacentElement('afterend', pn);
+    pn.classList.add('is-mounted');
+    void pn.offsetHeight;                      /* commit the 0fr start state */
+    requestAnimationFrame(function(){
+      pn.classList.add('is-open');
+      card.classList.add('is-open');
+      card.setAttribute('aria-expanded','true');
+      current = card;
+      if (typeof ScrollTrigger !== 'undefined') setTimeout(function(){ ScrollTrigger.refresh(); }, 700);
+      setTimeout(function(){
+        var top = card.getBoundingClientRect().top + window.pageYOffset - 110;
+        if (window.__lenis && window.__lenis.scrollTo) window.__lenis.scrollTo(top, { duration: reduced ? 0 : .9 });
+        else window.scrollTo({ top: top, behavior: reduced ? 'auto' : 'smooth' });
+      }, 40);
+    });
+  }
+
+  cards.forEach(function(card){
+    card.addEventListener('click', function(){
+      if (card.classList.contains('is-open')) close(card); else open(card);
+    });
+  });
+
+  [].slice.call(grid.querySelectorAll('[data-close]')).forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var pn = btn.closest('.tm-panel');
+      var owner = pn && document.getElementById(pn.getAttribute('data-owner'));
+      if (owner){ close(owner); owner.focus(); }
+    });
+  });
+
+  /* Esc closes; arrows walk the team */
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ if (current) close(current); return; }
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    var i = cards.indexOf(document.activeElement);
+    if (i < 0) return;
+    var wasOpen = cards[i].classList.contains('is-open');
+    var next = cards[(i + (e.key === 'ArrowRight' ? 1 : cards.length - 1)) % cards.length];
+    next.focus();
+    if (wasOpen) open(next);
+    e.preventDefault();
+  });
+
+  /* the row changes when the column count does — re-seat the open panel */
+  var t;
+  window.addEventListener('resize', function(){
+    if (!current) return;
+    clearTimeout(t);
+    t = setTimeout(function(){
+      var pn = panelOf(current);
+      if (pn) endOfRow(current).insertAdjacentElement('afterend', pn);
+    }, 160);
+  });
+
+  /* stagger the cards in */
+  if (!reduced && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
+    gsap.set(cards, { y: 26, opacity: 0 });
+    ScrollTrigger.batch(cards, {
+      start: 'top 88%',
+      onEnter: function(batch){ gsap.to(batch, { y: 0, opacity: 1, duration: .75, ease: 'power3.out', stagger: .08, overwrite: true }); }
+    });
+  }
+})();
+</script>

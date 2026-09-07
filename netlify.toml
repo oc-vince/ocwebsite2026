@@ -1,0 +1,28 @@
+# Netlify configuration for onlineconsulting.com.au
+#
+# The site is plain static HTML with no build step, so publish is the repo root.
+# _redirects (at the root) carries the 301 map from the old WordPress URLs.
+
+[build]
+  publish = "."
+  command = ""
+
+# Keep the build tooling out of the deployed site.
+[build.processing]
+  skip_processing = false
+
+# Long cache for immutable assets, short for HTML so content edits go live fast.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

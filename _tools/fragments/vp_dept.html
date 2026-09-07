@@ -1,0 +1,181 @@
+          <div class="dept" id="dept-vp" data-label="Video and Photography">
+    <div class="form-block">
+      <div class="form-block__head">
+        <h4>What do you need?</h4>
+        <span class="form-block__hint">Choose one</span>
+      </div>
+      <p class="q">Select your service <em class="req">*</em></p>
+      <div class="choices choices--3">
+        <label class="choice">
+          <input type="radio" name="vp_service" value="Video Production" required>
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Video Production</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="vp_service" value="Photography" required>
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Photography</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="vp_service" value="Video + Photography" required>
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Video + Photography</span>
+        </label>
+      </div>
+    </div>
+    <div class="form-block">
+      <div class="form-block__head">
+        <h4>About your project</h4>
+      </div>
+      <label class="field">
+        <span>Project / campaign name</span>
+        <input type="text" name="vp_project" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>Tell us about your project <em class="req">*</em></span>
+        <textarea name="vp_brief" required></textarea>
+      </label>
+      <p class="q">What is the main purpose of this project?</p>
+      <div class="choices choices--3">
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Marketing / Advertising">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Marketing / Advertising</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Website Content">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Website Content</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Social Media">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Social Media</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Product Promotion">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Product Promotion</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Corporate / Business">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Corporate / Business</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Event Coverage">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Event Coverage</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Brand Campaign">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Brand Campaign</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Training / Educational">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Training / Educational</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Personal Project">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Personal Project</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="vp_purpose[]" value="Other">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Other</span>
+        </label>
+      </div>
+      <div class="reveal-field" id="vp-other-field">
+        <label class="field">
+          <span>Please specify a project</span>
+          <input type="text" name="vp_purpose_other">
+        </label>
+      </div>
+      <label class="field">
+        <span>When would you like the project completed?</span>
+        <select name="vp_timing">
+          <option value="" selected disabled>Please choose&hellip;</option>
+          <option value="As soon as possible">As soon as possible</option>
+          <option value="Within 1 month">Within 1 month</option>
+          <option value="1-2 months">1-2 months</option>
+          <option value="2-3 months">2-3 months</option>
+          <option value="3+ months">3+ months</option>
+          <option value="No specific deadline">No specific deadline</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Anything else you'd like us to know?</span>
+        <textarea name="vp_notes"></textarea>
+      </label>
+    </div>
+    <div class="form-block">
+      <div class="form-block__head">
+        <h4>Your details</h4>
+      </div>
+      <div class="grid-2">
+      <label class="field">
+        <span>Full name <em class="req">*</em></span>
+        <input type="text" name="vp_name" required autocomplete="on">
+      </label>
+      <label class="field">
+        <span>Company</span>
+        <input type="text" name="vp_company" autocomplete="on">
+      </label>
+      <label class="field">
+        <span>Email <em class="req">*</em></span>
+        <input type="email" name="vp_email" required autocomplete="email">
+      </label>
+      <label class="field">
+        <span>Phone <em class="req">*</em></span>
+        <input type="tel" name="vp_phone" required autocomplete="tel">
+      </label>
+      </div>
+    </div>
+    <div class="form-block">
+      <div class="form-block__head">
+        <h4>Book your consultation</h4>
+      </div>
+      <div class="grid-2">
+      <label class="field">
+        <span>Preferred consultation date</span>
+        <input type="date" name="vp_date">
+      </label>
+      <label class="field">
+        <span>Preferred time</span>
+        <input type="time" name="vp_time">
+      </label>
+      </div>
+      <p class="q">Preferred meeting method</p>
+      <div class="choices choices--3">
+        <label class="choice">
+          <input type="radio" name="vp_method" value="Google Meet">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Google Meet</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="vp_method" value="Phone Call">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Phone Call</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="vp_method" value="In Person">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">In Person</span>
+        </label>
+      </div>
+      <div class="consent">
+        <label class="choice">
+          <input type="checkbox" name="vp_consent" value="yes" required>
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">I agree to be contacted regarding my enquiry and understand that the consultation does not obligate me to purchase any services.</span>
+        </label>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn--primary" type="submit" data-magnetic><span>Submit</span><span class="arrow">&rarr;</span></button>
+        <small>We reply within 2 business hours. No obligation, no sales script.</small>
+      </div>
+    </div>
+          </div>

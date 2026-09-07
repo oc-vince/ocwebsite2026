@@ -1,0 +1,227 @@
+
+      <div class="nav__item nav__item--mega">
+        <a class="nav__link" href="/managed-it-services/">Managed IT Services <i class="chev"></i></a>
+        <div class="mega" role="group" aria-label="Managed IT Services">
+          <div class="mega__panel">
+            <video class="mega__video" src="video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="mega__scrim" aria-hidden="true"></span>
+            <div class="mega__grid">
+
+              <div class="mega__intro">
+                <h3>Managed <span>IT Services</span></h3>
+                <p>Need reliable support for your business network, cybersecurity, devices, or day-to-day IT needs? Our managed IT services keep your technology secure, reliable, and running smoothly.</p>
+                <div class="mega__cta">
+                  <a class="btn btn--ghost" href="book.html" data-magnetic><span>Book a Free IT Review</span></a>
+                </div>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/it-support/index.html">
+                  <span class="mega__ico"><img src="images/submenus/IT-Support-in-Sydney-Icon.png" alt="" width="44" height="48" loading="lazy" decoding="async"></span>
+                  <span><b>IT Support in Sydney</b><span>Reliable IT support and expert assistance to keep your business running smoothly.</span></span>
+                </a>
+                <a class="mega__item" href="service/it-support/index.html#managed-cyber-security-support">
+                  <span class="mega__ico"><img src="images/submenus/Managed-Cyber-Security-Icon.png" alt="" width="44" height="43" loading="lazy" decoding="async"></span>
+                  <span><b>Managed Cyber Security &amp; Support</b><span>Protect your business with proactive security monitoring, threat detection, and support.</span></span>
+                </a>
+                <a class="mega__item" href="service/it-support/index.html#managed-network-packages">
+                  <span class="mega__ico"><img src="images/submenus/Managed-Network-Packages-Icon.png" alt="" width="46" height="50" loading="lazy" decoding="async"></span>
+                  <span><b>Managed Network Packages</b><span>Fast, secure, and reliable network solutions designed around your business needs.</span></span>
+                </a>
+                <a class="mega__item" href="service/it-support/index.html#robust-cloud-backup">
+                  <span class="mega__ico"><img src="images/submenus/Robust-Cloud-Backup-Icon.png" alt="" width="47" height="47" loading="lazy" decoding="async"></span>
+                  <span><b>Robust Cloud Backup</b><span>Securely protect your critical business data with reliable cloud backup and recovery.</span></span>
+                </a>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/it-support/index.html#ongoing-maintenance">
+                  <span class="mega__ico"><img src="images/submenus/Ongoing-Maintenance-Icon.png" alt="" width="42" height="42" loading="lazy" decoding="async"></span>
+                  <span><b>Ongoing Maintenance</b><span>Keep your systems performing at their best with proactive maintenance and monitoring.</span></span>
+                </a>
+                <a class="mega__item" href="service/google-workspace/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Google-Workspace-Icon.png" alt="" width="44" height="39" loading="lazy" decoding="async"></span>
+                  <span><b>Google Workspace</b><span>Streamline collaboration with cloud-based email, apps, and productivity tools.</span></span>
+                </a>
+                <a class="mega__item" href="service/computer-repairs/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Computer-Repairs-Icon.png" alt="" width="45" height="42" loading="lazy" decoding="async"></span>
+                  <span><b>Computer Repairs</b><span>Fast, professional computer repairs and troubleshooting to get you back on track.</span></span>
+                </a>
+                <a class="mega__item" href="service/va-recruitment-services/index.html">
+                  <span class="mega__ico"><img src="images/submenus/VA-Recruitment-Services-Icon.png" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>VA Recruitment Services</b><span>Find skilled virtual assistants to support your business and improve productivity.</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item nav__item--mega">
+        <a class="nav__link" href="/digital-marketing/">Digital Marketing <i class="chev"></i></a>
+        <div class="mega mega--4" role="group" aria-label="Digital Marketing">
+          <div class="mega__panel">
+            <video class="mega__video" src="video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="mega__scrim" aria-hidden="true"></span>
+            <div class="mega__grid">
+
+              <div class="mega__intro">
+                <h3>Digital <span>Marketing</span></h3>
+                <p>Grow your online presence with strategic digital marketing designed to attract customers, build your brand, and drive measurable results.</p>
+                <div class="mega__cta">
+                  <a class="btn btn--ghost" href="book.html" data-magnetic><span>Book a Free IT Review</span></a>
+                </div>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/seo-services/index.html">
+                  <span class="mega__ico"><img src="images/submenus/SEO-Services.svg" alt="" width="46" height="38" loading="lazy" decoding="async"></span>
+                  <span><b>SEO Services</b><span>Improve your search visibility, rankings, and organic traffic with proven SEO strategies.</span></span>
+                </a>
+                <a class="mega__item" href="service/google-adwords/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Google-Ads.svg" alt="" width="46" height="44" loading="lazy" decoding="async"></span>
+                  <span><b>Google Ads</b><span>Reach the right customers with targeted Google Ads campaigns built to drive results.</span></span>
+                </a>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/social-media-marketing/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Social-Media-Marketing.svg" alt="" width="43" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>Social Media Marketing</b><span>Build your brand and engage your audience with strategic social media marketing.</span></span>
+                </a>
+                <a class="mega__item" href="service/copywriting/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Content-Copywriting.svg" alt="" width="46" height="44" loading="lazy" decoding="async"></span>
+                  <span><b>Content &amp; Copywriting</b><span>Create compelling content and persuasive copy that connects with your audience.</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item nav__item--mega">
+        <a class="nav__link" href="service/web-development/index.html">Web Development <i class="chev"></i></a>
+        <div class="mega mega--4 mega--wd" role="group" aria-label="Web Development">
+          <div class="mega__panel">
+            <video class="mega__video" src="video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="mega__scrim" aria-hidden="true"></span>
+            <div class="mega__grid">
+
+              <div class="mega__intro">
+                <h3>Web <span>Development</span></h3>
+                <p>Build a modern, secure, and high-performing website tailored to your business goals and designed to turn visitors into customers.</p>
+                <div class="mega__cta">
+                  <a class="btn btn--ghost" href="book.html" data-magnetic><span>Book a Free IT Review</span></a>
+                </div>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/web-development/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Web-Design.svg" alt="" width="46" height="38" loading="lazy" decoding="async"></span>
+                  <span><b>Web Design &amp; Development</b><span>Build modern, high-performing websites designed to engage visitors and drive growth.</span></span>
+                </a>
+                <a class="mega__item" href="service/web-hosting/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Web-Hosting.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>Web Hosting &amp; Domains</b><span>Fast, secure, and reliable hosting with domain solutions to keep your website online.</span></span>
+                </a>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="service/video/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Videography.svg" alt="" width="39" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>Videography</b><span>Bring your brand to life with professional video production crafted for impact.</span></span>
+                </a>
+                <a class="mega__item" href="service/photography/index.html">
+                  <span class="mega__ico"><img src="images/submenus/Photography.svg" alt="" width="46" height="35" loading="lazy" decoding="async"></span>
+                  <span><b>Photography</b><span>Capture your brand, products, and people with professional photography that stands out.</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item nav__item--mega">
+        <a class="nav__link" href="one-partner.html">Why One Partner <i class="chev"></i></a>
+        <div class="mega mega--4 mega--op" role="group" aria-label="Why One Partner">
+          <div class="mega__panel">
+            <video class="mega__video" src="video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="mega__scrim" aria-hidden="true"></span>
+            <div class="mega__grid">
+
+              <div class="mega__intro">
+                <h3>Why <span>One Partner</span></h3>
+                <p>Every extra vendor with access to your systems is another set of credentials, another support queue and another gap for things to fall through.</p>
+                <div class="mega__cta">
+                  <a class="btn btn--ghost" href="one-partner.html" data-magnetic><span>One Partner Overview</span></a>
+                </div>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="one-partner.html#here-for">
+                  <span class="mega__ico"><img src="images/submenus/What-Were-Here-For.svg" alt="" width="45" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>What We&rsquo;re Here For</b><span>One partner is a way of working, not a bundle of services.</span></span>
+                </a>
+                <a class="mega__item" href="one-partner.html#coverage">
+                  <span class="mega__ico"><img src="images/submenus/See-Coverage.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>See Coverage</b><span>One partner, six disciplines.</span></span>
+                </a>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="one-partner.html#advantages">
+                  <span class="mega__ico"><img src="images/submenus/See-The-Advantages.svg" alt="" width="46" height="35" loading="lazy" decoding="async"></span>
+                  <span><b>See The Advantages</b><span>Six things that get easier the day you consolidate.</span></span>
+                </a>
+                <a class="mega__item" href="one-partner.html#three-teams">
+                  <span class="mega__ico"><img src="images/submenus/What-One-Partner-Covers.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>What One Partner Covers</b><span>Three teams. One partner behind them.</span></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item nav__item--mega">
+        <a class="nav__link" href="about.html">About <i class="chev"></i></a>
+        <div class="mega mega--about" role="group" aria-label="About">
+          <div class="mega__panel">
+            <video class="mega__video" src="video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="mega__scrim" aria-hidden="true"></span>
+            <div class="mega__grid">
+
+              <div class="mega__col">
+                <a class="mega__item" href="about.html">
+                  <span class="mega__ico"><img src="images/submenus/About-Us.svg" alt="" width="41" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>About Us</b><span>Discover who we are, what we do, and how we help businesses achieve their goals.</span></span>
+                </a>
+                <a class="mega__item" href="people.html">
+                  <span class="mega__ico"><img src="images/submenus/Our-People.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>Our People</b><span>Meet our experienced team dedicated to delivering great service and smart solutions.</span></span>
+                </a>
+              </div>
+
+              <div class="mega__col">
+                <a class="mega__item" href="work.html">
+                  <span class="mega__ico"><img src="images/submenus/Our-Work.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>Our Work</b><span>Explore our projects, solutions, and success stories across a range of industries.</span></span>
+                </a>
+                <a class="mega__item" href="blog.html">
+                  <span class="mega__ico"><img src="images/submenus/Blog.svg" alt="" width="45" height="46" loading="lazy" decoding="async"></span>
+                  <span><b>Blog</b><span>Explore the latest insights, tips, trends, and practical advice from our team.</span></span>
+                </a>
+              </div>
+
+              <div class="mega__intro">
+                <h3>Get in touch <span>with us today!</span></h3>
+                <p>Have a question or ready to get started? Our team is here to help with the right solution for your business.</p>
+                <div class="mega__cta">
+                  <a class="btn btn--ghost" href="contact.html" data-magnetic><span>Contact Us Now!</span></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>

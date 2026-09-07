@@ -1,0 +1,13 @@
+<!-- ============ WHAT HAPPENS NEXT ============ -->
+<section class="ty">
+  <div class="container">
+    <div class="ty__head" data-reveal>
+      <p class="section__kicker">What happens next</p>
+      <h2>__NEXTH2__</h2>
+      <p>__NEXTSUB__</p>
+    </div>
+    <div class="ty-steps">
+__STEPS__
+    </div>
+  </div>
+</section>

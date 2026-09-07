@@ -1,0 +1,93 @@
+<script>
+/* ---------- video lightbox: intro/outro animation, chrome-free embeds ---------- */
+(function videoLightbox(){
+  var lb = document.getElementById('vlx');
+  var grid = document.getElementById('pfGrid');
+  if (!lb || !grid) return;
+  var frame   = document.getElementById('vlxFrame');
+  var caption = document.getElementById('vlxCaption');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lastFocus = null, closing = null;
+
+  /* Params strip everything but the play control: no related videos, no titles,
+     no uploader chrome, no share/watch-later buttons. */
+  function embed(id, title){
+    var t = (title || 'Video').replace(/&mdash;/g, '—').replace(/&amp;/g, '&').replace(/"/g, '');
+    /* an id may carry a share token, e.g. yt:ID?si=... or vm:ID?h=... */
+    var raw = id.slice(3), bits = raw.split('?'), vid = bits[0], share = bits[1] || '';
+    if (id.indexOf('yt:') === 0){
+      /* Matches YouTube's own share/oEmbed embed, plus the params that strip chrome.
+         No `origin` - that is only valid alongside enablejsapi=1 and on its own it
+         produced "Video player configuration error / 153". */
+      var q = (share ? share + '&' : '') + 'autoplay=1&rel=0&playsinline=1&iv_load_policy=3';
+      return '<iframe src="https://www.youtube.com/embed/' + vid + '?' + q + '"' +
+             ' title="' + t + '" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"' +
+             ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"' +
+             ' allowfullscreen></iframe>';
+    }
+    if (id.indexOf('vm:') === 0){
+      var vq = (share ? share + '&' : '') + 'autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1';
+      return '<iframe src="https://player.vimeo.com/video/' + vid + '?' + vq + '"' +
+             ' title="' + t + '" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"' +
+             ' allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    }
+    return '';
+  }
+
+  function open(tile){
+    var id = tile.getAttribute('data-video');
+    if (!id) return false;                       /* no id -> let the link through */
+    lastFocus = document.activeElement;
+    clearTimeout(closing);
+    lb.hidden = false;
+    lb.classList.remove('is-closing');
+    void lb.offsetHeight;                        /* commit the start state so the intro animates */
+    lb.classList.add('is-open');
+    frame.innerHTML = embed(id, tile.getAttribute('data-title'));
+    var href = tile.getAttribute('href') || '';
+    var where = id.indexOf('yt:') === 0 ? 'YouTube' : 'Vimeo';
+    caption.innerHTML = (tile.getAttribute('data-title') || '') +
+      (href ? ' <a class="vlx__src" href="' + href + '" target="_blank" rel="noopener">Open on ' + where +
+              ' <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9.4 7H17v7.6"/></svg></a>' : '');
+    document.body.style.overflow = 'hidden';
+    if (window.__lenis && window.__lenis.stop) window.__lenis.stop();
+    lb.querySelector('.vlx__close').focus();
+    return true;
+  }
+
+  function close(){
+    if (lb.hidden || lb.classList.contains('is-closing')) return;
+    /* .is-open stays on through the outro so the element remains visible;
+       .is-closing supplies the exit. Both come off once it has played. */
+    lb.classList.add('is-closing');
+    document.body.style.overflow = '';
+    if (window.__lenis && window.__lenis.start) window.__lenis.start();
+    closing = setTimeout(function(){
+      frame.innerHTML = '';                      /* stops playback */
+      caption.innerHTML = '';
+      lb.classList.remove('is-closing', 'is-open');
+      lb.hidden = true;
+    }, reduced ? 0 : 360);
+    if (lastFocus) lastFocus.focus();
+  }
+
+  grid.addEventListener('click', function(e){
+    var tile = e.target.closest('.pf-item--videos');
+    if (!tile) return;
+    if (open(tile)) e.preventDefault();
+  });
+
+  [].slice.call(lb.querySelectorAll('[data-vlx-close]')).forEach(function(el){
+    el.addEventListener('click', close);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (lb.hidden) return;
+    if (e.key === 'Escape'){ close(); return; }
+    if (e.key === 'Tab'){                        /* keep focus in the dialog */
+      e.preventDefault();
+      lb.querySelector('.vlx__close').focus();
+    }
+  });
+})();
+</script>

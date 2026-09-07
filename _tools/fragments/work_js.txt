@@ -1,0 +1,90 @@
+<script>
+/* ---------- our work: service filter over the client grid ---------- */
+(function workFilter(){
+  var grid = document.getElementById('pfGrid');
+  if (!grid) return;
+  var items   = [].slice.call(grid.querySelectorAll('[data-pf]'));
+  var filters = [].slice.call(document.querySelectorAll('#pfFilters .pf-filter'));
+  var empty   = document.getElementById('pfEmpty');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!items.length) return;
+
+  function cats(el){ return (el.getAttribute('data-cat') || '').split(/\s+/).filter(Boolean); }
+  function matches(el, f){ return f === 'all' || cats(el).indexOf(f) > -1; }
+
+  var run = 0, timers = [];
+  function apply(f){
+    var me = ++run;                                   /* a newer click always wins */
+    timers.forEach(clearTimeout); timers = [];
+
+    var leaving = items.filter(function(i){ return !i.classList.contains('is-hidden') && !matches(i, f); });
+    var joining = items.filter(function(i){ return  i.classList.contains('is-hidden') &&  matches(i, f); });
+
+    if (reduced){
+      items.forEach(function(it){ it.classList.toggle('is-hidden', !matches(it, f)); it.classList.remove('is-entering','is-leaving'); });
+      if (empty) empty.hidden = items.filter(function(i){ return !i.classList.contains('is-hidden'); }).length > 0;
+      return;
+    }
+
+    /* 1. departing cards ease out straight away - stagger capped so the exit stays ~300ms */
+    leaving.forEach(function(it, n){
+      it.style.transitionDelay = Math.min(n, 6) * 18 + 'ms';
+      it.classList.add('is-leaving');
+    });
+
+    timers.push(setTimeout(function(){
+      if (me !== run) return;
+      leaving.forEach(function(it){ it.classList.add('is-hidden'); it.classList.remove('is-leaving'); it.style.transitionDelay = ''; });
+
+      /* 2. the whole surviving set animates in, not just the new arrivals - otherwise a
+         switch that keeps most cards looks like nothing happened. */
+      joining.forEach(function(it){ it.classList.remove('is-hidden'); });
+      var shown = items.filter(function(i){ return !i.classList.contains('is-hidden'); });
+      shown.forEach(function(it){ it.style.transitionDelay = ''; it.classList.add('is-entering'); });
+      if (empty) empty.hidden = shown.length > 0;
+
+      void grid.offsetHeight;          /* commit the start state, or there is nothing to animate from */
+
+      /* release after a painted frame - removing the class inside the same frame makes the
+         browser resolve both ends in one style pass and skip the transition entirely */
+      timers.push(setTimeout(function(){
+        if (me !== run) return;
+        shown.forEach(function(it, n){
+          it.style.transitionDelay = Math.min(n, 11) * 34 + 'ms';   /* ~375ms max, not 2s */
+          it.classList.remove('is-entering');
+        });
+        timers.push(setTimeout(function(){
+          shown.forEach(function(it){ it.style.transitionDelay = ''; });
+          if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+        }, 1000));
+      }, 40));
+    }, leaving.length ? 300 : 0));
+  }
+
+  function select(f, animate){
+    var btn = filters.filter(function(b){ return b.getAttribute('data-filter') === f; })[0];
+    if (!btn) return false;
+    filters.forEach(function(b){ b.classList.remove('is-active'); b.removeAttribute('aria-current'); });
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-current', 'true');
+    apply(f);
+    return true;
+  }
+
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){ select(btn.getAttribute('data-filter')); });
+  });
+
+  /* deep link: work.html?cat=videos#clients opens the gallery on that category */
+  (function fromUrl(){
+    var m = /[?&]cat=([a-z0-9-]+)/i.exec(window.location.search);
+    if (!m) return;
+    var f = m[1].toLowerCase();
+    if (!select(f)) return;
+    if (window.location.hash) return;   /* the hash already handles scrolling */
+    var sec = document.getElementById('clients');
+    if (sec) setTimeout(function(){ sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 400);
+  })();
+
+})();
+</script>

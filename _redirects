@@ -1,0 +1,173 @@
+# Online Consulting - Netlify redirects
+# Generated for the 2026 rebuild. First matching rule wins, so order matters.
+#
+# Netlify "Pretty URLs" (on by default) already serves about.html at /about/ and
+# 301s /about.html -> /about/, so .html -> clean-URL rules are NOT listed here.
+# Trailing slashes are normalised before these rules run: a rule written /foo
+# also matches /foo/. The ! flag forces a redirect even when a file matches.
+
+# Build tooling lives in the repo but must not be served
+/_tools/*                                 /_not-found                  404
+
+# Blog posts: the old site published these at the root, the new site nests them under /blog/
+/10-common-blogging-mistakes-to-avoid-for-your-business-blog                    /blog/10-common-blogging-mistakes-to-avoid-for-your-business-blog/  301
+/10-effective-brand-awareness-strategies                                        /blog/10-effective-brand-awareness-strategies/  301
+/10-signs-your-business-needs-a-google-ads-expert                               /blog/10-signs-your-business-needs-a-google-ads-expert/  301
+/2019-seo-predictions-trends-to-look-out-for                                    /blog/2019-seo-predictions-trends-to-look-out-for/  301
+/2025-video-marketing-tips                                                      /blog/2025-video-marketing-tips/  301
+/2026-social-media-strategy-whats-next-with-ai                                  /blog/2026-social-media-strategy-whats-next-with-ai/  301
+/5-futuristic-technology-trends-in-ecommerce-industry                           /blog/5-futuristic-technology-trends-in-ecommerce-industry/  301
+/5-must-have-copywriting-trends-for-2022                                        /blog/5-must-have-copywriting-trends-for-2022/  301
+/5-web-design-blunders-to-avoid-in-ecommerce-website                            /blog/5-web-design-blunders-to-avoid-in-ecommerce-website/  301
+/6-tags-that-influence-seo-and-website-rankings                                 /blog/6-tags-that-influence-seo-and-website-rankings/  301
+/8-reasons-google-workspace-is-worth-the-upgrade-for-your-business              /blog/8-reasons-google-workspace-is-worth-the-upgrade-for-your-business/  301
+/8-tips-for-successful-virtual-collaboration                                    /blog/8-tips-for-successful-virtual-collaboration/  301
+/adblock-blocker-acquired-but-the-rumored-purchaser-has-denied                  /blog/adblock-blocker-acquired-but-the-rumored-purchaser-has-denied/  301
+/ai-search-content-writing-guide                                                /blog/ai-search-content-writing-guide/  301
+/apps-you-need-to-make-working-from-home-easier                                 /blog/apps-you-need-to-make-working-from-home-easier/  301
+/benefits-of-it-support-to-small-businesses-in-sydney                           /blog/benefits-of-it-support-to-small-businesses-in-sydney/  301
+/benefits-of-outsourcing-website-maintenance                                    /blog/benefits-of-outsourcing-website-maintenance/  301
+/best-ways-to-protect-your-business-website-from-cyber-attacks                  /blog/best-ways-to-protect-your-business-website-from-cyber-attacks/  301
+/blending-ai-and-human-content-for-seo                                          /blog/blending-ai-and-human-content-for-seo/  301
+/boost-brand-awareness-with-seo                                                 /blog/boost-brand-awareness-with-seo/  301
+/boost-local-visibility-with-seo-and-ppc-together                               /blog/boost-local-visibility-with-seo-and-ppc-together/  301
+/business-rebranding-tips                                                       /blog/business-rebranding-tips/  301
+/choosing-the-right-web-hosting-for-your-business                               /blog/choosing-the-right-web-hosting-for-your-business/  301
+/common-google-ads-mistakes                                                     /blog/common-google-ads-mistakes/  301
+/compelling-visuals-importance-for-social-media-marketing-success               /blog/compelling-visuals-importance-for-social-media-marketing-success/  301
+/computer-running-slow-causes-and-how-to-fix                                    /blog/computer-running-slow-causes-and-how-to-fix/  301
+/consider-running-search-engine-marketing-campaigns                             /blog/consider-running-search-engine-marketing-campaigns/  301
+/difference-between-managed-service-provider-and-it-support                     /blog/difference-between-managed-service-provider-and-it-support/  301
+/do-search-engines-think-your-content-is-relevant-to-their-users                /blog/do-search-engines-think-your-content-is-relevant-to-their-users/  301
+/do-you-need-new-website-or-just-redesign                                       /blog/do-you-need-new-website-or-just-redesign/  301
+/effective-ways-to-grow-your-blog-audience                                      /blog/effective-ways-to-grow-your-blog-audience/  301
+/eight-essential-computer-maintenance-tips                                      /blog/eight-essential-computer-maintenance-tips/  301
+/eight-latest-web-design-trends-for-2022                                        /blog/eight-latest-web-design-trends-for-2022/  301
+/five-copywriting-tips-increase-website-conversion                              /blog/five-copywriting-tips-increase-website-conversion/  301
+/google-ads-vs-facebook-ads                                                     /blog/google-ads-vs-facebook-ads/  301
+/google-adwords-an-excellent-way-to-promote-your-business                       /blog/google-adwords-an-excellent-way-to-promote-your-business/  301
+/google-adwords-tips-for-small-business-owners                                  /blog/google-adwords-tips-for-small-business-owners/  301
+/google-ai-overviews-local-businesses                                           /blog/google-ai-overviews-local-businesses/  301
+/google-ppc-is-more-important-than-ever-for-your-business                       /blog/google-ppc-is-more-important-than-ever-for-your-business/  301
+/heres-why-you-need-an-it-disaster-recovery-plan-for-your-business              /blog/heres-why-you-need-an-it-disaster-recovery-plan-for-your-business/  301
+/hidden-costs-of-ignoring-it-support-for-your-business                          /blog/hidden-costs-of-ignoring-it-support-for-your-business/  301
+/how-can-a-virtual-assistant-help-you-focus-on-the-core-of-your-business        /blog/how-can-a-virtual-assistant-help-you-focus-on-the-core-of-your-business/  301
+/how-ecommerce-website-boosts-your-local-business                               /blog/how-ecommerce-website-boosts-your-local-business/  301
+/how-facebook-videos-can-help-to-promote-your-business                          /blog/how-facebook-videos-can-help-to-promote-your-business/  301
+/how-google-workspace-helps-your-business-stay-secure                           /blog/how-google-workspace-helps-your-business-stay-secure/  301
+/how-investment-in-seo-can-be-the-best-step-for-your-business                   /blog/how-investment-in-seo-can-be-the-best-step-for-your-business/  301
+/how-social-media-helps-with-seo                                                /blog/how-social-media-helps-with-seo/  301
+/how-team-photos-can-build-trust-with-your-clients                              /blog/how-team-photos-can-build-trust-with-your-clients/  301
+/how-to-build-a-high-converting-landing-page                                    /blog/how-to-build-a-high-converting-landing-page/  301
+/how-to-build-a-strong-online-presence-for-business-success                     /blog/how-to-build-a-strong-online-presence-for-business-success/  301
+/how-to-capture-great-images-for-websites-6-tips-you-just-cant-ignore           /blog/how-to-capture-great-images-for-websites-6-tips-you-just-cant-ignore/  301
+/how-to-create-a-successful-business-blog                                       /blog/how-to-create-a-successful-business-blog/  301
+/how-to-create-a-successful-facebook-ad-campaign                                /blog/how-to-create-a-successful-facebook-ad-campaign/  301
+/how-to-generate-traffic-through-facebook-marketing                             /blog/how-to-generate-traffic-through-facebook-marketing/  301
+/how-to-get-more-blog-readers-on-your-website                                   /blog/how-to-get-more-blog-readers-on-your-website/  301
+/how-to-maintain-security-when-employees-work-remotely                          /blog/how-to-maintain-security-when-employees-work-remotely/  301
+/how-to-make-an-easy-approach-in-seo                                            /blog/how-to-make-an-easy-approach-in-seo/  301
+/how-to-optimize-your-website-for-voice-search-in-2022                          /blog/how-to-optimize-your-website-for-voice-search-in-2022/  301
+/how-to-prepare-your-website-for-the-holidays                                   /blog/how-to-prepare-your-website-for-the-holidays/  301
+/how-to-promote-your-website-by-spending-some-money                             /blog/how-to-promote-your-website-by-spending-some-money/  301
+/how-to-recover-after-major-google-algorithm-update                             /blog/how-to-recover-after-major-google-algorithm-update/  301
+/how-to-write-for-digital-marketing-and-website-content-that-converts           /blog/how-to-write-for-digital-marketing-and-website-content-that-converts/  301
+/importance-of-data-privacy-and-security-for-businesses                         /blog/importance-of-data-privacy-and-security-for-businesses/  301
+/importance-of-updating-your-professional-headshot                              /blog/importance-of-updating-your-professional-headshot/  301
+/in-house-vs-agency-google-ads-management                                       /blog/in-house-vs-agency-google-ads-management/  301
+/increase-sales-with-optimised-google-my-business-listing                       /blog/increase-sales-with-optimised-google-my-business-listing/  301
+/increase-your-social-media-reach-in-2020                                       /blog/increase-your-social-media-reach-in-2020/  301
+/it-support-tips-to-avoid-downtime-business-owners                              /blog/it-support-tips-to-avoid-downtime-business-owners/  301
+/jump-start-the-new-year-with-a-new-promotional-video                           /blog/jump-start-the-new-year-with-a-new-promotional-video/  301
+/long-form-vs-short-form-content                                                /blog/long-form-vs-short-form-content/  301
+/marketing-tactics-to-avoid-these-days                                          /blog/marketing-tactics-to-avoid-these-days/  301
+/migrator-for-google-apps-the-ultimate-weapon-to-transfer-data                  /blog/migrator-for-google-apps-the-ultimate-weapon-to-transfer-data/  301
+/mobile-search-a-continuous-rise-in-2015                                        /blog/mobile-search-a-continuous-rise-in-2015/  301
+/online-consulting-weve-made-sense-of-the-web-for-10-years                      /blog/online-consulting-weve-made-sense-of-the-web-for-10-years/  301
+/online-marketing-the-common-mistakes-you-make                                  /blog/online-marketing-the-common-mistakes-you-make/  301
+/organic-vs-paid-social-media                                                   /blog/organic-vs-paid-social-media/  301
+/pros-of-outsourcing-video-production-for-your-business                         /blog/pros-of-outsourcing-video-production-for-your-business/  301
+/reach-business-goals-using-youtube                                             /blog/reach-business-goals-using-youtube/  301
+/reasons-why-your-business-still-needs-facebook                                 /blog/reasons-why-your-business-still-needs-facebook/  301
+/reasons-why-your-windows-computer-keeps-crashing                               /blog/reasons-why-your-windows-computer-keeps-crashing/  301
+/security-tips-for-online-holiday-shopping                                      /blog/security-tips-for-online-holiday-shopping/  301
+/shared-vs-dedicated-hosting-which-is-right-for-your-website                    /blog/shared-vs-dedicated-hosting-which-is-right-for-your-website/  301
+/signs-its-time-to-hire-a-virtual-assistant-for-your-business                   /blog/signs-its-time-to-hire-a-virtual-assistant-for-your-business/  301
+/small-business-guide-web-hosting-common-questions                              /blog/small-business-guide-web-hosting-common-questions/  301
+/small-business-video-marketing-tips-for-success                                /blog/small-business-video-marketing-tips-for-success/  301
+/successful-virtual-assistant-onboarding                                        /blog/successful-virtual-assistant-onboarding/  301
+/the-benefits-of-using-a-professional-photographer-for-your-website             /blog/the-benefits-of-using-a-professional-photographer-for-your-website/  301
+/the-benefits-to-redesigning-your-website                                       /blog/the-benefits-to-redesigning-your-website/  301
+/the-social-media-trends-that-are-set-to-dominate-2019                          /blog/the-social-media-trends-that-are-set-to-dominate-2019/  301
+/things-to-do-before-launching-your-website                                     /blog/things-to-do-before-launching-your-website/  301
+/things-to-do-to-help-your-business-survive-during-coronavirus                  /blog/things-to-do-to-help-your-business-survive-during-coronavirus/  301
+/things-to-keep-in-mind-when-choosing-the-perfect-domain-name-for-your-business /blog/things-to-keep-in-mind-when-choosing-the-perfect-domain-name-for-your-business/  301
+/things-to-look-for-when-buying-a-new-computer                                  /blog/things-to-look-for-when-buying-a-new-computer/  301
+/three-reasons-why-digital-marketing-fails                                      /blog/three-reasons-why-digital-marketing-fails/  301
+/tips-to-improve-website-conversions-with-help-of-quality-content               /blog/tips-to-improve-website-conversions-with-help-of-quality-content/  301
+/tips-to-stand-out-on-social-media-and-beat-competitors                         /blog/tips-to-stand-out-on-social-media-and-beat-competitors/  301
+/top-10-advantages-of-social-media-marketing-for-your-small-business            /blog/top-10-advantages-of-social-media-marketing-for-your-small-business/  301
+/top-10-signs-your-website-is-outdated                                          /blog/top-10-signs-your-website-is-outdated/  301
+/top-benefits-of-hiring-a-virtual-assistant-for-your-business                   /blog/top-benefits-of-hiring-a-virtual-assistant-for-your-business/  301
+/top-cloud-storage-providers-for-businesses-in-2024                             /blog/top-cloud-storage-providers-for-businesses-in-2024/  301
+/top-videos-every-growing-business-should-create                                /blog/top-videos-every-growing-business-should-create/  301
+/top-website-fails-and-how-to-avoid-them                                        /blog/top-website-fails-and-how-to-avoid-them/  301
+/troubleshooting-common-web-hosting-issues                                      /blog/troubleshooting-common-web-hosting-issues/  301
+/user-friendly-websites-characteristics                                         /blog/user-friendly-websites-characteristics/  301
+/warning-signs-that-your-macbook-needs-repair-service                           /blog/warning-signs-that-your-macbook-needs-repair-service/  301
+/web-design-best-practices-for-2019                                             /blog/web-design-best-practices-for-2019/  301
+/web-development-trends-for-2018                                                /blog/web-development-trends-for-2018/  301
+/what-should-you-look-for-in-an-it-company                                      /blog/what-should-you-look-for-in-an-it-company/  301
+/when-should-you-upgrade-your-hosting-plan                                      /blog/when-should-you-upgrade-your-hosting-plan/  301
+/when-to-upgrade-vs-replace-your-hard-drive                                     /blog/when-to-upgrade-vs-replace-your-hard-drive/  301
+/why-clickbait-is-bad-for-your-website                                          /blog/why-clickbait-is-bad-for-your-website/  301
+/why-graphic-design-is-important-for-any-business                               /blog/why-graphic-design-is-important-for-any-business/  301
+/why-it-is-important-to-have-great-photos-on-your-website                       /blog/why-it-is-important-to-have-great-photos-on-your-website/  301
+/why-seo-the-top-5-reasons-you-should-invest-in-seo                             /blog/why-seo-the-top-5-reasons-you-should-invest-in-seo/  301
+/why-your-business-needs-a-digital-marketing-strategy                           /blog/why-your-business-needs-a-digital-marketing-strategy/  301
+/why-your-business-needs-g-suite                                                /blog/why-your-business-needs-g-suite/  301
+/why-your-website-is-the-most-important-business-asset-you-own                  /blog/why-your-website-is-the-most-important-business-asset-you-own/  301
+/why-your-website-will-fail-without-responsive-web-design                       /blog/why-your-website-will-fail-without-responsive-web-design/  301
+
+# Nav parents that have no hub page built yet - point them at the lead service
+# TODO replace these two with real hub pages; the top nav links here on every page
+/managed-it-services                      /service/it-support/        301
+/digital-marketing                        /service/seo-services/      301
+
+# Service pages whose slug changed
+/service/google-workspace-microsoft-365   /service/google-workspace/  301
+/service/search-engine-marketing          /service/seo-services/      301
+
+# Standalone pages that are now service pages
+/video                                    /service/video/             301
+/photography                              /service/photography/       301
+/google-workspace                         /service/google-workspace/  301
+
+# Northern Beaches landing pages -> closest service page
+/seo-northern-beaches                                     /service/seo-services/      301
+/search-engine-marketing-seo-and-adwords-expert-northern-beaches  /service/seo-services/  301
+/web-design-and-web-development-northern-beaches          /service/web-development/   301
+/video-producer-and-photography-northern-beaches           /service/video/             301
+/onsite-computer-repairs-and-fix-northern-beaches          /service/computer-repairs/  301
+/it-help-and-computer-geek-northern-beaches                /service/computer-repairs/  301
+
+# Retired customer portal and WooCommerce pages
+/buy-now                                  /contact/  301
+/buy-now-it                               /contact/  301
+/buy-services                             /contact/  301
+/my-account                               /contact/  301
+/dashboard                                /contact/  301
+/user-hosting                             /contact/  301
+/update-detail                            /contact/  301
+/development-and-support                  /contact/  301
+
+# COVID-era content
+/covid-19-key-information                 /                           301
+/covid/:slug                              /                           301
+
+# Sections the new site rolls up into one page
+# :slug never matches an empty segment, so /work/ and /people/ themselves are safe
+/work/:slug                               /work/                      301
+/team/:slug                               /people/                    301
+/speciality/:slug                         /one-partner/               301
+/testimonial/:slug                        /work/                      301

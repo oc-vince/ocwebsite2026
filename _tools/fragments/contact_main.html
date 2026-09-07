@@ -1,0 +1,156 @@
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero hero--page hero--book hero--contact">
+  <div class="container hero__inner">
+    <nav class="crumbs" aria-label="Breadcrumb" data-reveal>
+      <a href="index.html">Home</a><i>&rsaquo;</i><span>Contact</span>
+    </nav>
+    <p class="hero__eyebrow" data-reveal><span class="eyebrow-seg">Two Sydney offices</span><span class="eyebrow-sep"> &middot; </span><span class="eyebrow-seg">Northern Beaches to the CBD</span></p>
+    <h1 class="reveal-lines" id="heroTitle">Contact <span class="accent">Us</span></h1>
+    <p class="hero__sub" data-reveal>Ready to get started? Keen to find out more? We'd love to help your business. Call or message us now and one of our friendly team will be happy to chat through some options with you.</p>
+    <div class="hero__cta" data-reveal>
+      <a class="btn btn--light" href="tel:+61284597882" data-magnetic><span>+61 2 8459 7882</span><span class="arrow">&rarr;</span></a>
+      <a class="btn btn--ghost" href="book.html" data-magnetic><span>Book a Free IT Review</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM + DETAILS ============ -->
+<section class="op-sec">
+  <div class="container">
+    <div class="ct-wrap">
+
+      <!-- form -->
+      <div class="ct-form" data-reveal>
+        <h2>Send us a message</h2>
+        <p>Tell us what you need and we'll come back to you. If it's urgent, the phone is always faster.</p>
+
+        <!-- TODO: point action= at your form handler (Formspree endpoint, mail script, etc.)
+             and remove the novalidate/JS-intercept below if the handler does its own redirect. -->
+        <form id="contactForm" action="" method="post" novalidate>
+          <p class="ct-hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+          <div class="ct-grid">
+            <div class="ct-field" data-field>
+              <label for="firstName">First name <i>*</i></label>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="Jane" required>
+              <span class="ct-err">Please enter your first name.</span>
+            </div>
+            <div class="ct-field" data-field>
+              <label for="lastName">Last name <i>*</i></label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" placeholder="Citizen" required>
+              <span class="ct-err">Please enter your last name.</span>
+            </div>
+            <div class="ct-field" data-field>
+              <label for="email">Email <i>*</i></label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="jane@yourbusiness.com.au" required>
+              <span class="ct-err">Please enter a valid email address.</span>
+            </div>
+            <div class="ct-field" data-field>
+              <label for="phone">Phone <i>*</i></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" required>
+              <span class="ct-err">Please enter a phone number we can reach you on.</span>
+            </div>
+            <div class="ct-field ct-field--wide" data-field>
+              <label for="message">Message <i>*</i></label>
+              <textarea id="message" name="message" placeholder="Tell us a bit about your business and what you're after &mdash; IT support, a new website, marketing, or something else entirely." required></textarea>
+              <span class="ct-err">Please tell us how we can help.</span>
+            </div>
+          </div>
+          <div class="ct-foot">
+            <button class="btn btn--blue" type="submit" data-magnetic><span>Send message</span><span class="arrow">&rarr;</span></button>
+            <small>We'll only use your details to reply to this enquiry. No lists, no sharing.</small>
+          </div>
+          <div class="ct-ok" id="ctOk" role="status" aria-live="polite">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.6l4.4 4.4L19 7.4"/></svg>
+            <span><b>Thanks &mdash; that's on its way.</b><br>One of our team will be in touch shortly. If it's urgent, call us on +61 2 8459 7882.</span>
+          </div>
+        </form>
+        <p class="ct-note" id="ctSetup">Setup note for the developer: this form validates in the browser but has no <code>action</code> yet. Point it at your handler and delete this note.</p>
+      </div>
+
+      <!-- details -->
+      <aside class="ct-card" data-reveal>
+        <h2>Our details</h2>
+        <div class="ct-quick">
+          <a href="tel:+61284597882">
+            <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 16.9v2.5a1.6 1.6 0 0 1-1.8 1.6 15.6 15.6 0 0 1-6.8-2.4 15.4 15.4 0 0 1-4.8-4.8A15.6 15.6 0 0 1 4.6 6.9 1.6 1.6 0 0 1 6.2 5.1h2.5A1.6 1.6 0 0 1 10.3 6.5c.1.8.3 1.6.6 2.3a1.6 1.6 0 0 1-.4 1.7l-1 1a12.6 12.6 0 0 0 4.7 4.7l1-1a1.6 1.6 0 0 1 1.7-.4c.7.3 1.5.5 2.3.6a1.6 1.6 0 0 1 1.2 1.5z"/></svg></i>
+            <span><b>+61 2 8459 7882</b><em>Phone &mdash; fastest if it's urgent</em></span>
+          </a>
+          <a href="mailto:info@onlineconsulting.com.au">
+            <i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="4.6" width="18.8" height="14.8" rx="2.6"/><path d="M3.8 6.8l8.2 5.8 8.2-5.8"/></svg></i>
+            <span><b>info@onlineconsulting.com.au</b><em>Email</em></span>
+          </a>
+          <span class="ct-line">
+            <i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.2" y="3.4" width="15.6" height="17.2" rx="2.2"/><path d="M8.6 8h2.2M8.6 12h2.2M8.6 16h2.2M13.4 8h2.2M13.4 12h2.2M13.4 16h2.2"/></svg></i>
+            <span><b>OnlineConsulting.com.au Pty Ltd</b><em>ABN 28 140 582 681</em></span>
+          </span>
+        </div>
+
+        <div class="ct-offices">
+          <div class="ct-office">
+            <b><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.9-8 12-8 12s-8-6.1-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10.4" r="2.8"/></svg> Head Office</b>
+            <address>Level 2/35 Clarence St,<br>Sydney NSW 2000<br>Australia</address>
+            <a href="https://maps.google.com/?q=Level+2%2F35+Clarence+St%2C+Sydney+NSW+2000%2C+Australia" target="_blank" rel="noopener">Directions <span class="arrow">&rarr;</span></a>
+          </div>
+          <div class="ct-office">
+            <b><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.9-8 12-8 12s-8-6.1-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10.4" r="2.8"/></svg> Northern Beaches Studio</b>
+            <address>30 Smith Avenue<br>Allambie Heights NSW 2100<br>Australia</address>
+            <a href="https://maps.google.com/?q=30+Smith+Avenue%2C+Allambie+Heights+NSW+2100%2C+Australia" target="_blank" rel="noopener">Directions <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+
+        <p class="ct-legal">Our helpdesk is our own &mdash; based on the Northern Beaches, not a call centre and not a sales script. We reply within 2 business hours.</p>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAP ============ -->
+<section class="op-sec op-sec--tint" id="find-us">
+  <div class="container">
+    <div class="map-head">
+      <div data-reveal>
+        <p class="section__kicker">Find us</p>
+        <h2 class="reveal-lines" style="font-size:clamp(27px,3.6vw,46px);font-weight:700;line-height:1.07;">Two offices, <br>one Sydney team.</h2>
+      </div>
+      <div class="map-toggle" id="mapToggle" role="group" aria-label="Choose an office to show on the map" data-reveal>
+        <button class="map-btn is-active" type="button" aria-current="true"
+                data-label="Head Office" data-sub="Level 2/35 Clarence St, Sydney NSW 2000"
+                data-q="Level 2%2F35 Clarence St, Sydney NSW 2000, Australia">
+          <b>Head Office</b><span>Sydney CBD</span>
+        </button>
+        <button class="map-btn" type="button"
+                data-label="Northern Beaches Studio" data-sub="30 Smith Avenue, Allambie Heights NSW 2100"
+                data-q="30 Smith Avenue, Allambie Heights NSW 2100, Australia">
+          <b>Northern Beaches Studio</b><span>Allambie Heights</span>
+        </button>
+      </div>
+    </div>
+    <div class="map-frame" id="mapFrame" data-reveal>
+      <iframe id="mapEmbed" title="Map showing the Online Consulting Head Office at Level 2/35 Clarence St, Sydney"
+              src="https://www.google.com/maps?q=Level%202%2F35%20Clarence%20St%2C%20Sydney%20NSW%202000%2C%20Australia&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="map-pin" id="mapPin">
+        <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10.4c0 5.9-8 12-8 12s-8-6.1-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10.4" r="2.8"/></svg></i>
+        <span><b id="mapPinLabel">Head Office</b><span id="mapPinSub">Level 2/35 Clarence St, Sydney NSW 2000</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <video class="cta__video" src="video/lab.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="cta__inner">
+    <h2 class="reveal-lines">Prefer to talk it <br>through first?</h2>
+    <p data-reveal>Book a free, no-obligation IT review &mdash; we'll show you exactly where you stand, and the findings are yours to keep either way.</p>
+    <div class="cta__actions" data-reveal>
+      <a class="btn btn--light" href="book.html" data-magnetic><span>Book a Free IT Review</span><span class="arrow">&rarr;</span></a>
+      <a class="btn btn--ghost" href="tel:+61284597882" data-magnetic><span>Or call us now &mdash; +61 2 8459 7882</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
