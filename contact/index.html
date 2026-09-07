@@ -1417,27 +1417,27 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
           <div class="ct-grid">
             <div class="ct-field" data-field>
               <label for="firstName">First name <i>*</i></label>
-              <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="Jane" required>
+              <input type="text" id="firstName" data-key="firstName" name="First name" autocomplete="given-name" placeholder="Jane" required>
               <span class="ct-err">Please enter your first name.</span>
             </div>
             <div class="ct-field" data-field>
               <label for="lastName">Last name <i>*</i></label>
-              <input type="text" id="lastName" name="lastName" autocomplete="family-name" placeholder="Citizen" required>
+              <input type="text" id="lastName" data-key="lastName" name="Last name" autocomplete="family-name" placeholder="Citizen" required>
               <span class="ct-err">Please enter your last name.</span>
             </div>
             <div class="ct-field" data-field>
               <label for="email">Email <i>*</i></label>
-              <input type="email" id="email" name="email" autocomplete="email" placeholder="jane@yourbusiness.com.au" required>
+              <input type="email" id="email" data-key="email" name="Email" autocomplete="email" placeholder="jane@yourbusiness.com.au" required>
               <span class="ct-err">Please enter a valid email address.</span>
             </div>
             <div class="ct-field" data-field>
               <label for="phone">Phone <i>*</i></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" required>
+              <input type="tel" id="phone" data-key="phone" name="Phone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" required>
               <span class="ct-err">Please enter a phone number we can reach you on.</span>
             </div>
             <div class="ct-field ct-field--wide" data-field>
               <label for="message">Message <i>*</i></label>
-              <textarea id="message" name="message" placeholder="Tell us a bit about your business and what you're after &mdash; IT support, a new website, marketing, or something else entirely." required></textarea>
+              <textarea id="message" data-key="message" name="Your message" placeholder="Tell us a bit about your business and what you're after &mdash; IT support, a new website, marketing, or something else entirely." required></textarea>
               <span class="ct-err">Please tell us how we can help.</span>
             </div>
           </div>

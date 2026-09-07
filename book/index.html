@@ -1203,7 +1203,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
 
       <div class="card" data-reveal>
         <form id="bookForm" action="https://formspree.io/f/xvkowpqp" method="post" novalidate>
-          <input type="hidden" name="department" id="deptValue" value="">
+          <input type="hidden" id="deptValue" value="">
           <!-- Formspree: _next is where it sends the visitor after a successful post,
                _subject is the email subject line so bookings are easy to spot. -->
           <input type="hidden" name="_next" value="https://onlineconsulting.com.au/book/thank-you/">
@@ -1218,7 +1218,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
 
           <label class="field">
             <span class="sr-only-lbl">Choose a department <em class="req">*</em></span>
-            <select class="select--hero" id="department" name="department_label" required>
+            <select class="select--hero" id="department" data-key="department_label" name="Department" required>
               <option value="" selected disabled>Choose a department&hellip;</option>
               <option value="IT Support">IT Support</option>
               <option value="Digital Marketing">Digital Marketing</option>
@@ -1240,79 +1240,75 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </div>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Migrate my data">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Migrate my data">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Migrate my data</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Measure usage and engagement">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Measure usage and engagement">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Measure usage and engagement</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Manage external collaboration">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Manage external collaboration">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Manage external collaboration</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Back up my data">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Back up my data">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Back up my data</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Secure/Protect my data">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Secure/Protect my data">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Secure/Protect my data</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Manage Data Lifecycle">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Manage Data Lifecycle">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Manage Data Lifecycle</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Build AI agents and intelligent solutions">
-          <span class="box" aria-hidden="true"></span>
-          <span class="t">Build AI agents and intelligent solutions</span>
-        </label>
-        <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Adopt AI across my organisation">
-          <span class="box" aria-hidden="true"></span>
-          <span class="t">Adopt AI across my organisation</span>
-        </label>
-        <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="AI automation">
-          <span class="box" aria-hidden="true"></span>
-          <span class="t">AI automation</span>
-        </label>
-        <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Modernise legacy systems">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Modernise legacy systems">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Modernise legacy systems</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Unify data across my organisation">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Unify data across my organisation">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Unify data across my organisation</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Unlock insights from my business data">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Unlock insights from my business data">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Unlock insights from my business data</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Improve customer experience">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Improve customer experience">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Improve customer experience</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Outsource IT operations">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Outsource IT operations">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Outsource IT operations</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_goals[]" value="Find a Virtual Assistant">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Find a Virtual Assistant">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Find a Virtual Assistant</span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" data-key="it_goals" name="I want to[]" value="Other">
+          <span class="box" aria-hidden="true"></span>
+          <span class="t">Other</span>
+        </label>
+      </div>
+      <div class="reveal-field" id="it-other-field">
+        <label class="field">
+          <span>Please tell us what you need <em class="req">*</em></span>
+          <input type="text" data-key="it_goals_other" name="Please tell us what you need" required disabled>
         </label>
       </div>
     </div>
@@ -1323,32 +1319,32 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </div>
       <div class="choices choices--2">
         <label class="choice">
-          <input type="checkbox" name="it_workspace[]" value="Microsoft 365">
+          <input type="checkbox" data-key="it_workspace" name="My current workspace is[]" value="Microsoft 365">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Microsoft 365</span><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg></span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_workspace[]" value="Google Workspace">
+          <input type="checkbox" data-key="it_workspace" name="My current workspace is[]" value="Google Workspace">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Google Workspace</span><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.2c0-.7-.06-1.4-.18-2.05H12v3.9h5.6a4.8 4.8 0 0 1-2.08 3.15v2.6h3.36C20.84 18.1 22 15.4 22 12.2z" fill="#4285F4"/><path d="M12 22.5c2.7 0 4.96-.9 6.62-2.42l-3.36-2.6c-.93.62-2.12.99-3.26.99-2.5 0-4.62-1.69-5.38-3.96H3.15v2.68A10 10 0 0 0 12 22.5z" fill="#34A853"/><path d="M6.62 14.5a6 6 0 0 1 0-3.83V7.99H3.15a10 10 0 0 0 0 8.97l3.47-2.46z" fill="#FBBC05"/><path d="M12 6.7c1.47 0 2.79.5 3.83 1.5l2.86-2.86C16.95 3.6 14.7 2.5 12 2.5a10 10 0 0 0-8.85 5.49l3.47 2.68C7.38 8.4 9.5 6.7 12 6.7z" fill="#EA4335"/></svg></span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_workspace[]" value="Azure">
+          <input type="checkbox" data-key="it_workspace" name="My current workspace is[]" value="Azure">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Azure</span><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.6 2.4h6.1L9.4 20.4l-7.2.1 6.2-10.6 5.4.5L9.6 2.4z" fill="#0089D6"/><path d="M13.6 6.6L21.8 21H9.9l7.2-1.3-3.5-4.2 0-8.9z" fill="#0078D4"/></svg></span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_workspace[]" value="Dynamics 365">
+          <input type="checkbox" data-key="it_workspace" name="My current workspace is[]" value="Dynamics 365">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Dynamics 365</span><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3l14 3.2v11.6L4 21V3z" fill="#002050"/><path d="M18 6.2L9 9.4v8.4l9-3.2V6.2z" fill="#0078D4"/></svg></span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_workspace[]" value="Salesforce">
+          <input type="checkbox" data-key="it_workspace" name="My current workspace is[]" value="Salesforce">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Salesforce</span><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.8 6.4a3.7 3.7 0 0 1 6.3 1 4 4 0 1 1 .6 8 3.4 3.4 0 0 1-4.6 1.5 3.9 3.9 0 0 1-7-1.4A3.6 3.6 0 0 1 5 9.6a4.4 4.4 0 0 1 4.8-3.2z" fill="#00A1E0"/></svg></span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="it_workspace[]" value="Power Platform">
+          <input type="checkbox" data-key="it_workspace" name="My current workspace is[]" value="Power Platform">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Power Platform</span><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 6.5-8 6.5-8-6.5L12 2z" fill="#742774"/><path d="M12 9.5l8 6.5-8 5.5-8-5.5 8-6.5z" fill="#B04ABA"/></svg></span>
         </label>
@@ -1361,24 +1357,24 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Full name <em class="req">*</em></span>
-        <input type="text" name="it_name" required autocomplete="on">
+        <input type="text" data-key="it_name" name="Full name" required autocomplete="on">
       </label>
       <label class="field">
         <span>Company</span>
-        <input type="text" name="it_company" autocomplete="on">
+        <input type="text" data-key="it_company" name="Company" autocomplete="on">
       </label>
       <label class="field">
         <span>Email <em class="req">*</em></span>
-        <input type="email" name="it_email" required autocomplete="email">
+        <input type="email" data-key="it_email" name="Email" required autocomplete="email">
       </label>
       <label class="field">
         <span>Phone <em class="req">*</em></span>
-        <input type="tel" name="it_phone" required autocomplete="tel">
+        <input type="tel" data-key="it_phone" name="Phone" required autocomplete="tel">
       </label>
       </div>
       <label class="field">
         <span>Enquiry <em class="req">*</em></span>
-        <textarea name="it_enquiry" required placeholder="Tell us what you need help with…"></textarea>
+        <textarea data-key="it_enquiry" name="Enquiry" required placeholder="Tell us what you need help with…"></textarea>
       </label>
     </div>
     <div class="form-block">
@@ -1388,34 +1384,34 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Preferred consultation date</span>
-        <input type="date" name="it_date">
+        <input type="date" data-key="it_date" name="Preferred consultation date">
       </label>
       <label class="field">
         <span>Preferred time</span>
-        <input type="time" name="it_time">
+        <input type="time" data-key="it_time" name="Preferred time">
       </label>
       </div>
       <p class="q">Preferred meeting method</p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="radio" name="it_method" value="Google Meet">
+          <input type="radio" data-key="it_method" name="Preferred meeting method" value="Google Meet">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Google Meet</span>
         </label>
         <label class="choice">
-          <input type="radio" name="it_method" value="Phone Call">
+          <input type="radio" data-key="it_method" name="Preferred meeting method" value="Phone Call">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Phone Call</span>
         </label>
         <label class="choice">
-          <input type="radio" name="it_method" value="In Person">
+          <input type="radio" data-key="it_method" name="Preferred meeting method" value="In Person">
           <span class="box" aria-hidden="true"></span>
           <span class="t">In Person</span>
         </label>
       </div>
       <div class="consent">
         <label class="choice">
-          <input type="checkbox" name="it_consent" value="yes" required>
+          <input type="checkbox" data-key="it_consent" name="Consent" value="yes" required>
           <span class="box" aria-hidden="true"></span>
           <span class="t">I agree to be contacted regarding my enquiry and understand that the consultation does not obligate me to purchase any services.</span>
         </label>
@@ -1435,7 +1431,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </div>
       <label class="field">
         <span>What industry is your business in?</span>
-        <select name="dm_industry">
+        <select data-key="dm_industry" name="What industry is your business in?">
           <option value="" selected disabled>Please choose&hellip;</option>
           <option value="Professional Services">Professional Services</option>
           <option value="Retail / E-commerce">Retail / E-commerce</option>
@@ -1451,11 +1447,11 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </label>
       <label class="field">
         <span>Briefly describe your business</span>
-        <textarea name="dm_about"></textarea>
+        <textarea data-key="dm_about" name="Briefly describe your business"></textarea>
       </label>
       <label class="field">
         <span>Where do you currently operate?</span>
-        <input type="text" name="dm_operate" placeholder="e.g. Northern Beaches and Sydney CBD" autocomplete="on">
+        <input type="text" data-key="dm_operate" name="Where do you currently operate?" placeholder="e.g. Northern Beaches and Sydney CBD" autocomplete="on">
       </label>
     </div>
     <div class="form-block">
@@ -1466,72 +1462,72 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <p class="q">Select the services you're interested in</p>
       <div class="choices choices--2">
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Search Engine Optimisation (SEO)">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Search Engine Optimisation (SEO)">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Search Engine Optimisation (SEO)</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Google Ads / PPC">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Google Ads / PPC">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Google Ads / PPC</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Social Media Marketing">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Social Media Marketing">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Social Media Marketing</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Facebook / Instagram Advertising">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Facebook / Instagram Advertising">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Facebook / Instagram Advertising</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Content Marketing">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Content Marketing">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Content Marketing</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Email Marketing">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Email Marketing">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Email Marketing</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Local SEO">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Local SEO">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Local SEO</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Website Conversion Optimisation">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Website Conversion Optimisation">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Website Conversion Optimisation</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Landing Page Development">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Landing Page Development">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Landing Page Development</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Online Reputation Management">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Online Reputation Management">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Online Reputation Management</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Marketing Strategy">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Marketing Strategy">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Marketing Strategy</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="AI Marketing &amp; Automation">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="AI Marketing &amp; Automation">
           <span class="box" aria-hidden="true"></span>
           <span class="t">AI Marketing &amp; Automation</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Full Digital Marketing Management">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Full Digital Marketing Management">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Full Digital Marketing Management</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_services[]" value="Not sure — I need advice">
+          <input type="checkbox" data-key="dm_services" name="What do you need help with?[]" value="Not sure — I need advice">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Not sure — I need advice</span>
         </label>
@@ -1545,64 +1541,64 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <p class="q">What would you like to achieve?</p>
       <div class="choices choices--2">
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Generate more leads">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Generate more leads">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Generate more leads</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Increase sales">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Increase sales">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Increase sales</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Get more website traffic">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Get more website traffic">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Get more website traffic</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Improve Google rankings">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Improve Google rankings">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Improve Google rankings</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Increase online visibility">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Increase online visibility">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Increase online visibility</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Generate more phone calls">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Generate more phone calls">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Generate more phone calls</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Increase enquiries">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Increase enquiries">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Increase enquiries</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Build brand awareness">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Build brand awareness">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Build brand awareness</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Improve conversion rates">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Improve conversion rates">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Improve conversion rates</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Launch a new product or service">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Launch a new product or service">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Launch a new product or service</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_goals[]" value="Other">
+          <input type="checkbox" data-key="dm_goals" name="What would you like to achieve?[]" value="Other">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Other</span>
         </label>
       </div>
       <label class="field">
         <span>What is your biggest marketing challenge right now?</span>
-        <textarea name="dm_challenge"></textarea>
+        <textarea data-key="dm_challenge" name="What is your biggest marketing challenge right now?"></textarea>
       </label>
     </div>
     <div class="form-block">
@@ -1612,12 +1608,12 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <p class="q">Are you currently doing any digital marketing?</p>
       <div class="choices choices--2">
         <label class="choice">
-          <input type="radio" name="dm_doing" value="Yes">
+          <input type="radio" data-key="dm_doing" name="Are you currently doing any digital marketing?" value="Yes">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Yes</span>
         </label>
         <label class="choice">
-          <input type="radio" name="dm_doing" value="No">
+          <input type="radio" data-key="dm_doing" name="Are you currently doing any digital marketing?" value="No">
           <span class="box" aria-hidden="true"></span>
           <span class="t">No</span>
         </label>
@@ -1625,49 +1621,49 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <p class="q">What marketing channels are you currently using?</p>
       <div class="choices choices--2">
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="Google Ads">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="Google Ads">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Google Ads</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="Facebook / Instagram">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="Facebook / Instagram">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Facebook / Instagram</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="SEO">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="SEO">
           <span class="box" aria-hidden="true"></span>
           <span class="t">SEO</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="Email Marketing">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="Email Marketing">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Email Marketing</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="LinkedIn">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="LinkedIn">
           <span class="box" aria-hidden="true"></span>
           <span class="t">LinkedIn</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="TikTok">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="TikTok">
           <span class="box" aria-hidden="true"></span>
           <span class="t">TikTok</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="Content Marketing">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="Content Marketing">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Content Marketing</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="dm_channels[]" value="Other">
+          <input type="checkbox" data-key="dm_channels" name="What marketing channels are you currently using?[]" value="Other">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Other</span>
         </label>
       </div>
       <label class="field">
         <span>What is your approximate monthly marketing budget?</span>
-        <select name="dm_budget">
+        <select data-key="dm_budget" name="What is your approximate monthly marketing budget?">
           <option value="" selected disabled>Please choose&hellip;</option>
           <option value="Under $500">Under $500</option>
           <option value="$500 - $1,000">$500 - $1,000</option>
@@ -1679,7 +1675,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </label>
       <label class="field">
         <span>Anything else you'd like us to know?</span>
-        <textarea name="dm_notes"></textarea>
+        <textarea data-key="dm_notes" name="Anything else you'd like us to know?"></textarea>
       </label>
     </div>
     <div class="form-block">
@@ -1689,19 +1685,19 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Full name <em class="req">*</em></span>
-        <input type="text" name="dm_name" required autocomplete="on">
+        <input type="text" data-key="dm_name" name="Full name" required autocomplete="on">
       </label>
       <label class="field">
         <span>Company</span>
-        <input type="text" name="dm_company" autocomplete="on">
+        <input type="text" data-key="dm_company" name="Company" autocomplete="on">
       </label>
       <label class="field">
         <span>Email <em class="req">*</em></span>
-        <input type="email" name="dm_email" required autocomplete="email">
+        <input type="email" data-key="dm_email" name="Email" required autocomplete="email">
       </label>
       <label class="field">
         <span>Phone <em class="req">*</em></span>
-        <input type="tel" name="dm_phone" required autocomplete="tel">
+        <input type="tel" data-key="dm_phone" name="Phone" required autocomplete="tel">
       </label>
       </div>
     </div>
@@ -1712,34 +1708,34 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Preferred consultation date</span>
-        <input type="date" name="dm_date">
+        <input type="date" data-key="dm_date" name="Preferred consultation date">
       </label>
       <label class="field">
         <span>Preferred time</span>
-        <input type="time" name="dm_time">
+        <input type="time" data-key="dm_time" name="Preferred time">
       </label>
       </div>
       <p class="q">Preferred meeting method</p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="radio" name="dm_method" value="Google Meet">
+          <input type="radio" data-key="dm_method" name="Preferred meeting method" value="Google Meet">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Google Meet</span>
         </label>
         <label class="choice">
-          <input type="radio" name="dm_method" value="Phone Call">
+          <input type="radio" data-key="dm_method" name="Preferred meeting method" value="Phone Call">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Phone Call</span>
         </label>
         <label class="choice">
-          <input type="radio" name="dm_method" value="In Person">
+          <input type="radio" data-key="dm_method" name="Preferred meeting method" value="In Person">
           <span class="box" aria-hidden="true"></span>
           <span class="t">In Person</span>
         </label>
       </div>
       <div class="consent">
         <label class="choice">
-          <input type="checkbox" name="dm_consent" value="yes" required>
+          <input type="checkbox" data-key="dm_consent" name="Consent" value="yes" required>
           <span class="box" aria-hidden="true"></span>
           <span class="t">I agree to be contacted regarding my enquiry and understand that the consultation does not obligate me to purchase any services.</span>
         </label>
@@ -1759,7 +1755,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </div>
       <label class="field">
         <span>What industry is your business in?</span>
-        <select name="wd_industry">
+        <select data-key="wd_industry" name="What industry is your business in?">
           <option value="" selected disabled>Please choose&hellip;</option>
           <option value="Professional Services">Professional Services</option>
           <option value="Retail / E-commerce">Retail / E-commerce</option>
@@ -1775,7 +1771,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </label>
       <label class="field">
         <span>Tell us briefly about your business</span>
-        <textarea name="wd_about"></textarea>
+        <textarea data-key="wd_about" name="Tell us briefly about your business"></textarea>
       </label>
     </div>
     <div class="form-block">
@@ -1786,62 +1782,62 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <p class="q">Select the option that best describes your project</p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="radio" name="wd_type" value="New Website">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="New Website">
           <span class="box" aria-hidden="true"></span>
           <span class="t">New Website</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Website Redesign">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Website Redesign">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Website Redesign</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Website Migration">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Website Migration">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Website Migration</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="WordPress Development">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="WordPress Development">
           <span class="box" aria-hidden="true"></span>
           <span class="t">WordPress Development</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="E-commerce Website">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="E-commerce Website">
           <span class="box" aria-hidden="true"></span>
           <span class="t">E-commerce Website</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Landing Page">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Landing Page">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Landing Page</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Business / Corporate Website">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Business / Corporate Website">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Business / Corporate Website</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Membership Website">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Membership Website">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Membership Website</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Booking / Appointment Website">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Booking / Appointment Website">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Booking / Appointment Website</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Web Application">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Web Application">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Web Application</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Web Hosting">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Web Hosting">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Web Hosting</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_type" value="Not sure — I need advice">
+          <input type="radio" data-key="wd_type" name="What type of website do you need?" value="Not sure — I need advice">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Not sure — I need advice</span>
         </label>
@@ -1854,12 +1850,12 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <p class="q">Do you currently have a website?</p>
       <div class="choices choices--2">
         <label class="choice">
-          <input type="radio" name="wd_haswebsite" value="Yes">
+          <input type="radio" data-key="wd_haswebsite" name="Do you currently have a website?" value="Yes">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Yes</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_haswebsite" value="No">
+          <input type="radio" data-key="wd_haswebsite" name="Do you currently have a website?" value="No">
           <span class="box" aria-hidden="true"></span>
           <span class="t">No</span>
         </label>
@@ -1867,70 +1863,70 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="reveal-field" id="wd-url-field">
         <label class="field">
           <span>Your current website address</span>
-          <span class="prefix"><b>https://</b><input type="text" name="wd_url" placeholder="yourbusiness.com.au"></span>
+          <span class="prefix"><b>https://</b><input type="text" data-key="wd_url" name="Your current website address" placeholder="yourbusiness.com.au"></span>
         </label>
       </div>
       <p class="q">What would you like to improve?</p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Design">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Design">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Design</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Mobile Experience">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Mobile Experience">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Mobile Experience</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Speed / Performance">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Speed / Performance">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Speed / Performance</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="SEO">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="SEO">
           <span class="box" aria-hidden="true"></span>
           <span class="t">SEO</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Security">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Security">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Security</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Content">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Content">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Content</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="User Experience">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="User Experience">
           <span class="box" aria-hidden="true"></span>
           <span class="t">User Experience</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Conversion Rate">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Conversion Rate">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Conversion Rate</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="E-commerce">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="E-commerce">
           <span class="box" aria-hidden="true"></span>
           <span class="t">E-commerce</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Functionality">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Functionality">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Functionality</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="wd_improve[]" value="Other">
+          <input type="checkbox" data-key="wd_improve" name="What would you like to improve?[]" value="Other">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Other</span>
         </label>
       </div>
       <label class="field">
         <span>What platform is your current website using?</span>
-        <select name="wd_platform">
+        <select data-key="wd_platform" name="What platform is your current website using?">
           <option value="" selected disabled>Please choose&hellip;</option>
           <option value="WordPress">WordPress</option>
           <option value="Shopify">Shopify</option>
@@ -1949,7 +1945,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </div>
       <label class="field">
         <span>When would you like the project completed?</span>
-        <select name="wd_timing">
+        <select data-key="wd_timing" name="When would you like the project completed?">
           <option value="" selected disabled>Please choose&hellip;</option>
           <option value="As soon as possible">As soon as possible</option>
           <option value="Within 1 month">Within 1 month</option>
@@ -1961,7 +1957,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </label>
       <label class="field">
         <span>Anything else you'd like us to know?</span>
-        <textarea name="wd_notes"></textarea>
+        <textarea data-key="wd_notes" name="Anything else you'd like us to know?"></textarea>
       </label>
     </div>
     <div class="form-block">
@@ -1971,19 +1967,19 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Full name <em class="req">*</em></span>
-        <input type="text" name="wd_name" required autocomplete="on">
+        <input type="text" data-key="wd_name" name="Full name" required autocomplete="on">
       </label>
       <label class="field">
         <span>Company</span>
-        <input type="text" name="wd_company" autocomplete="on">
+        <input type="text" data-key="wd_company" name="Company" autocomplete="on">
       </label>
       <label class="field">
         <span>Email <em class="req">*</em></span>
-        <input type="email" name="wd_email" required autocomplete="email">
+        <input type="email" data-key="wd_email" name="Email" required autocomplete="email">
       </label>
       <label class="field">
         <span>Phone <em class="req">*</em></span>
-        <input type="tel" name="wd_phone" required autocomplete="tel">
+        <input type="tel" data-key="wd_phone" name="Phone" required autocomplete="tel">
       </label>
       </div>
     </div>
@@ -1994,34 +1990,34 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Preferred consultation date</span>
-        <input type="date" name="wd_date">
+        <input type="date" data-key="wd_date" name="Preferred consultation date">
       </label>
       <label class="field">
         <span>Preferred time</span>
-        <input type="time" name="wd_time">
+        <input type="time" data-key="wd_time" name="Preferred time">
       </label>
       </div>
       <p class="q">Preferred meeting method</p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="radio" name="wd_method" value="Google Meet">
+          <input type="radio" data-key="wd_method" name="Preferred meeting method" value="Google Meet">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Google Meet</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_method" value="Phone Call">
+          <input type="radio" data-key="wd_method" name="Preferred meeting method" value="Phone Call">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Phone Call</span>
         </label>
         <label class="choice">
-          <input type="radio" name="wd_method" value="In Person">
+          <input type="radio" data-key="wd_method" name="Preferred meeting method" value="In Person">
           <span class="box" aria-hidden="true"></span>
           <span class="t">In Person</span>
         </label>
       </div>
       <div class="consent">
         <label class="choice">
-          <input type="checkbox" name="wd_consent" value="yes" required>
+          <input type="checkbox" data-key="wd_consent" name="Consent" value="yes" required>
           <span class="box" aria-hidden="true"></span>
           <span class="t">I agree to be contacted regarding my enquiry and understand that the consultation does not obligate me to purchase any services.</span>
         </label>
@@ -2042,17 +2038,17 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <p class="q">Select your service <em class="req">*</em></p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="radio" name="vp_service" value="Video Production" required>
+          <input type="radio" data-key="vp_service" name="What do you need?" value="Video Production" required>
           <span class="box" aria-hidden="true"></span>
           <span class="t">Video Production</span>
         </label>
         <label class="choice">
-          <input type="radio" name="vp_service" value="Photography" required>
+          <input type="radio" data-key="vp_service" name="What do you need?" value="Photography" required>
           <span class="box" aria-hidden="true"></span>
           <span class="t">Photography</span>
         </label>
         <label class="choice">
-          <input type="radio" name="vp_service" value="Video + Photography" required>
+          <input type="radio" data-key="vp_service" name="What do you need?" value="Video + Photography" required>
           <span class="box" aria-hidden="true"></span>
           <span class="t">Video + Photography</span>
         </label>
@@ -2064,61 +2060,61 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </div>
       <label class="field">
         <span>Project / campaign name</span>
-        <input type="text" name="vp_project" autocomplete="off">
+        <input type="text" data-key="vp_project" name="Project / campaign name" autocomplete="off">
       </label>
       <label class="field">
         <span>Tell us about your project <em class="req">*</em></span>
-        <textarea name="vp_brief" required></textarea>
+        <textarea data-key="vp_brief" name="Tell us about your project" required></textarea>
       </label>
       <p class="q">What is the main purpose of this project?</p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Marketing / Advertising">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Marketing / Advertising">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Marketing / Advertising</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Website Content">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Website Content">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Website Content</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Social Media">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Social Media">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Social Media</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Product Promotion">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Product Promotion">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Product Promotion</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Corporate / Business">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Corporate / Business">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Corporate / Business</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Event Coverage">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Event Coverage">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Event Coverage</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Brand Campaign">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Brand Campaign">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Brand Campaign</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Training / Educational">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Training / Educational">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Training / Educational</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Personal Project">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Personal Project">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Personal Project</span>
         </label>
         <label class="choice">
-          <input type="checkbox" name="vp_purpose[]" value="Other">
+          <input type="checkbox" data-key="vp_purpose" name="What is the main purpose of this project?[]" value="Other">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Other</span>
         </label>
@@ -2126,12 +2122,12 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="reveal-field" id="vp-other-field">
         <label class="field">
           <span>Please specify a project</span>
-          <input type="text" name="vp_purpose_other">
+          <input type="text" data-key="vp_purpose_other" name="Please specify a project">
         </label>
       </div>
       <label class="field">
         <span>When would you like the project completed?</span>
-        <select name="vp_timing">
+        <select data-key="vp_timing" name="When would you like the project completed?">
           <option value="" selected disabled>Please choose&hellip;</option>
           <option value="As soon as possible">As soon as possible</option>
           <option value="Within 1 month">Within 1 month</option>
@@ -2143,7 +2139,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       </label>
       <label class="field">
         <span>Anything else you'd like us to know?</span>
-        <textarea name="vp_notes"></textarea>
+        <textarea data-key="vp_notes" name="Anything else you'd like us to know?"></textarea>
       </label>
     </div>
     <div class="form-block">
@@ -2153,19 +2149,19 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Full name <em class="req">*</em></span>
-        <input type="text" name="vp_name" required autocomplete="on">
+        <input type="text" data-key="vp_name" name="Full name" required autocomplete="on">
       </label>
       <label class="field">
         <span>Company</span>
-        <input type="text" name="vp_company" autocomplete="on">
+        <input type="text" data-key="vp_company" name="Company" autocomplete="on">
       </label>
       <label class="field">
         <span>Email <em class="req">*</em></span>
-        <input type="email" name="vp_email" required autocomplete="email">
+        <input type="email" data-key="vp_email" name="Email" required autocomplete="email">
       </label>
       <label class="field">
         <span>Phone <em class="req">*</em></span>
-        <input type="tel" name="vp_phone" required autocomplete="tel">
+        <input type="tel" data-key="vp_phone" name="Phone" required autocomplete="tel">
       </label>
       </div>
     </div>
@@ -2176,34 +2172,34 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 30px #fff inset;}
       <div class="grid-2">
       <label class="field">
         <span>Preferred consultation date</span>
-        <input type="date" name="vp_date">
+        <input type="date" data-key="vp_date" name="Preferred consultation date">
       </label>
       <label class="field">
         <span>Preferred time</span>
-        <input type="time" name="vp_time">
+        <input type="time" data-key="vp_time" name="Preferred time">
       </label>
       </div>
       <p class="q">Preferred meeting method</p>
       <div class="choices choices--3">
         <label class="choice">
-          <input type="radio" name="vp_method" value="Google Meet">
+          <input type="radio" data-key="vp_method" name="Preferred meeting method" value="Google Meet">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Google Meet</span>
         </label>
         <label class="choice">
-          <input type="radio" name="vp_method" value="Phone Call">
+          <input type="radio" data-key="vp_method" name="Preferred meeting method" value="Phone Call">
           <span class="box" aria-hidden="true"></span>
           <span class="t">Phone Call</span>
         </label>
         <label class="choice">
-          <input type="radio" name="vp_method" value="In Person">
+          <input type="radio" data-key="vp_method" name="Preferred meeting method" value="In Person">
           <span class="box" aria-hidden="true"></span>
           <span class="t">In Person</span>
         </label>
       </div>
       <div class="consent">
         <label class="choice">
-          <input type="checkbox" name="vp_consent" value="yes" required>
+          <input type="checkbox" data-key="vp_consent" name="Consent" value="yes" required>
           <span class="box" aria-hidden="true"></span>
           <span class="t">I agree to be contacted regarding my enquiry and understand that the consultation does not obligate me to purchase any services.</span>
         </label>
@@ -2946,6 +2942,7 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
     void active.offsetWidth;
     active.classList.add('is-active');
     markStep(2);
+    syncReveals();
 
     if (typeof ScrollTrigger !== 'undefined') setTimeout(function(){ ScrollTrigger.refresh(); }, 700);
 
@@ -2956,24 +2953,40 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 
   select.addEventListener('change', function(){ show(select.value); });
 
-  /* conditional: current website URL */
+  /* Conditional fields. Every field posts under the question the visitor read,
+     so the JS keys off data-key instead of name. A reveal field stays disabled
+     while hidden, which is what stops the required input inside it from
+     blocking validation. */
+  function setReveal(boxId, on, focus){
+    var box = document.getElementById(boxId);
+    if (!box) return;
+    box.classList.toggle('is-open', on);
+    var f = box.querySelectorAll('input, select, textarea');
+    [].forEach.call(f, function(el){
+      el.disabled = !on;
+      if (!on) el.value = '';
+    });
+    if (on && focus && f.length) f[0].focus();
+  }
+
+  /* show() re-enables everything in the active panel, hidden reveal fields
+     included, so their state has to be put back straight afterwards */
+  function syncReveals(){
+    function isOn(key, val){
+      var el = form.querySelector('[data-key="' + key + '"][value="' + val + '"]');
+      return !!el && el.checked;
+    }
+    setReveal('wd-url-field',   isOn('wd_haswebsite', 'Yes'),   false);
+    setReveal('vp-other-field', isOn('vp_purpose',    'Other'), false);
+    setReveal('it-other-field', isOn('it_goals',      'Other'), false);
+  }
+
   form.addEventListener('change', function(e){
-    var t = e.target;
-    if (t.name === 'wd_haswebsite') {
-      var box = document.getElementById('wd-url-field');
-      var open = (t.value === 'Yes');
-      box.classList.toggle('is-open', open);
-      var input = box.querySelector('input');
-      input.disabled = !open;
-    }
-    if (t.name === 'vp_purpose[]' && t.value === 'Other') {
-      var vbox = document.getElementById('vp-other-field');
-      vbox.classList.toggle('is-open', t.checked);
-      var vinput = vbox.querySelector('input');
-      vinput.disabled = !t.checked;
-      if (t.checked) vinput.focus();
-    }
-    if (/_(date|time|method|consent)$/.test(t.name || '')) markStep(3);
+    var t = e.target, k = t.getAttribute('data-key');
+    if (k === 'wd_haswebsite') setReveal('wd-url-field', t.value === 'Yes', false);
+    if (k === 'vp_purpose' && t.value === 'Other') setReveal('vp-other-field', t.checked, true);
+    if (k === 'it_goals'    && t.value === 'Other') setReveal('it-other-field', t.checked, true);
+    if (/_(date|time|method|consent)$/.test(k || '')) markStep(3);
   });
 
   /* submit */
