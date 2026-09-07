@@ -25,7 +25,10 @@ for dp, dn, fn in os.walk(ROOT):
     dn[:] = [d for d in dn if d not in ('_tools', '.git', 'dump')]
     for f in fn:
         if f.endswith('.html'):
-            htmls.append(os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, '/'))
+            rel = os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, '/')
+            if rel == '404.html':
+                continue   # Netlify serves this internally; it has no clean URL
+            htmls.append(rel)
 htmls.sort()
 
 def clean_of(rel):

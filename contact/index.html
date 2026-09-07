@@ -2514,5 +2514,17 @@ window.ocRecaptchaSubmit = function (form) {
   } catch (err) { send(null); }
 };
 </script>
+<script>
+/* Formspree needs _next as an absolute URL, so the markup hardcodes the
+   production one for the no-JS case. Rewriting it to the origin the page is
+   actually being served from keeps the thank-you page on the same site - the
+   Netlify deploy preview and the local site included - instead of bouncing the
+   visitor over to onlineconsulting.com.au mid-form. */
+(function thankYouOrigin(){
+  var next = document.querySelector('form input[name="_next"]');
+  if (!next || !/^https?:$/.test(location.protocol)) return;
+  next.value = location.origin + '/contact/thank-you/';
+})();
+</script>
 </body>
 </html>
