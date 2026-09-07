@@ -1,27 +1,13 @@
-<script>
-/* Mega menu: the background clip is only fetched the first time the panel opens,
-   so it costs nothing on page load. */
-(function megaMenu(){
-  var items = [].slice.call(document.querySelectorAll('.nav__item--mega'));
-  if (!items.length) return;
-  items.forEach(function(item){
-    var vid = item.querySelector('.mega__video');
-    if (!vid) return;
-    var started = false;
-    function start(){
-      if (started) return;
-      started = true;
-      if (!vid.getAttribute('src')) return;
-      vid.load();
-      var p = vid.play();
-      if (p && p.catch) p.catch(function(){ /* autoplay blocked — the scrim still reads fine */ });
-    }
-    item.addEventListener('mouseenter', start);
-    item.addEventListener('focusin', start);
-  });
-})();
-</script>
-<script>
+# -*- coding: utf-8 -*-
+"""The mega panel must open on hover only. A mouse click on a trigger used to
+focus it, which pinned the panel open through :focus-within, so the next hover
+opened a second panel on top of it."""
+import os, re, sys
+
+ROOT = os.path.expanduser('~/mnt/public')
+DRY  = '--apply' not in sys.argv
+
+NEW = '''<script>
 /* Menu dismissal. The mega panel is opened by :hover / :focus-within in CSS,
    which leaves three things to suppress in JS:
    - a MOUSE click on a trigger must not focus it. Focus pins the panel open
@@ -98,29 +84,32 @@
     });
   });
 })();
-</script>
-<script>
-/* Mobile menu: tapping any link inside it closes the panel, including #anchors
-   on the current page where no navigation happens. */
-(function mmenuDismiss(){
-  var menu   = document.getElementById('mobileMenu');
-  var burger = document.getElementById('burger');
-  if (!menu || !burger) return;
-  menu.addEventListener('click', function(e){
-    var t = e.target;
-    var a = t && t.closest ? t.closest('a') : null;
-    if (!a || !menu.contains(a)) return;
-    menu.classList.remove('is-open');
-    burger.classList.remove('is-open');
-    burger.setAttribute('aria-expanded', 'false');
-    if (window.__lenis) window.__lenis.start();
-    menu.querySelectorAll('.mmenu__group.is-open').forEach(function(g){
-      g.classList.remove('is-open');
-      var tog = g.querySelector('.mmenu__toggle');
-      var sub = g.querySelector('.mmenu__sub');
-      if (tog) tog.setAttribute('aria-expanded', 'false');
-      if (sub) sub.style.maxHeight = '0px';
-    });
-  });
-})();
-</script>
+</script>'''
+
+OLD = re.compile(r'<script>\n/\* Menu dismissal\..*?</script>', re.S)
+
+targets = []
+for dp, dn, fn in os.walk(ROOT):
+    dn[:] = [d for d in dn if d not in ('.git', 'dump', 'Online Consulting 2026')]
+    for f in fn:
+        if f.endswith('.html') or f in ('g_mega_js.txt', 'mega_js.txt'):
+            targets.append(os.path.join(dp, f))
+targets.sort()
+
+done = 0; skipped = []
+for p in targets:
+    rel = os.path.relpath(p, ROOT).replace(os.sep, '/')
+    s = open(p, encoding='utf-8').read()
+    if 'Menu dismissal.' not in s:
+        continue
+    n = OLD.subn(NEW, s)
+    s2, k = n
+    if k != 1:
+        skipped.append('%s: matched %d times' % (rel, k)); continue
+    if s2 != s:
+        done += 1
+        if not DRY:
+            open(p, 'w', encoding='utf-8', newline='').write(s2)
+
+print('%s replaced in %d file(s)' % ('DRY RUN' if DRY else 'APPLIED', done))
+for x in skipped: print('  !', x)
