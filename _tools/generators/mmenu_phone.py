@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os, re
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 
 CSS = '''.mmenu__phone{display:inline-flex;align-items:center;gap:9px;margin-top:28px;
   font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--navy);

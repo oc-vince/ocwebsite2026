@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os, re
-SITE=os.path.expanduser('~/mnt/Version 2'); BUILD=os.path.expanduser('~/ocblog')
+SITE=os.path.expanduser('~/mnt/public'); BUILD=os.path.expanduser('~/ocblog')
 def rd(p): return open(p,encoding='utf-8').read()
 
 TPL=rd(os.path.join(SITE,'one-partner.html'))

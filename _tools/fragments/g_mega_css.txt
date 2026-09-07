@@ -11,6 +11,15 @@
 .mega::before{content:"";position:absolute;left:0;right:0;top:0;height:20px;}
 .nav__item--mega:hover .mega,
 .nav__item--mega:focus-within .mega{opacity:1;visibility:visible;pointer-events:auto;}
+/* the top-level labels are triggers, not links */
+.nav__link[role="button"]{cursor:default;-webkit-user-select:none;user-select:none;
+  -webkit-tap-highlight-color:transparent;}
+/* clicking a submenu item force-closes the panel, so a same-page #anchor link
+   does not leave the mega sitting open under the cursor */
+.nav__item--mega.is-dismissed .mega{opacity:0!important;visibility:hidden!important;
+  pointer-events:none!important;}
+.nav__item--mega.is-dismissed .mega__panel{transform:translateY(-14px) scale(.985)!important;
+  opacity:0!important;}
 
 .mega__panel{position:relative;overflow:hidden;border-radius:20px;background:var(--navy-deep);
   box-shadow:0 46px 90px -34px rgba(6,15,26,.75);

@@ -721,6 +721,15 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
 .mega::before{content:"";position:absolute;left:0;right:0;top:0;height:20px;}
 .nav__item--mega:hover .mega,
 .nav__item--mega:focus-within .mega{opacity:1;visibility:visible;pointer-events:auto;}
+/* the top-level labels are triggers, not links */
+.nav__link[role="button"]{cursor:default;-webkit-user-select:none;user-select:none;
+  -webkit-tap-highlight-color:transparent;}
+/* clicking a submenu item force-closes the panel, so a same-page #anchor link
+   does not leave the mega sitting open under the cursor */
+.nav__item--mega.is-dismissed .mega{opacity:0!important;visibility:hidden!important;
+  pointer-events:none!important;}
+.nav__item--mega.is-dismissed .mega__panel{transform:translateY(-14px) scale(.985)!important;
+  opacity:0!important;}
 
 .mega__panel{position:relative;overflow:hidden;border-radius:20px;background:var(--navy-deep);
   box-shadow:0 46px 90px -34px rgba(6,15,26,.75);
@@ -885,12 +894,12 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
 <!-- Header -->
 <header class="header" id="header">
   <div class="header__inner">
-    <a class="header__logo" href="/" aria-label="Online Consulting — home">
+    <a class="header__logo" href="/index.html" aria-label="Online Consulting — home">
       <img src="/images/OC-Logo.png" alt="Online Consulting">
     </a>
     <nav class="nav" aria-label="Main navigation">
       <div class="nav__item nav__item--mega">
-        <a class="nav__link" href="/managed-it-services/">Managed IT Services <i class="chev"></i></a>
+        <span class="nav__link" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Managed IT Services <i class="chev"></i></span>
         <div class="mega" role="group" aria-label="Managed IT Services">
           <div class="mega__panel">
             <video class="mega__video" src="/video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -901,43 +910,43 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
                 <h3>Managed <span>IT Services</span></h3>
                 <p>Need reliable support for your business network, cybersecurity, devices, or day-to-day IT needs? Our managed IT services keep your technology secure, reliable, and running smoothly.</p>
                 <div class="mega__cta">
-                  <a class="btn btn--ghost" href="/book/" data-magnetic><span>Book a Free IT Review</span></a>
+                  <a class="btn btn--ghost" href="/book/index.html" data-magnetic><span>Book a Free IT Review</span></a>
                 </div>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/service/it-support/">
+                <a class="mega__item" href="/service/it-support/index.html">
                   <span class="mega__ico"><img src="/images/submenus/IT-Support-in-Sydney.svg" alt="" width="41" height="46" loading="lazy" decoding="async"></span>
                   <span><b>IT Support in Sydney</b><span>Reliable IT support and expert assistance to keep your business running smoothly.</span></span>
                 </a>
-                <a class="mega__item" href="/service/it-support/#managed-cyber-security-support">
+                <a class="mega__item" href="/service/it-support/index.html#managed-cyber-security-support">
                   <span class="mega__ico"><img src="/images/submenus/Managed-Cyber-Security.svg" alt="" width="46" height="45" loading="lazy" decoding="async"></span>
                   <span><b>Managed Cyber Security &amp; Support</b><span>Protect your business with proactive security monitoring, threat detection, and support.</span></span>
                 </a>
-                <a class="mega__item" href="/service/it-support/#managed-network-packages">
+                <a class="mega__item" href="/service/it-support/index.html#managed-network-packages">
                   <span class="mega__ico"><img src="/images/submenus/Managed-Network.svg" alt="" width="42" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Managed Network Packages</b><span>Fast, secure, and reliable network solutions designed around your business needs.</span></span>
                 </a>
-                <a class="mega__item" href="/service/it-support/#robust-cloud-backup">
+                <a class="mega__item" href="/service/it-support/index.html#robust-cloud-backup">
                   <span class="mega__ico"><img src="/images/submenus/Robust-Cloud-Backup.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Robust Cloud Backup</b><span>Securely protect your critical business data with reliable cloud backup and recovery.</span></span>
                 </a>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/service/it-support/#ongoing-maintenance">
+                <a class="mega__item" href="/service/it-support/index.html#ongoing-maintenance">
                   <span class="mega__ico"><img src="/images/submenus/Ongoing-Maintenance.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Ongoing Maintenance</b><span>Keep your systems performing at their best with proactive maintenance and monitoring.</span></span>
                 </a>
-                <a class="mega__item" href="/service/google-workspace/">
+                <a class="mega__item" href="/service/google-workspace/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Google-Workspace.svg" alt="" width="46" height="41" loading="lazy" decoding="async"></span>
                   <span><b>Google Workspace</b><span>Streamline collaboration with cloud-based email, apps, and productivity tools.</span></span>
                 </a>
-                <a class="mega__item" href="/service/computer-repairs/">
+                <a class="mega__item" href="/service/computer-repairs/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Computer-Repairs.svg" alt="" width="46" height="43" loading="lazy" decoding="async"></span>
                   <span><b>Computer Repairs</b><span>Fast, professional computer repairs and troubleshooting to get you back on track.</span></span>
                 </a>
-                <a class="mega__item" href="/service/va-recruitment-services/">
+                <a class="mega__item" href="/service/va-recruitment-services/index.html">
                   <span class="mega__ico"><img src="/images/submenus/VA-Recruitment-Services.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>VA Recruitment Services</b><span>Find skilled virtual assistants to support your business and improve productivity.</span></span>
                 </a>
@@ -948,7 +957,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         </div>
       </div>
       <div class="nav__item nav__item--mega">
-        <a class="nav__link" href="/digital-marketing/">Digital Marketing <i class="chev"></i></a>
+        <span class="nav__link" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Digital Marketing <i class="chev"></i></span>
         <div class="mega mega--4" role="group" aria-label="Digital Marketing">
           <div class="mega__panel">
             <video class="mega__video" src="/video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -959,27 +968,27 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
                 <h3>Digital <span>Marketing</span></h3>
                 <p>Grow your online presence with strategic digital marketing designed to attract customers, build your brand, and drive measurable results.</p>
                 <div class="mega__cta">
-                  <a class="btn btn--ghost" href="/book/" data-magnetic><span>Book a Free IT Review</span></a>
+                  <a class="btn btn--ghost" href="/book/index.html" data-magnetic><span>Book a Free IT Review</span></a>
                 </div>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/service/seo-services/">
+                <a class="mega__item" href="/service/seo-services/index.html">
                   <span class="mega__ico"><img src="/images/submenus/SEO-Services.svg" alt="" width="46" height="38" loading="lazy" decoding="async"></span>
                   <span><b>SEO Services</b><span>Improve your search visibility, rankings, and organic traffic with proven SEO strategies.</span></span>
                 </a>
-                <a class="mega__item" href="/service/google-adwords/">
+                <a class="mega__item" href="/service/google-adwords/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Google-Ads.svg" alt="" width="46" height="44" loading="lazy" decoding="async"></span>
                   <span><b>Google Ads</b><span>Reach the right customers with targeted Google Ads campaigns built to drive results.</span></span>
                 </a>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/service/social-media-marketing/">
+                <a class="mega__item" href="/service/social-media-marketing/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Social-Media-Marketing.svg" alt="" width="43" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Social Media Marketing</b><span>Build your brand and engage your audience with strategic social media marketing.</span></span>
                 </a>
-                <a class="mega__item" href="/service/copywriting/">
+                <a class="mega__item" href="/service/copywriting/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Content-Copywriting.svg" alt="" width="46" height="44" loading="lazy" decoding="async"></span>
                   <span><b>Content &amp; Copywriting</b><span>Create compelling content and persuasive copy that connects with your audience.</span></span>
                 </a>
@@ -990,7 +999,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         </div>
       </div>
       <div class="nav__item nav__item--mega">
-        <a class="nav__link" href="/service/web-development/">Web Development <i class="chev"></i></a>
+        <span class="nav__link" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Web Development <i class="chev"></i></span>
         <div class="mega mega--4 mega--wd" role="group" aria-label="Web Development">
           <div class="mega__panel">
             <video class="mega__video" src="/video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -1001,27 +1010,27 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
                 <h3>Web <span>Development</span></h3>
                 <p>Build a modern, secure, and high-performing website tailored to your business goals and designed to turn visitors into customers.</p>
                 <div class="mega__cta">
-                  <a class="btn btn--ghost" href="/book/" data-magnetic><span>Book a Free IT Review</span></a>
+                  <a class="btn btn--ghost" href="/book/index.html" data-magnetic><span>Book a Free IT Review</span></a>
                 </div>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/service/web-development/">
+                <a class="mega__item" href="/service/web-development/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Web-Design.svg" alt="" width="46" height="38" loading="lazy" decoding="async"></span>
                   <span><b>Web Design &amp; Development</b><span>Build modern, high-performing websites designed to engage visitors and drive growth.</span></span>
                 </a>
-                <a class="mega__item" href="/service/web-hosting/">
+                <a class="mega__item" href="/service/web-hosting/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Web-Hosting.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Web Hosting &amp; Domains</b><span>Fast, secure, and reliable hosting with domain solutions to keep your website online.</span></span>
                 </a>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/service/video/">
+                <a class="mega__item" href="/service/video/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Videography.svg" alt="" width="39" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Videography</b><span>Bring your brand to life with professional video production crafted for impact.</span></span>
                 </a>
-                <a class="mega__item" href="/service/photography/">
+                <a class="mega__item" href="/service/photography/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Photography.svg" alt="" width="46" height="35" loading="lazy" decoding="async"></span>
                   <span><b>Photography</b><span>Capture your brand, products, and people with professional photography that stands out.</span></span>
                 </a>
@@ -1032,7 +1041,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         </div>
       </div>
       <div class="nav__item nav__item--mega">
-        <a class="nav__link" href="/one-partner/">Why One Partner <i class="chev"></i></a>
+        <span class="nav__link" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Why One Partner <i class="chev"></i></span>
         <div class="mega mega--4 mega--op" role="group" aria-label="Why One Partner">
           <div class="mega__panel">
             <video class="mega__video" src="/video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -1043,27 +1052,27 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
                 <h3>Why <span>One Partner</span></h3>
                 <p>Every extra vendor with access to your systems is another set of credentials, another support queue and another gap for things to fall through.</p>
                 <div class="mega__cta">
-                  <a class="btn btn--ghost" href="/one-partner/" data-magnetic><span>One Partner Overview</span></a>
+                  <a class="btn btn--ghost" href="/one-partner.html" data-magnetic><span>One Partner Overview</span></a>
                 </div>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/one-partner/#here-for">
+                <a class="mega__item" href="/one-partner.html#here-for">
                   <span class="mega__ico"><img src="/images/submenus/What-Were-Here-For.svg" alt="" width="45" height="46" loading="lazy" decoding="async"></span>
                   <span><b>What We&rsquo;re Here For</b><span>One partner is a way of working, not a bundle of services.</span></span>
                 </a>
-                <a class="mega__item" href="/one-partner/#coverage">
+                <a class="mega__item" href="/one-partner.html#coverage">
                   <span class="mega__ico"><img src="/images/submenus/See-Coverage.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>See Coverage</b><span>One partner, six disciplines.</span></span>
                 </a>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/one-partner/#advantages">
+                <a class="mega__item" href="/one-partner.html#advantages">
                   <span class="mega__ico"><img src="/images/submenus/See-The-Advantages.svg" alt="" width="46" height="35" loading="lazy" decoding="async"></span>
                   <span><b>See The Advantages</b><span>Six things that get easier the day you consolidate.</span></span>
                 </a>
-                <a class="mega__item" href="/one-partner/#three-teams">
+                <a class="mega__item" href="/one-partner.html#three-teams">
                   <span class="mega__ico"><img src="/images/submenus/What-One-Partner-Covers.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>What One Partner Covers</b><span>Three teams. One partner behind them.</span></span>
                 </a>
@@ -1074,7 +1083,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         </div>
       </div>
       <div class="nav__item nav__item--mega">
-        <a class="nav__link" href="/about/">About <i class="chev"></i></a>
+        <span class="nav__link" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">About <i class="chev"></i></span>
         <div class="mega mega--about" role="group" aria-label="About">
           <div class="mega__panel">
             <video class="mega__video" src="/video/lab.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -1082,22 +1091,22 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
             <div class="mega__grid">
 
               <div class="mega__col">
-                <a class="mega__item" href="/about/">
+                <a class="mega__item" href="/about.html">
                   <span class="mega__ico"><img src="/images/submenus/About-Us.svg" alt="" width="41" height="46" loading="lazy" decoding="async"></span>
                   <span><b>About Us</b><span>Discover who we are, what we do, and how we help businesses achieve their goals.</span></span>
                 </a>
-                <a class="mega__item" href="/people/">
+                <a class="mega__item" href="/people.html">
                   <span class="mega__ico"><img src="/images/submenus/Our-People.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Our People</b><span>Meet our experienced team dedicated to delivering great service and smart solutions.</span></span>
                 </a>
               </div>
 
               <div class="mega__col">
-                <a class="mega__item" href="/work/">
+                <a class="mega__item" href="/work.html">
                   <span class="mega__ico"><img src="/images/submenus/Our-Work.svg" alt="" width="46" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Our Work</b><span>Explore our projects, solutions, and success stories across a range of industries.</span></span>
                 </a>
-                <a class="mega__item" href="/blog/">
+                <a class="mega__item" href="/blog/index.html">
                   <span class="mega__ico"><img src="/images/submenus/Blog.svg" alt="" width="45" height="46" loading="lazy" decoding="async"></span>
                   <span><b>Blog</b><span>Explore the latest insights, tips, trends, and practical advice from our team.</span></span>
                 </a>
@@ -1107,7 +1116,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
                 <h3>Get in touch <span>with us today!</span></h3>
                 <p>Have a question or ready to get started? Our team is here to help with the right solution for your business.</p>
                 <div class="mega__cta">
-                  <a class="btn btn--ghost" href="/contact/" data-magnetic><span>Contact Us Now!</span></a>
+                  <a class="btn btn--ghost" href="/contact/index.html" data-magnetic><span>Contact Us Now!</span></a>
                 </div>
               </div>
 
@@ -1118,7 +1127,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
     </nav>
     <div class="header__actions">
       <a class="header__phone" href="tel:+61284597882">+61 2 8459 7882</a>
-      <a class="btn btn--primary btn--sm header__cta" href="/book/" data-magnetic><span>Book a Free IT Review</span></a>
+      <a class="btn btn--primary btn--sm header__cta" href="/book/index.html" data-magnetic><span>Book a Free IT Review</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -1130,57 +1139,57 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
     <div class="mmenu__group">
       <button class="mmenu__toggle" aria-expanded="false">Managed IT Services <i class="chev"></i></button>
       <div class="mmenu__sub">
-        <a href="/service/it-support/">IT Support in Sydney</a>
-        <a href="/service/it-support/#managed-cyber-security-support">Managed Cyber Security &amp; Support</a>
-        <a href="/service/it-support/#managed-network-packages">Managed Network Packages</a>
-        <a href="/service/it-support/#robust-cloud-backup">Robust Cloud Backup</a>
-        <a href="/service/it-support/#ongoing-maintenance">Ongoing Maintenance</a>
-        <a href="/service/google-workspace/">Google Workspace</a>
-        <a href="/service/computer-repairs/">Computer Repairs</a>
-        <a href="/service/va-recruitment-services/">VA Recruitment Services</a>
+        <a href="/service/it-support/index.html">IT Support in Sydney</a>
+        <a href="/service/it-support/index.html#managed-cyber-security-support">Managed Cyber Security &amp; Support</a>
+        <a href="/service/it-support/index.html#managed-network-packages">Managed Network Packages</a>
+        <a href="/service/it-support/index.html#robust-cloud-backup">Robust Cloud Backup</a>
+        <a href="/service/it-support/index.html#ongoing-maintenance">Ongoing Maintenance</a>
+        <a href="/service/google-workspace/index.html">Google Workspace</a>
+        <a href="/service/computer-repairs/index.html">Computer Repairs</a>
+        <a href="/service/va-recruitment-services/index.html">VA Recruitment Services</a>
       </div>
     </div>
     <div class="mmenu__group">
       <button class="mmenu__toggle" aria-expanded="false">Digital Marketing <i class="chev"></i></button>
       <div class="mmenu__sub">
-        <a href="/service/seo-services/">SEO Services</a>
-        <a href="/service/google-adwords/">Google Ads</a>
-        <a href="/service/social-media-marketing/">Social Media Marketing</a>
-        <a href="/service/copywriting/">Content &amp; Copywriting</a>
+        <a href="/service/seo-services/index.html">SEO Services</a>
+        <a href="/service/google-adwords/index.html">Google Ads</a>
+        <a href="/service/social-media-marketing/index.html">Social Media Marketing</a>
+        <a href="/service/copywriting/index.html">Content &amp; Copywriting</a>
       </div>
     </div>
     <div class="mmenu__group">
       <button class="mmenu__toggle" aria-expanded="false">Web Development <i class="chev"></i></button>
       <div class="mmenu__sub">
-        <a href="/service/web-development/">Web Design &amp; Development</a>
-        <a href="/service/web-hosting/">Web Hosting &amp; Domains</a>
-        <a href="/service/video/">Videography</a>
-        <a href="/service/photography/">Photography</a>
+        <a href="/service/web-development/index.html">Web Design &amp; Development</a>
+        <a href="/service/web-hosting/index.html">Web Hosting &amp; Domains</a>
+        <a href="/service/video/index.html">Videography</a>
+        <a href="/service/photography/index.html">Photography</a>
       </div>
     </div>
     <div class="mmenu__group">
       <button class="mmenu__toggle" aria-expanded="false">Why One Partner <i class="chev"></i></button>
       <div class="mmenu__sub">
-        <a href="/one-partner/">One Partner Overview</a>
-        <a href="/one-partner/#here-for">What We&rsquo;re Here For</a>
-        <a href="/one-partner/#coverage">See Coverage</a>
-        <a href="/one-partner/#advantages">See The Advantages</a>
-        <a href="/one-partner/#three-teams">What One Partner Covers</a>
+        <a href="/one-partner.html">One Partner Overview</a>
+        <a href="/one-partner.html#here-for">What We&rsquo;re Here For</a>
+        <a href="/one-partner.html#coverage">See Coverage</a>
+        <a href="/one-partner.html#advantages">See The Advantages</a>
+        <a href="/one-partner.html#three-teams">What One Partner Covers</a>
       </div>
     </div>
     <div class="mmenu__group">
       <button class="mmenu__toggle" aria-expanded="false">About <i class="chev"></i></button>
       <div class="mmenu__sub">
-        <a href="/about/">About us</a>
-        <a href="/people/">Our People</a>
-        <a href="/work/">Our Work</a>
-        <a href="/blog/">Blog</a>
-        <a href="/contact/">Contact</a>
+        <a href="/about.html">About us</a>
+        <a href="/people.html">Our People</a>
+        <a href="/work.html">Our Work</a>
+        <a href="/blog/index.html">Blog</a>
+        <a href="/contact/index.html">Contact</a>
       </div>
     </div>
   </nav>
   <a class="mmenu__phone" href="tel:+61284597882"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg>+61 2 8459 7882</a>
-  <a class="btn btn--primary" href="/book/"><span>Book a Free IT Review</span></a>
+  <a class="btn btn--primary" href="/book/index.html"><span>Book a Free IT Review</span></a>
 </div>
 
 <main id="main">
@@ -1189,7 +1198,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
 <section class="hero hero--page hero--book">
   <div class="container hero__inner">
     <nav class="crumbs" aria-label="Breadcrumb" data-reveal>
-      <a href="/">Home</a><i>&rsaquo;</i><span>Why One Partner</span>
+      <a href="/index.html">Home</a><i>&rsaquo;</i><span>Why One Partner</span>
     </nav>
     <p class="hero__eyebrow" data-reveal><span class="eyebrow-seg">One partner</span><span class="eyebrow-sep"> &middot; </span><span class="eyebrow-seg">Not five suppliers</span></p>
     <h1 class="reveal-lines" id="heroTitle">Why <span class="accent">One Partner</span></h1>
@@ -1449,13 +1458,13 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
 
     <div data-reveal>
       <div class="op-chips">
-        <a class="op-chip" href="/service/it-support/"><em></em>IT Support in Sydney</a>
-        <a class="op-chip" href="/service/it-support/#managed-cyber-security-support"><em></em>Managed Cyber Security</a>
-        <a class="op-chip" href="/service/it-support/#managed-network-packages"><em></em>Managed Networks</a>
-        <a class="op-chip" href="/service/it-support/#robust-cloud-backup"><em></em>Cloud Backup</a>
-        <a class="op-chip" href="/service/google-workspace/"><em></em>Google Workspace</a>
-        <a class="op-chip" href="/service/computer-repairs/"><em></em>Computer Repairs</a>
-        <a class="op-chip" href="/service/va-recruitment-services/"><em></em>VA Recruitment</a>
+        <a class="op-chip" href="/service/it-support/index.html"><em></em>IT Support in Sydney</a>
+        <a class="op-chip" href="/service/it-support/index.html#managed-cyber-security-support"><em></em>Managed Cyber Security</a>
+        <a class="op-chip" href="/service/it-support/index.html#managed-network-packages"><em></em>Managed Networks</a>
+        <a class="op-chip" href="/service/it-support/index.html#robust-cloud-backup"><em></em>Cloud Backup</a>
+        <a class="op-chip" href="/service/google-workspace/index.html"><em></em>Google Workspace</a>
+        <a class="op-chip" href="/service/computer-repairs/index.html"><em></em>Computer Repairs</a>
+        <a class="op-chip" href="/service/va-recruitment-services/index.html"><em></em>VA Recruitment</a>
         <span class="op-chip"><em></em>Web design &amp; hosting</span>
         <span class="op-chip"><em></em>SEO, Ads &amp; social</span>
         <span class="op-chip"><em></em>Videography &amp; photography</span>
@@ -1480,15 +1489,15 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         <h3>Managed IT Support</h3>
         <p class="op-shortcard__blurb">The layer everything else stands on. We hold your users, devices, network, cloud and backups &mdash; so when the website goes quiet or mail stops arriving, the people who fix it already know how your systems are wired. No triage call to work out whose problem it is.</p>
         <div class="op-chips">
-          <a class="op-chip" href="/service/it-support/">IT Support</a>
-          <a class="op-chip" href="/service/it-support/#managed-cyber-security-support">Cyber Security</a>
-          <a class="op-chip" href="/service/it-support/#managed-network-packages">Networks</a>
-          <a class="op-chip" href="/service/it-support/#robust-cloud-backup">Cloud Backup</a>
-          <a class="op-chip" href="/service/google-workspace/">Google Workspace</a>
-          <a class="op-chip" href="/service/computer-repairs/">Computer Repairs</a>
-          <a class="op-chip" href="/service/va-recruitment-services/">VA Recruitment</a>
+          <a class="op-chip" href="/service/it-support/index.html">IT Support</a>
+          <a class="op-chip" href="/service/it-support/index.html#managed-cyber-security-support">Cyber Security</a>
+          <a class="op-chip" href="/service/it-support/index.html#managed-network-packages">Networks</a>
+          <a class="op-chip" href="/service/it-support/index.html#robust-cloud-backup">Cloud Backup</a>
+          <a class="op-chip" href="/service/google-workspace/index.html">Google Workspace</a>
+          <a class="op-chip" href="/service/computer-repairs/index.html">Computer Repairs</a>
+          <a class="op-chip" href="/service/va-recruitment-services/index.html">VA Recruitment</a>
         </div>
-        <a class="op-shortcard__more" href="/service/it-support/">More info<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
+        <a class="op-shortcard__more" href="/service/it-support/index.html">More info<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
       </article>
 
       <article class="op-shortcard" data-reveal>
@@ -1497,12 +1506,12 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         <h3>Digital Marketing</h3>
         <p class="op-shortcard__blurb">Marketing that can actually see the site it's promoting. Because we host and build the website too, a campaign brief never stops at &ldquo;ask your developer&rdquo; &mdash; tracking, landing pages and copy get changed by the same team, in the same week.</p>
         <div class="op-chips">
-          <a class="op-chip" href="/service/seo-services/">SEO Services</a>
-          <a class="op-chip" href="/service/google-adwords/">Google Ads</a>
-          <a class="op-chip" href="/service/social-media-marketing/">Social Media Marketing</a>
-          <a class="op-chip" href="/service/copywriting/">Content &amp; Copywriting</a>
+          <a class="op-chip" href="/service/seo-services/index.html">SEO Services</a>
+          <a class="op-chip" href="/service/google-adwords/index.html">Google Ads</a>
+          <a class="op-chip" href="/service/social-media-marketing/index.html">Social Media Marketing</a>
+          <a class="op-chip" href="/service/copywriting/index.html">Content &amp; Copywriting</a>
         </div>
-        <a class="op-shortcard__more" href="/service/seo-services/">More info<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
+        <a class="op-shortcard__more" href="/service/seo-services/index.html">More info<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
       </article>
 
       <article class="op-shortcard" data-reveal>
@@ -1511,12 +1520,12 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         <h3>Web Development</h3>
         <p class="op-shortcard__blurb">The site, the hosting, the domain and the DNS held by the people who also run your mail. That's the record that breaks two things at once when a stranger edits it &mdash; and the reason a website migration here doesn't take your email down with it.</p>
         <div class="op-chips">
-          <a class="op-chip" href="/service/web-development/">Web Design &amp; Development</a>
-          <a class="op-chip" href="/service/web-hosting/">Web Hosting &amp; Domains</a>
-          <a class="op-chip" href="/service/video/">Videography</a>
-          <a class="op-chip" href="/service/photography/">Photography</a>
+          <a class="op-chip" href="/service/web-development/index.html">Web Design &amp; Development</a>
+          <a class="op-chip" href="/service/web-hosting/index.html">Web Hosting &amp; Domains</a>
+          <a class="op-chip" href="/service/video/index.html">Videography</a>
+          <a class="op-chip" href="/service/photography/index.html">Photography</a>
         </div>
-        <a class="op-shortcard__more" href="/service/web-development/">More info<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
+        <a class="op-shortcard__more" href="/service/web-development/index.html">More info<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
       </article>
     </div>
     <p class="op-short__note" data-reveal>One standard, one invoice, one number to call &mdash; whichever of the three you started with.</p>
@@ -1538,7 +1547,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
             <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>A staged plan</b> &mdash; what to fix now, what can wait, what to consolidate first.</span></li>
           </ul>
           <div class="op-offer__foot">
-            <a class="btn btn--light" href="/book/" data-magnetic><span>Book a Free IT Review</span><span class="arrow">&rarr;</span></a>
+            <a class="btn btn--light" href="/book/index.html" data-magnetic><span>Book a Free IT Review</span><span class="arrow">&rarr;</span></a>
             <a class="btn btn--ghost" href="tel:+61284597882" data-magnetic><span>Or call &mdash; +61 2 8459 7882</span></a>
             <small>No cost, no obligation. Takes about 3 minutes to book.</small>
           </div>
@@ -1567,7 +1576,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
         <p class="section__kicker" data-reveal>Fair questions</p>
         <h2 class="reveal-lines">The objections, answered straight.</h2>
         <p data-reveal>Consolidating suppliers is a real decision with real trade-offs. Here's how we'd argue both sides of it.</p>
-        <div data-reveal><a class="tlink" href="/book/">Ask us directly <span class="arrow">&rarr;</span></a></div>
+        <div data-reveal><a class="tlink" href="/book/index.html">Ask us directly <span class="arrow">&rarr;</span></a></div>
       </div>
       <div class="faq__list js-faq" id="faqList">
 
@@ -1630,7 +1639,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
           <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4">
             <div class="faq__a-inner"><div class="faq__a-body">
               <p>It's a user-pays model. Support packages are priced up front, and if there's no work to do in a month, there's no labour to pay for &mdash; you're not funding hours you have to find a use for.</p>
-              <p>You can see the published package pricing on our <a href="/service/it-support/#packages">IT support page</a>, or buy support in blocks and move to a managed service later.</p>
+              <p>You can see the published package pricing on our <a href="/service/it-support/index.html#packages">IT support page</a>, or buy support in blocks and move to a managed service later.</p>
             </div></div>
           </div>
         </div>
@@ -1679,7 +1688,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
     <h2 class="reveal-lines">Ready to put all your technology <br>in one safe pair of hands?</h2>
     <p data-reveal>Book a free, no-obligation IT review &mdash; we'll show you exactly where you stand.</p>
     <div class="cta__actions" data-reveal>
-      <a class="btn btn--light" href="/book/" data-magnetic><span>Book a Free IT Review</span><span class="arrow">&rarr;</span></a>
+      <a class="btn btn--light" href="/book/index.html" data-magnetic><span>Book a Free IT Review</span><span class="arrow">&rarr;</span></a>
       <a class="btn btn--ghost" href="tel:+61284597882" data-magnetic><span>Or call us now &mdash; +61 2 8459 7882</span></a>
     </div>
   </div>
@@ -1696,46 +1705,46 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
       <div class="footer__col">
         <div class="footer__head"><span class="footer__bar" aria-hidden="true"></span><h4>Managed IT Services</h4></div>
         <ul>
-          <li><a href="/service/it-support/">IT Support in Sydney</a></li>
-          <li><a href="/service/it-support/#managed-cyber-security-support">Managed Cyber Security &amp; Support</a></li>
-          <li><a href="/service/it-support/#managed-network-packages">Managed Network Packages</a></li>
-          <li><a href="/service/it-support/#robust-cloud-backup">Robust Cloud Backup</a></li>
-          <li><a href="/service/it-support/#ongoing-maintenance">Ongoing Maintenance</a></li>
-          <li><a href="/service/google-workspace/">Google Workspace</a></li>
-          <li><a href="/service/computer-repairs/">Computer Repairs</a></li>
-          <li><a href="/service/va-recruitment-services/">VA Recruitment Services</a></li>
+          <li><a href="/service/it-support/index.html">IT Support in Sydney</a></li>
+          <li><a href="/service/it-support/index.html#managed-cyber-security-support">Managed Cyber Security &amp; Support</a></li>
+          <li><a href="/service/it-support/index.html#managed-network-packages">Managed Network Packages</a></li>
+          <li><a href="/service/it-support/index.html#robust-cloud-backup">Robust Cloud Backup</a></li>
+          <li><a href="/service/it-support/index.html#ongoing-maintenance">Ongoing Maintenance</a></li>
+          <li><a href="/service/google-workspace/index.html">Google Workspace</a></li>
+          <li><a href="/service/computer-repairs/index.html">Computer Repairs</a></li>
+          <li><a href="/service/va-recruitment-services/index.html">VA Recruitment Services</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
         <div class="footer__head"><span class="footer__bar" aria-hidden="true"></span><h4>Digital Marketing</h4></div>
         <ul>
-          <li><a href="/service/seo-services/">SEO Services</a></li>
-          <li><a href="/service/google-adwords/">Google Ads</a></li>
-          <li><a href="/service/social-media-marketing/">Social Media Marketing</a></li>
-          <li><a href="/service/copywriting/">Content &amp; Copywriting</a></li>
+          <li><a href="/service/seo-services/index.html">SEO Services</a></li>
+          <li><a href="/service/google-adwords/index.html">Google Ads</a></li>
+          <li><a href="/service/social-media-marketing/index.html">Social Media Marketing</a></li>
+          <li><a href="/service/copywriting/index.html">Content &amp; Copywriting</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
         <div class="footer__head"><span class="footer__bar" aria-hidden="true"></span><h4>Web Development</h4></div>
         <ul>
-          <li><a href="/service/web-development/">Web Design &amp; Development</a></li>
-          <li><a href="/service/web-hosting/">Web Hosting &amp; Domains</a></li>
-          <li><a href="/service/video/">Videography</a></li>
-          <li><a href="/service/photography/">Photography</a></li>
+          <li><a href="/service/web-development/index.html">Web Design &amp; Development</a></li>
+          <li><a href="/service/web-hosting/index.html">Web Hosting &amp; Domains</a></li>
+          <li><a href="/service/video/index.html">Videography</a></li>
+          <li><a href="/service/photography/index.html">Photography</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
         <div class="footer__head"><span class="footer__bar" aria-hidden="true"></span><h4>Who We Are</h4></div>
         <ul>
-          <li><a href="/about/">About us</a></li>
-          <li><a href="/people/">Our People</a></li>
-          <li><a href="/work/">Our Work</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/about.html">About us</a></li>
+          <li><a href="/people.html">Our People</a></li>
+          <li><a href="/work.html">Our Work</a></li>
+          <li><a href="/blog/index.html">Blog</a></li>
+          <li><a href="/contact/index.html">Contact</a></li>
+          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
@@ -1743,9 +1752,9 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
     <div class="footer__row footer__row--info">
 
       <div class="footer__col footer__col--brand">
-        <a class="footer__brand-logo" href="/" aria-label="Online Consulting &mdash; home"><img src="/images/OC-Logo-white.png" alt="Online Consulting"></a>
+        <a class="footer__brand-logo" href="/index.html" aria-label="Online Consulting &mdash; home"><img src="/images/OC-Logo-white.png" alt="Online Consulting"></a>
         <p>Sydney-based IT services &amp; support <br>&mdash; Northern Beaches to the CBD.</p>
-        <a class="footer__cta" href="/one-partner/" data-magnetic><span>Why One Partner</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
+        <a class="footer__cta" href="/one-partner.html" data-magnetic><span>Why One Partner</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
       </div>
 
       <div class="footer__col">
@@ -2382,6 +2391,84 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
     }
     item.addEventListener('mouseenter', start);
     item.addEventListener('focusin', start);
+  });
+})();
+</script>
+<script>
+/* Menu dismissal. The mega panel is hover/focus driven in CSS, so clicking an
+   in-page #anchor would scroll the page and leave the panel open under the
+   pointer. A one-shot .is-dismissed class closes it; it clears as soon as the
+   pointer or focus leaves, so the next hover opens normally. */
+(function menuDismiss(){
+  var items = [].slice.call(document.querySelectorAll('.nav__item--mega'));
+
+  items.forEach(function(item){
+    function close(){
+      item.classList.add('is-dismissed');
+      var a = document.activeElement;
+      if (a && a.blur && item.contains(a)) a.blur();
+    }
+    function clear(){ item.classList.remove('is-dismissed'); }
+
+    item.addEventListener('click', function(e){
+      var t = e.target;
+      if (t && t.closest && t.closest('a')) close();
+    });
+    item.addEventListener('mouseleave', clear);
+    item.addEventListener('focusout', function(e){
+      if (!item.contains(e.relatedTarget)) clear();
+    });
+
+    /* the trigger is a span, so wire up the keyboard equivalent of a click */
+    var btn = item.querySelector('.nav__link[role="button"]');
+    if (btn) {
+      btn.addEventListener('keydown', function(e){
+        if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+        e.preventDefault();
+        var wasClosed = item.classList.contains('is-dismissed');
+        item.classList.toggle('is-dismissed', !wasClosed);
+        btn.setAttribute('aria-expanded', wasClosed ? 'true' : 'false');
+        if (wasClosed) {
+          var first = item.querySelector('.mega a');
+          if (first) first.focus();
+        }
+      });
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    items.forEach(function(item){
+      if (!item.contains(document.activeElement) && !item.querySelector(':hover')) return;
+      item.classList.add('is-dismissed');
+      var btn = item.querySelector('.nav__link[role="button"]');
+      if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+    });
+  });
+})();
+</script>
+<script>
+/* Mobile menu: tapping any link inside it closes the panel, including #anchors
+   on the current page where no navigation happens. */
+(function mmenuDismiss(){
+  var menu   = document.getElementById('mobileMenu');
+  var burger = document.getElementById('burger');
+  if (!menu || !burger) return;
+  menu.addEventListener('click', function(e){
+    var t = e.target;
+    var a = t && t.closest ? t.closest('a') : null;
+    if (!a || !menu.contains(a)) return;
+    menu.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    if (window.__lenis) window.__lenis.start();
+    menu.querySelectorAll('.mmenu__group.is-open').forEach(function(g){
+      g.classList.remove('is-open');
+      var tog = g.querySelector('.mmenu__toggle');
+      var sub = g.querySelector('.mmenu__sub');
+      if (tog) tog.setAttribute('aria-expanded', 'false');
+      if (sub) sub.style.maxHeight = '0px';
+    });
   });
 })();
 </script>

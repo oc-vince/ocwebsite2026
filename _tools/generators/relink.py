@@ -1,5 +1,5 @@
 import os, glob, re
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 MAP = {
  '/digital-marketing/seo/':                ('service/seo-services/index.html',            '../seo-services/index.html'),
  '/digital-marketing/google-ads/':         ('service/google-adwords/index.html',          '../google-adwords/index.html'),

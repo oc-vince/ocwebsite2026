@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Fresh sitemap.xml + robots.txt for the clean-URL build."""
 import os, re, datetime
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 D = 'https://onlineconsulting.com.au'
 os.chdir(ROOT)
 

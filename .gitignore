@@ -19,3 +19,5 @@ dump/
 
 # local Netlify state
 .netlify/
+# leftover from a failed first git init in the sandbox - safe to delete
+.git-broken/

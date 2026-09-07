@@ -2,7 +2,7 @@
 import os, re, html
 from PIL import Image
 
-SITE = os.path.expanduser('~/mnt/Version 2')
+SITE = os.path.expanduser('~/mnt/public')
 BUILD = os.path.expanduser('~/ocblog')
 SLUG = '5-futuristic-technology-trends-in-ecommerce-industry'
 SRC = os.path.join(SITE, 'blog', SLUG + '.html')

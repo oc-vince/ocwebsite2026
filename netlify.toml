@@ -1,7 +1,9 @@
 # Netlify configuration for onlineconsulting.com.au
 #
 # The site is plain static HTML with no build step, so publish is the repo root.
-# _redirects (at the root) carries the 301 map from the old WordPress URLs.
+# Every page is a real .html file so it can be browsed on a local server; the
+# _redirects map 301s each .html path to its clean URL and serves the clean URL
+# from that same file, so only the clean URL is ever visible live.
 
 [build]
   publish = "."
@@ -11,7 +13,15 @@
 [build.processing]
   skip_processing = false
 
-# Long cache for immutable assets, short for HTML so content edits go live fast.
+# Short cache for pages so content edits go live fast. This has to be a /*
+# rule rather than /*.html: pages are served at their clean URL, which carries
+# no extension. The asset rules below are more specific, so they win for
+# /images and /video.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 [[headers]]
   for = "/images/*"
   [headers.values]
@@ -21,8 +31,3 @@
   for = "/video/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"

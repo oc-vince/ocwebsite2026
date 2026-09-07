@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
-"""Rewrite every internal href/src/data-shot to a root-relative clean URL.
+"""SUPERSEDED - do not run.
 
-Runs in two phases:
-  1. rewrite links in place, using each file's CURRENT location to resolve ../
-  2. move blog.html / book.html / contact.html into their same-named folders as
-     index.html, which removes the /blog/ vs blog/ ambiguity. Safe only after
-     phase 1, because the rewritten paths no longer depend on file depth.
+The site now ships real .html files and links to them, so it can be browsed on a
+local server; _redirects 301s each .html path to its clean URL on the live site.
+Running this would rewrite every internal link back to the extensionless form and
+break local navigation again. localurls.py is the script that maintains the
+current convention.
+
+Kept only as a record of how the 2026 clean-URL pass was done.
 """
+import sys
+if '--i-really-mean-it' not in sys.argv:
+    sys.exit('cleanurls.py is superseded by localurls.py - see the docstring.')
+
 import os, re, sys, shutil
 
-ROOT   = os.path.expanduser('~/mnt/Version 2')
+ROOT   = os.path.expanduser('~/mnt/public')
 DOMAIN = 'https://onlineconsulting.com.au'
 DRY    = '--apply' not in sys.argv
 

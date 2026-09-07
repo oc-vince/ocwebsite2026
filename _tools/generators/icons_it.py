@@ -1,5 +1,5 @@
 import os, re
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 MAP = [
  ('IT-Support-in-Sydney-Icon.png',       'IT-Support-in-Sydney.svg',    41, 46),
  ('Managed-Cyber-Security-Icon.png',     'Managed-Cyber-Security.svg',  46, 45),

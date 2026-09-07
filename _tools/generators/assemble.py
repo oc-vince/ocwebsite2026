@@ -1,5 +1,5 @@
 import re, os, sys, json
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 BUILD = os.path.expanduser('~/oc_build')
 
 def rd(p):

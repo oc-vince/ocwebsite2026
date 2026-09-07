@@ -1,26 +1,30 @@
-<script>
-/* Mega menu: the background clip is only fetched the first time the panel opens,
-   so it costs nothing on page load. */
-(function megaMenu(){
-  var items = [].slice.call(document.querySelectorAll('.nav__item--mega'));
-  if (!items.length) return;
-  items.forEach(function(item){
-    var vid = item.querySelector('.mega__video');
-    if (!vid) return;
-    var started = false;
-    function start(){
-      if (started) return;
-      started = true;
-      if (!vid.getAttribute('src')) return;
-      vid.load();
-      var p = vid.play();
-      if (p && p.catch) p.catch(function(){ /* autoplay blocked — the scrim still reads fine */ });
-    }
-    item.addEventListener('mouseenter', start);
-    item.addEventListener('focusin', start);
-  });
-})();
-</script>
+# -*- coding: utf-8 -*-
+"""Top-level nav labels become non-clickable triggers, and the mega / mobile
+   menus close when a submenu item is clicked."""
+import os, re, sys
+
+ROOT = os.path.expanduser('~/mnt/public')
+DRY  = '--apply' not in sys.argv
+
+NAV_A = re.compile(
+    r'<a class="nav__link" href="[^"]*">(?P<label>.*?)</a>', re.S)
+
+CSS_ANCHOR = ('.nav__item--mega:hover .mega,\n'
+              '.nav__item--mega:focus-within .mega'
+              '{opacity:1;visibility:visible;pointer-events:auto;}')
+
+CSS_ADD = CSS_ANCHOR + """
+/* the top-level labels are triggers, not links */
+.nav__link[role="button"]{cursor:default;-webkit-user-select:none;user-select:none;
+  -webkit-tap-highlight-color:transparent;}
+/* clicking a submenu item force-closes the panel, so a same-page #anchor link
+   does not leave the mega sitting open under the cursor */
+.nav__item--mega.is-dismissed .mega{opacity:0!important;visibility:hidden!important;
+  pointer-events:none!important;}
+.nav__item--mega.is-dismissed .mega__panel{transform:translateY(-14px) scale(.985)!important;
+  opacity:0!important;}"""
+
+JS_ADD = """
 <script>
 /* Menu dismissal. The mega panel is hover/focus driven in CSS, so clicking an
    in-page #anchor would scroll the page and leave the panel open under the
@@ -98,4 +102,54 @@
     });
   });
 })();
-</script>
+</script>"""
+
+def nav_sub(m):
+    label = m.group('label')
+    return ('<span class="nav__link" role="button" tabindex="0" '
+            'aria-haspopup="true" aria-expanded="false">%s</span>' % label)
+
+files = []
+for dp, dn, fn in os.walk(ROOT):
+    dn[:] = [d for d in dn if d not in ('_tools', '.git', 'dump')]
+    for f in fn:
+        if f.endswith('.html'):
+            files.append(os.path.join(dp, f))
+files.sort()
+
+stat = {'nav': 0, 'css': 0, 'js': 0, 'files': 0}
+miss = []
+for p in files:
+    rel = os.path.relpath(p, ROOT).replace(os.sep, '/')
+    s = o = open(p, encoding='utf-8').read()
+
+    s, n = NAV_A.subn(nav_sub, s)
+    if n: stat['nav'] += n
+    if n != 5: miss.append('%s: %d nav links converted (expected 5)' % (rel, n))
+
+    if 'is-dismissed' not in s:
+        if CSS_ANCHOR in s:
+            s = s.replace(CSS_ANCHOR, CSS_ADD, 1); stat['css'] += 1
+        else:
+            miss.append('%s: CSS anchor not found' % rel)
+
+    if 'menuDismiss' not in s:
+        i = s.find('(function megaMenu(){')
+        j = s.find('</script>', i) if i != -1 else -1
+        if j != -1:
+            j += len('</script>')
+            s = s[:j] + JS_ADD + s[j:]; stat['js'] += 1
+        else:
+            miss.append('%s: megaMenu script not found' % rel)
+
+    if s != o:
+        stat['files'] += 1
+        if not DRY:
+            open(p, 'w', encoding='utf-8', newline='').write(s)
+
+print('%s files=%d touched=%d nav=%d css=%d js=%d'
+      % ('DRY RUN' if DRY else 'APPLIED', len(files), stat['files'],
+         stat['nav'], stat['css'], stat['js']))
+if miss:
+    print('\nissues (%d):' % len(miss))
+    for x in miss[:20]: print('  ', x)

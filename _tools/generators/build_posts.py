@@ -7,7 +7,7 @@ block (extracted by brace-matching, not a lazy regex, so nested <div>s survive).
 """
 import os, re, sys, html, math, time
 
-SITE  = os.path.expanduser('~/mnt/Version 2')
+SITE  = os.path.expanduser('~/mnt/public')
 BLOG  = os.path.join(SITE, 'blog')
 BUILD = os.path.expanduser('~/ocblog')
 MON   = ['January','February','March','April','May','June','July','August','September','October','November','December']

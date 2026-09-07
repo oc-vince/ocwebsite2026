@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, re, glob, html
 
-SITE  = os.path.expanduser('~/mnt/Version 2')
+SITE  = os.path.expanduser('~/mnt/public')
 BUILD = os.path.expanduser('~/ocblog')
 OUT   = os.path.join(SITE, 'blog.html')
 MON   = ['January','February','March','April','May','June','July','August','September','October','November','December']

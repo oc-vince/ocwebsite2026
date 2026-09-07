@@ -3,7 +3,7 @@
 mega menus, mobile menu, footer and scripts), swapping in the policy content."""
 import os, re
 
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 SRC  = os.path.join(ROOT, 'blog', 'how-social-media-helps-with-seo.html')
 OUT  = os.path.join(ROOT, 'privacy-policy.html')
 BODY = open(os.path.expanduser('~/ocblog/pp_body.html'), encoding='utf-8').read().rstrip('\n')

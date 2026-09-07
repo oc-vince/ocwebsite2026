@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os, re
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 PAT = re.compile(r'([ \t]*)<a class="mmenu__link" href="((?:\.\./)*)one-partner\.html">Why One Partner</a>\n')
 
 ITEMS = [

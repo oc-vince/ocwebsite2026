@@ -2,7 +2,7 @@
 """Put the five mega panels into every page's header."""
 import os, re, glob, sys
 
-SITE  = os.path.expanduser('~/mnt/Version 2')
+SITE  = os.path.expanduser('~/mnt/public')
 BUILD = os.path.expanduser('~/ocblog')
 def rd(p): return open(p, encoding='utf-8').read()
 

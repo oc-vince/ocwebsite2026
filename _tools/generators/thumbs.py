@@ -1,6 +1,6 @@
 import os, re, glob, sys
 from PIL import Image, ImageOps
-SITE = os.path.expanduser('~/mnt/Version 2')
+SITE = os.path.expanduser('~/mnt/public')
 FI   = os.path.join(SITE, 'blog', 'featured-images')
 TH   = os.path.join(FI, 'thumb')
 os.makedirs(TH, exist_ok=True)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-ROOT = os.path.expanduser('~/mnt/Version 2')
+ROOT = os.path.expanduser('~/mnt/public')
 slugs = sorted(f[:-5] for f in os.listdir(os.path.join(ROOT, 'blog'))
                 if f.endswith('.html') and f != 'index.html')  # index.html is the blog listing, not a post
 
@@ -10,13 +10,47 @@ def sec(t): L.append(''); L.append('# ' + t)
 L.append('# Online Consulting - Netlify redirects')
 L.append('# Generated for the 2026 rebuild. First matching rule wins, so order matters.')
 L.append('#')
-L.append('# Netlify "Pretty URLs" (on by default) already serves about.html at /about/ and')
-L.append('# 301s /about.html -> /about/, so .html -> clean-URL rules are NOT listed here.')
+L.append('# Every page ships as a real .html file so the site can be browsed straight')
+L.append('# from disk on a local server. On the live server the .html paths 301 to the')
+L.append('# clean URL, so only the clean URL is ever visible or indexed.')
 L.append('# Trailing slashes are normalised before these rules run: a rule written /foo')
 L.append('# also matches /foo/. The ! flag forces a redirect even when a file matches.')
 
 sec('Build tooling lives in the repo but must not be served')
 L.append('/_tools/*                                 /_not-found                  404')
+
+# ---- .html <-> clean URL, generated from what is actually on disk ----
+htmls = []
+for dp, dn, fn in os.walk(ROOT):
+    dn[:] = [d for d in dn if d not in ('_tools', '.git', 'dump')]
+    for f in fn:
+        if f.endswith('.html'):
+            htmls.append(os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, '/'))
+htmls.sort()
+
+def clean_of(rel):
+    if rel == 'index.html':
+        return '/'
+    if rel.endswith('/index.html'):
+        return '/' + rel[:-len('index.html')]
+    return '/' + rel[:-5] + '/'
+
+sec('Canonical URLs: the .html file the local server uses 301s to the clean URL')
+L.append('# /index.html is deliberately absent: a forced rule on it can loop, and Netlify')
+L.append('# already 301s /index.html -> / on its own.')
+for rel in htmls:
+    if rel == 'index.html':
+        continue
+    L.append('/%-78s %-78s 301!' % (rel, clean_of(rel)))
+
+sec('And the clean URL serves that same file, without changing the address bar')
+L.append('# Netlify Pretty URLs does this on its own; spelled out so the site does not')
+L.append('# depend on that setting staying on.')
+for rel in htmls:
+    c = clean_of(rel)
+    if c == '/':
+        continue          # / already serves index.html natively
+    L.append('%-79s /%-78s 200' % (c, rel))
 
 sec('Blog posts: the old site published these at the root, the new site nests them under /blog/')
 for s in slugs:

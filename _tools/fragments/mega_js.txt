@@ -19,3 +19,81 @@
   item.addEventListener('focusin', start);
 })();
 </script>
+<script>
+/* Menu dismissal. The mega panel is hover/focus driven in CSS, so clicking an
+   in-page #anchor would scroll the page and leave the panel open under the
+   pointer. A one-shot .is-dismissed class closes it; it clears as soon as the
+   pointer or focus leaves, so the next hover opens normally. */
+(function menuDismiss(){
+  var items = [].slice.call(document.querySelectorAll('.nav__item--mega'));
+
+  items.forEach(function(item){
+    function close(){
+      item.classList.add('is-dismissed');
+      var a = document.activeElement;
+      if (a && a.blur && item.contains(a)) a.blur();
+    }
+    function clear(){ item.classList.remove('is-dismissed'); }
+
+    item.addEventListener('click', function(e){
+      var t = e.target;
+      if (t && t.closest && t.closest('a')) close();
+    });
+    item.addEventListener('mouseleave', clear);
+    item.addEventListener('focusout', function(e){
+      if (!item.contains(e.relatedTarget)) clear();
+    });
+
+    /* the trigger is a span, so wire up the keyboard equivalent of a click */
+    var btn = item.querySelector('.nav__link[role="button"]');
+    if (btn) {
+      btn.addEventListener('keydown', function(e){
+        if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+        e.preventDefault();
+        var wasClosed = item.classList.contains('is-dismissed');
+        item.classList.toggle('is-dismissed', !wasClosed);
+        btn.setAttribute('aria-expanded', wasClosed ? 'true' : 'false');
+        if (wasClosed) {
+          var first = item.querySelector('.mega a');
+          if (first) first.focus();
+        }
+      });
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    items.forEach(function(item){
+      if (!item.contains(document.activeElement) && !item.querySelector(':hover')) return;
+      item.classList.add('is-dismissed');
+      var btn = item.querySelector('.nav__link[role="button"]');
+      if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+    });
+  });
+})();
+</script>
+<script>
+/* Mobile menu: tapping any link inside it closes the panel, including #anchors
+   on the current page where no navigation happens. */
+(function mmenuDismiss(){
+  var menu   = document.getElementById('mobileMenu');
+  var burger = document.getElementById('burger');
+  if (!menu || !burger) return;
+  menu.addEventListener('click', function(e){
+    var t = e.target;
+    var a = t && t.closest ? t.closest('a') : null;
+    if (!a || !menu.contains(a)) return;
+    menu.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    if (window.__lenis) window.__lenis.start();
+    menu.querySelectorAll('.mmenu__group.is-open').forEach(function(g){
+      g.classList.remove('is-open');
+      var tog = g.querySelector('.mmenu__toggle');
+      var sub = g.querySelector('.mmenu__sub');
+      if (tog) tog.setAttribute('aria-expanded', 'false');
+      if (sub) sub.style.maxHeight = '0px';
+    });
+  });
+})();
+</script>
