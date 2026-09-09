@@ -664,6 +664,14 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
    ABOUT PAGE
    ============================================================ */
 .hero--book.hero--about h1{white-space:normal;max-width:16ch;}
+@media (max-width:900px){
+  /* The ch cap is a line-length control for the desktop headline. On mobile
+     it leaves the h1 box narrower than the container, and a block box with
+     margin 0 sits hard left - so text-align:center centres the text inside a
+     left-pinned box and the headline lands off-centre. Centre the box itself
+     and keep the cap. */
+  .hero--book.hero--about h1{margin-left:auto;margin-right:auto;}
+}
 .hero--about .hero__sub{max-width:100ch;}
 
 /* opening statement */
