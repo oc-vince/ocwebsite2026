@@ -596,6 +596,8 @@ button{font-family:inherit;cursor:pointer;}
 .pack--dark .pack__price span{color:rgba(255,255,255,.62);}
 .pack__lead{margin-top:20px;color:var(--grey);font-size:15px;line-height:1.72;}
 .pack--dark .pack__lead{color:rgba(255,255,255,.72);}
+.pack__outro{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);}
+.pack--dark .pack__outro{border-top-color:rgba(255,255,255,.18);}
 .pack ul{list-style:none;display:grid;gap:11px;margin-top:20px;}
 .pack li{position:relative;padding-left:27px;font-size:14.6px;line-height:1.6;color:var(--grey);}
 .pack--dark li{color:rgba(255,255,255,.76);}
@@ -876,6 +878,51 @@ button{font-family:inherit;cursor:pointer;}
           "position": 2,
           "name": "IT Support",
           "item": "https://onlineconsulting.com.au/service/it-support/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's inside the Managed Cyber Security & Support plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As your cyber security consultant in Sydney, we built the MCSS plan for proactive and immediate support. One key part is remote access tooling — it lets us reach your systems and networks without having to be physically present, so we can troubleshoot quickly regardless of where you or we happen to be. The plan also includes monitoring software that watches your systems and networks in real time, detecting potential threats or vulnerabilities and alerting us immediately so we can act before they become a problem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is UniFi OS, and what do you manage for us?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UniFi OS is what lets us manage your whole network from anywhere in the world, instead of only when someone's on site. We supply the essential equipment — UniFi switches and access points, plus a UDM Pro — and our team manages that equipment and the network as a whole, keeping everything updated and secure. That means we can spot problems early and keep things running smoothly, without you having to think about it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you keep the network secure day to day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Day-to-day IT networking in Sydney means staying on top of things before they become a problem, not reacting after the fact. UniFi firmware is updated automatically on a weekly basis, so your systems stay current against evolving threats. We use port management to block all incoming connections except those we explicitly allow, which lets us strictly control access — only authorised users and specific machines can connect. If a connection attempt fails, the IP block feature promptly blocks that IP address and notifies our team, and that applies to everyone who fails verification, authorised users included. Blocked addresses stay blocked until we manually unblock them from our end, adding a further layer of protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know my backups are actually working?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Backups run offsite daily with unlimited versions, and they're monitored every day for missed or failed runs. Any issues are rectified as part of the monthly price — not billed as an extra. We also carry out monthly test restores, because a backup nobody has restored from is only a theory. That's how you know your data is intact and recoverable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does billing work — blocks, retainers or hourly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can buy IT support in blocks of up to 10 hours, or move to a managed service. Ongoing maintenance is $204 +GST per hour on a managed service, and $297 +GST per hour for ad hoc and after-hours work. Unlike most providers, we don't bill you for labour you didn't use — no tickets logged, no invoice for that month. Talk to us, and we'll walk through which option suits your business."
+          }
         }
       ]
     }
@@ -1241,9 +1288,8 @@ button{font-family:inherit;cursor:pointer;}
       </div>
       <div class="editorial__body">
         <p class="lead" data-reveal>Whether it's one-off assistance, extra support on a project, or outsourcing your entire day-to-day IT management &mdash; <strong>we've got you covered.</strong></p>
-        <p data-reveal>At Online Consulting we offer a wide range of IT consulting and support services, across the Greater Sydney region and beyond. From a single home computer to an entire network, our friendly team of IT experts are on hand to deliver professional, reliable and affordable solutions.</p>
-        <p data-reveal>When you invest heavily in technology it makes sense to protect your assets. Our IT support for your small or medium-sized business will help to keep things running as efficiently as possible.</p>
-        <p data-reveal>We can upgrade your entire IT system, carry out computer repairs, move stored data to a Cloud-based system and more. First, we'll work with you to understand your specific needs, then diagnose, repair and put in place strategies to bring results and keep you a step ahead of your competitors.</p>
+        <p data-reveal>At Online Consulting, we offer a wide range of IT consulting, support and IT infrastructure that Sydney businesses depend on, across the Greater Sydney region and beyond. From a single home computer to an entire network, our friendly team of IT experts are on hand to deliver professional, reliable and affordable solutions.</p>
+        <p data-reveal>When you invest heavily in technology, it makes sense to protect your assets. Our IT support for your small or medium-sized business will help to keep things running as efficiently as possible. Our IT infrastructure management services cover full system upgrades, computer repairs, and the cloud migration Sydney businesses need to move data safely &mdash; and more. First, we'll work with you to understand your specific needs, then diagnose, repair and put in place strategies to bring results and keep you a step ahead of your competitors.</p>
       </div>
     </div>
   </div>
@@ -1254,8 +1300,8 @@ button{font-family:inherit;cursor:pointer;}
   <div class="container">
     <div class="section__head">
       <p class="section__kicker" data-reveal>Our services</p>
-      <h2 class="section__title reveal-lines">Our IT support Sydney services include</h2>
-      <p class="section__sub" data-reveal>Macs, PCs, servers, networks and everything attached to them &mdash; covered by one team that already knows your setup.</p>
+      <h2 class="section__title reveal-lines">Our IT Support Services Sydney Businesses Rely On</h2>
+      <p class="section__sub" data-reveal>These are just a few of the IT infrastructure solutions we offer — Macs, PCs, servers, networks and everything attached to them, covered by one team that already knows your setup.</p>
     </div>
     <div class="cap-grid">
       <div class="cap" data-reveal><em>01</em><b>Desktop support</b></div>
@@ -1292,7 +1338,7 @@ button{font-family:inherit;cursor:pointer;}
         <div class="step__track"><i></i></div>
         <div class="step__num">02</div>
         <h3>We deliver a package that suits you.</h3>
-        <p>Buy IT support in blocks of up to 10 hours, or hand over the whole function. Talk to us and we'll explore the options together.</p>
+        <p>Buy IT support in blocks of up to 10 hours, or move to managed services IT support and hand over the whole function. Talk to us, and we'll explore the options together.</p>
       </div>
       <div class="step" data-reveal>
         <div class="step__track"><i></i></div>
@@ -1315,7 +1361,7 @@ button{font-family:inherit;cursor:pointer;}
     <h2 class="reveal-lines">If there's no work to do, <br>there's no charge.</h2>
     <div class="why__split">
       <div class="why__body">
-        <p data-reveal>We're IT experts with a proven track record of delivering outstanding results for small and medium-sized businesses &mdash; and we've been doing it since 2007.</p>
+        <p data-reveal>We're IT experts with a proven track record of delivering outstanding results for small and medium-sized businesses — the IT support Northern Beaches businesses have counted on since 2007, and beyond.</p>
         <p data-reveal>With years of experience we offer reliable, efficient and affordable IT support services on Sydney's Northern Beaches and beyond. Our computer and IT support team are on the road, equipped, skilled and ready to repair almost any IT issue.</p>
         <p data-reveal>We have a range of IT support packages to choose from, so you only pay for what your business actually needs.</p>
       </div>
@@ -1356,7 +1402,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="pack__tag">IT Support in Sydney</span>
         <h3 class="pack__name">Managed Cyber Security &amp; Support Plan</h3>
         <div class="pack__price"><b>$39</b><span>/ endpoint / month +GST &mdash; MCSS Standard</span></div>
-        <p class="pack__lead">A comprehensive set of tools that lets us support you proactively and immediately: remote access so we can troubleshoot without being on site, and monitoring software watching your systems in real time, flagging threats and vulnerabilities the moment they appear.</p>
+        <p class="pack__lead">Our cyber security services in Sydney combine remote access — so we can troubleshoot without being on site — with monitoring software that watches your systems in real time, flagging threats and vulnerabilities the moment they appear, so you get proactive, immediate support.</p>
         <div class="pack__cols">
           <div>
             <h4>Monitoring</h4>
@@ -1389,13 +1435,14 @@ button{font-family:inherit;cursor:pointer;}
             <li><span>Microsoft&nbsp;365 or Google Workspace 24/7 cloud backup</span> <b>+$8 / email / mth</b></li>
           </ul>
         </div>
+        <p class="pack__lead pack__outro">That's the full shape of cybersecurity Sydney businesses get with MCSS: round-the-clock monitoring, proactive protection and hands-on support, all under one plan instead of stitched together from separate tools. Online Consulting is one of the cyber security companies in Sydney managing endpoint protection and monitoring for local businesses every day.</p>
       </article>
 
       <article class="pack pack--wide" data-reveal id="managed-network-packages">
         <span class="pack__tag">Networking</span>
         <h3 class="pack__name">Managed Network Packages</h3>
         <div class="pack__price"><b>$39</b><span>/ device / month +GST</span></div>
-        <p class="pack__lead">We supply the UniFi equipment &mdash; switches, access points and a UDM Pro &mdash; and manage the whole network on UniFi OS, so it stays updated, hardened and monitored from anywhere in the world. Firmware updates run automatically every week, incoming connections are blocked except the ones we explicitly allow, and any failed connection attempt triggers an IP block and an alert to our team.</p>
+        <p class="pack__lead">Our IT networking solutions start with the hardware: we supply the UniFi equipment — switches, access points and a UDM Pro — and manage the whole network on UniFi OS, so it stays updated, hardened and monitored from anywhere in the world. Firmware updates run automatically every week, incoming connections are blocked except the ones we explicitly allow, and any failed connection attempt triggers an IP block and an alert to our team.</p>
         <div class="pack__cols">
           <div>
             <h4>Gateway</h4>
@@ -1443,6 +1490,7 @@ button{font-family:inherit;cursor:pointer;}
           <li>Backups monitored daily for missed or failed runs &mdash; any issues rectified as part of the monthly price</li>
           <li>Monthly test restores to prove data integrity and restoration</li>
         </ul>
+        <p class="pack__lead pack__outro">That's what backup should look like as part of your cloud services in Sydney &mdash; quiet, consistent, and never something you have to think about until you need it. It's one piece of the wider cloud solutions Sydney businesses rely on us for, alongside hosting, migration and day-to-day cloud management. Add it to any of our managed cloud services in Sydney, and your data protection runs on the same predictable monthly billing as everything else.</p>
       </article>
 
       <article class="pack" data-reveal id="ongoing-maintenance">
@@ -1486,8 +1534,8 @@ button{font-family:inherit;cursor:pointer;}
           <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1">
             <div class="faq__a-inner">
               <div class="faq__a-body">
-              <p>Our MCSS plan includes a comprehensive set of tools and features that enable us to offer proactive and immediate support for cyber security issues. One key component is remote access tooling &mdash; it lets us reach your systems and networks without having to be physically present, so we can troubleshoot quickly regardless of where you or we happen to be.</p>
-              <p>The plan also includes monitoring software that watches your systems and networks in real time. It detects potential threats or vulnerabilities and alerts us immediately, so we can act to mitigate the risk. Together, these give you a robust cyber security framework that helps protect against cyber threats and minimises the risk of a data breach.</p>
+              <p>As your cyber security consultant in Sydney, we built the MCSS plan for proactive and immediate support. One key part is remote access tooling — it lets us reach your systems and networks without having to be physically present, so we can troubleshoot quickly regardless of where you or we happen to be.</p>
+              <p>The plan also includes monitoring software that watches your systems and networks in real time, detecting potential threats or vulnerabilities and alerting us immediately so we can act before they become a problem.</p>
               </div>
             </div>
           </div>
@@ -1503,8 +1551,8 @@ button{font-family:inherit;cursor:pointer;}
           <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2">
             <div class="faq__a-inner">
               <div class="faq__a-body">
-              <p>UniFi OS is an advanced operating system that hosts all UniFi applications, letting your network infrastructure be managed from any location globally. As part of our approach, we furnish the essential equipment &mdash; UniFi switches and access points, alongside a UDM Pro device &mdash; to complete your network.</p>
-              <p>Our team manages that equipment and the network as a whole, keeping everything updated and secure. This proactive approach lets us monitor the network efficiently, pre-empting potential security vulnerabilities and guaranteeing seamless operations.</p>
+              <p>UniFi OS is what lets us manage your whole network from anywhere in the world, instead of only when someone's on site. We supply the essential equipment — UniFi switches and access points, plus a UDM Pro — and our team manages that equipment and the network as a whole, keeping everything updated and secure.</p>
+              <p>That means we can spot problems early and keep things running smoothly, without you having to think about it.</p>
               </div>
             </div>
           </div>
@@ -1520,9 +1568,9 @@ button{font-family:inherit;cursor:pointer;}
           <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3">
             <div class="faq__a-inner">
               <div class="faq__a-body">
-              <p>We recognise the critical importance of maintaining a dynamic security posture. UniFi firmware is updated automatically on a weekly basis, so your systems stay current against evolving threats.</p>
-              <p>We use port management to block all incoming connections except those we explicitly allow, which lets us strictly control access &mdash; only authorised users and specific machines can connect.</p>
-              <p>If a connection attempt fails, the IP block feature promptly blocks that IP address and notifies our team. This applies to everyone who fails verification, authorised users included. Blocked addresses stay blocked until we manually unblock them from our end, adding a further layer of protection.</p>
+              <p>Day-to-day IT networking in Sydney means staying on top of things before they become a problem, not reacting after the fact. UniFi firmware is updated automatically on a weekly basis, so your systems stay current against evolving threats.</p>
+              <p>We use port management to block all incoming connections except those we explicitly allow, which lets us strictly control access — only authorised users and specific machines can connect.</p>
+              <p>If a connection attempt fails, the IP block feature promptly blocks that IP address and notifies our team, and that applies to everyone who fails verification, authorised users included. Blocked addresses stay blocked until we manually unblock them from our end, adding a further layer of protection.</p>
               </div>
             </div>
           </div>
@@ -1556,7 +1604,7 @@ button{font-family:inherit;cursor:pointer;}
             <div class="faq__a-inner">
               <div class="faq__a-body">
               <p>You can buy IT support in blocks of up to 10 hours, or move to a managed service. Ongoing maintenance is $204 +GST per hour on a managed service, and $297 +GST per hour for ad hoc and after-hours work.</p>
-              <p>Unlike most providers, we don't expect you to pay for labour each month. If there's no work to do, there's no charge &mdash; it's a user-pays system. Talk to us and we'll walk through which option suits your business.</p>
+              <p>Unlike most providers, we don't bill you for labour you didn't use — no tickets logged, no invoice for that month. Talk to us, and we'll walk through which option suits your business.</p>
               </div>
             </div>
           </div>
