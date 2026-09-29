@@ -1,0 +1,82 @@
+{
+ "index.html": {
+  "title": "Online Consulting Sydney - Managed IT Company Northern Beaches",
+  "desc": "Keep your IT, website and marketing with one Sydney team. Our managed IT services and support fix problems fast, with a 2-hour response. Book a free IT review."
+ },
+ "service/it-support/index.html": {
+  "title": "Business IT Support Sydney | Managed IT Services | Online Consulting",
+  "desc": "Need IT support in Sydney that actually picks up the phone? Our own helpdesk responds within two hours, and you only pay for the work we do. Talk to us today."
+ },
+ "service/computer-repairs/index.html": {
+  "title": "Computer Repairs Northern Beaches | PC, Mac & Laptop Repairs Sydney",
+  "desc": "Computer playing up? Our computer repairs Northern Beaches service gets most problems sorted the same day, on-site or remotely, so you're back at work fast."
+ },
+ "service/google-workspace/index.html": {
+  "title": "Google Workspace Specialist Sydney | Certified Google Partner",
+  "desc": "Moving to Google Workspace should feel easy. Work with the Google Workspace specialist Sydney businesses trust to migrate your data safely and train your team."
+ },
+ "service/va-recruitment-services/index.html": {
+  "title": "Virtual Assistant Services Northern Beaches | VA Recruitment Sydney",
+  "desc": "Imagine handing your admin to someone who knows your business. With our virtual assistant services Northern Beaches owners get one dedicated VA who gets it right."
+ },
+ "service/seo-services/index.html": {
+  "title": "SEO Specialists Northern Beaches | SEO Services Sydney",
+  "desc": "Rankings mean little if the phone stays quiet. Work with SEO specialists Northern Beaches and Sydney businesses call on to win searches that bring real enquiries."
+ },
+ "service/google-adwords/index.html": {
+  "title": "Google Ads Northern Beaches | AdWords Management Services Sydney",
+  "desc": "Every click should earn its keep. Our Google Ads Northern Beaches management puts your budget into searches that turn into leads, run by a certified Google Partner."
+ },
+ "service/social-media-marketing/index.html": {
+  "title": "Social Media Marketing Consultant Sydney | Facebook & Instagram Ads",
+  "desc": "Turn followers into customers. Our Sydney social media marketing team runs Facebook and Instagram ads measured on leads and sales, not likes. Let's talk."
+ },
+ "service/copywriting/index.html": {
+  "title": "Copywriting Services Sydney | SEO Copywriters Northern Beaches",
+  "desc": "Words that rank on Google, get picked up by AI search and turn readers into customers. Our Sydney SEO copywriters make your website work harder. Get in touch."
+ },
+ "service/web-development/index.html": {
+  "title": "Web Design & Development Northern Beaches | Sydney Web Developers",
+  "desc": "Your website is often your first impression. Our Northern Beaches web design and development team builds fast sites that turn visitors into enquiries."
+ },
+ "service/web-hosting/index.html": {
+  "title": "Web Hosting Services Northern Beaches | Managed Hosting Sydney",
+  "desc": "Sydney web hosting from $33 a month, with your site kept in an Ultimo data centre and a local team on call when something goes wrong. Switching is easy."
+ },
+ "service/video/index.html": {
+  "title": "Video Production Northern Beaches | Promotional, Corporate & Event",
+  "desc": "Tell your story with video people actually watch. We plan, shoot and edit promotional and corporate videos in our own Sydney studio. Talk to us about a shoot."
+ },
+ "service/photography/index.html": {
+  "title": "Photography Services Northern Beaches | Events, Corporate & Commercial",
+  "desc": "Images that make people stop scrolling. Our Sydney photographers capture your events, products and team with care, then edit everything in-house. Book a shoot."
+ },
+ "about.html": {
+  "title": "About Us | Online Consulting",
+  "desc": "Since 2007, Online Consulting has helped Sydney businesses keep their IT, website and marketing with one team they can trust. Discover how we work and why."
+ },
+ "people.html": {
+  "title": "Our Team | Sydney IT, Web & Marketing Experts | Online Consulting",
+  "desc": "No call centres and no ticket queues. Meet the Sydney-led team who set up, manage and support your technology, and who actually pick up when you call."
+ },
+ "work.html": {
+  "title": "Our Work | IT, Web & Marketing Case Studies | Online Consulting",
+  "desc": "See how we've helped Australian businesses like Velocity Brand Management and Benjamin Lawyers get more from their IT, websites and marketing. Take a look."
+ },
+ "one-partner.html": {
+  "title": "One Partner | Online Consulting",
+  "desc": "Every extra supplier is another login and another gap for things to slip through. See why Sydney businesses trust one partner with their IT, web and marketing."
+ },
+ "blog/index.html": {
+  "title": "Digital Marketing Tips | Online Consulting Blog",
+  "desc": "Explore IT, web and marketing case studies showcasing how Australian businesses have improved their digital presence, performance and results."
+ },
+ "book/index.html": {
+  "title": "Book a Free IT Review | Online Consulting",
+  "desc": "Find out exactly where your IT stands. Our free, no-obligation review gives you a plain-English roadmap with clear priorities and pricing. Book yours today."
+ },
+ "contact/index.html": {
+  "title": "Contact Us | Sydney CBD & Northern Beaches | Online Consulting",
+  "desc": "Have a question or ready to get started? Call +61 2 8459 7882 or send us a message, and a real person from our Sydney team will get back to you quickly."
+ }
+}
