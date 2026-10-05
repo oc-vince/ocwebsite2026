@@ -82,8 +82,12 @@ L.append('/onsite-computer-repairs-and-fix-northern-beaches          /service/co
 L.append('/it-help-and-computer-geek-northern-beaches                /service/computer-repairs/  301')
 
 sec('Retired customer portal and WooCommerce pages')
-for p in ['buy-now', 'buy-now-it', 'buy-services', 'my-account', 'dashboard',
-          'user-hosting', 'update-detail', 'development-and-support']:
+# the three shop URLs go to the homepage per the 301 mapping sheet; the rest
+# keep the contact page, which the sheet does not cover
+for p in ['buy-now', 'buy-now-it', 'buy-services']:
+    L.append('/%-40s /  301' % p)
+for p in ['my-account', 'dashboard', 'user-hosting', 'update-detail',
+          'development-and-support']:
     L.append('/%-40s /contact/  301' % p)
 
 sec('COVID-era content')
@@ -96,6 +100,53 @@ L.append('/work/:slug                               /work/                      
 L.append('/team/:slug                               /people/                    301')
 L.append('/speciality/:slug                         /one-partner/               301')
 L.append('/testimonial/:slug                        /work/                      301')
+
+
+# ---- rows from "Blog Post Meta Tags.xlsx" / 301 mapping that are not already
+# covered above. Skipped deliberately:
+#   * "No change" rows - nothing to redirect
+#   * /service/google-adwords/ -> /service/google-ads/ : the target page does
+#     not exist, and the source is a live page, so the rule would 301 the
+#     Google Ads page to a 404
+#   * query-string variants (/buy-now/?plan=...) - a source without a query
+#     already matches the request whatever its query string
+#   * /about/ -> /about and /work/ -> /work : Netlify normalises the trailing
+#     slash before rules run, so both sides are the same path
+import json as _json
+_sheet = os.path.join(ROOT, '_tools/content-2026-09/redirects_sheet.json')
+if os.path.exists(_sheet):
+    _rows = _json.load(open(_sheet, encoding='utf-8'))
+    _have = set()
+    for _l in L:
+        if _l and not _l.startswith('#'):
+            _have.add(_l.split()[0].rstrip('/') or '/')
+    _SKIP = {'/service/google-adwords/'}
+    _norm = lambda x: (x.rstrip('/') or '/')
+    _extra = []
+    for _r in _rows:
+        _o, _n = _r['Old'] if 'Old' in _r else _r['old'], _r['new']
+        if _n.lower() == 'no change' or _o in _SKIP or '?' in _o:
+            continue
+        if _norm(_o) == _norm(_n):
+            continue
+        if _norm(_o) in _have:
+            continue
+        _extra.append('%-56s %-46s 301' % (_o, _n))
+        _have.add(_norm(_o))
+    if _extra:
+        # These must sit BEFORE the /work/:slug, /team/:slug, /speciality/:slug
+        # and /testimonial/:slug wildcards. First match wins, so appending them
+        # at the end would let the wildcards swallow every one of them - and the
+        # sheet sends several of those slugs somewhere different from the
+        # wildcard (team members to a #bio anchor, testimonials to /).
+        _block = ['', '# From the 301 mapping sheet',
+                  '# Ahead of the :slug wildcards below, which would otherwise match first.']
+        _block += sorted(_extra)
+        try:
+            _at = L.index('# Sections the new site rolls up into one page') - 1
+        except ValueError:
+            _at = len(L)
+        L[_at:_at] = _block
 
 open(os.path.join(ROOT, '_redirects'), 'w', encoding='utf-8', newline='\n').write('\n'.join(L) + '\n')
 print('rules:', sum(1 for x in L if x and not x.startswith('#')))

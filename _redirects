@@ -441,9 +441,9 @@
 /it-help-and-computer-geek-northern-beaches                /service/computer-repairs/  301
 
 # Retired customer portal and WooCommerce pages
-/buy-now                                  /contact/  301
-/buy-now-it                               /contact/  301
-/buy-services                             /contact/  301
+/buy-now                                  /  301
+/buy-now-it                               /  301
+/buy-services                             /  301
 /my-account                               /contact/  301
 /dashboard                                /contact/  301
 /user-hosting                             /contact/  301
@@ -453,6 +453,66 @@
 # COVID-era content
 /covid-19-key-information                 /                           301
 /covid/:slug                              /                           301
+
+# From the 301 mapping sheet
+# Ahead of the :slug wildcards below, which would otherwise match first.
+/blog/page/10/                                           /blog/                                         301
+/blog/page/11/                                           /blog/                                         301
+/blog/page/12/                                           /blog/                                         301
+/blog/page/13/                                           /blog/                                         301
+/blog/page/14/                                           /blog/                                         301
+/blog/page/2/                                            /blog/                                         301
+/blog/page/3/                                            /blog/                                         301
+/blog/page/4/                                            /blog/                                         301
+/blog/page/5/                                            /blog/                                         301
+/blog/page/6/                                            /blog/                                         301
+/blog/page/7/                                            /blog/                                         301
+/blog/page/8/                                            /blog/                                         301
+/blog/page/9/                                            /blog/                                         301
+/covid/commit-to-social-distancing/                      /                                              301
+/covid/following-good-hygiene-habits/                    /                                              301
+/covid/how-to-prevent-catching-the-covid-19/             /                                              301
+/covid/what-is-coronavirus-covid-19/                     /                                              301
+/covid/what-we-are-doing-to-reduce-the-spread/           /                                              301
+/speciality/how-we-work/                                 /work                                          301
+/speciality/what-we-offer/                               /work                                          301
+/speciality/why-work-with-us/                            /work                                          301
+/team/hannah-sheila-iway/                                /people#bio-hannah                             301
+/team/jackie-tuazon/                                     /people#bio-jackie                             301
+/team/jarrad-peters/                                     /people#bio-jarrad                             301
+/team/jeff-ernacio/                                      /people#bio-jeff                               301
+/team/richard-hensley/                                   /people#bio-richard                            301
+/team/sam-crawford/                                      /people#bio-sam                                301
+/team/thanh-le/                                          /people#bio-thanh                              301
+/team/vince-besavilla/                                   /people#bio-vince                              301
+/team/wilma-go-amposta/                                  /people#bio-wilma                              301
+/testimonial/carolyn-capelin/                            /                                              301
+/testimonial/fireside/                                   /                                              301
+/testimonial/sam-crawford/                               /                                              301
+/testimonial/yalla-foods/                                /                                              301
+/work/a-different-brilliant/                             /work                                          301
+/work/autismspectrum/                                    /work                                          301
+/work/bnb-school/                                        /work                                          301
+/work/brettbower/                                        /work                                          301
+/work/cheer-direct-2/                                    /work                                          301
+/work/colourful-life/                                    /work                                          301
+/work/craig-interiors-3/                                 /work                                          301
+/work/cryo-2/                                            /work                                          301
+/work/cryo-3/                                            /work                                          301
+/work/custom-neon/                                       /work                                          301
+/work/djelectricians-com-au/                             /work                                          301
+/work/elle-j/                                            /work                                          301
+/work/fhms-4/                                            /work                                          301
+/work/luxury-heating/                                    /work                                          301
+/work/maniscalco-stone/                                  /work                                          301
+/work/nfactorial/                                        /work                                          301
+/work/shogun/                                            /work                                          301
+/work/southern-cross-automotive/                         /work                                          301
+/work/surfrider/                                         /work                                          301
+/work/the-sand-artist/                                   /work                                          301
+/work/universal-tech-solution/                           /work                                          301
+/work/vendilicious-2/                                    /work                                          301
+/work/you-eye/                                           /work                                          301
 
 # Sections the new site rolls up into one page
 # :slug never matches an empty segment, so /work/ and /people/ themselves are safe

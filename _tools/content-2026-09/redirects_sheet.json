@@ -1,0 +1,814 @@
+[
+ {
+  "old": "/",
+  "new": "No change"
+ },
+ {
+  "old": "/about/",
+  "new": "/about"
+ },
+ {
+  "old": "/blog/",
+  "new": "No change"
+ },
+ {
+  "old": "/blog/page/10/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/11/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/12/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/13/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/14/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/2/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/3/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/4/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/5/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/6/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/7/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/8/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/blog/page/9/",
+  "new": "/blog/"
+ },
+ {
+  "old": "/buy-now/",
+  "new": "/"
+ },
+ {
+  "old": "/buy-now/?plan=managedhosting",
+  "new": "/"
+ },
+ {
+  "old": "/buy-now/?plan=ownhosting",
+  "new": "/"
+ },
+ {
+  "old": "/buy-now-it/",
+  "new": "/"
+ },
+ {
+  "old": "/buy-now-it/?plan=it",
+  "new": "/"
+ },
+ {
+  "old": "/buy-services/",
+  "new": "/"
+ },
+ {
+  "old": "/contact/",
+  "new": "No change"
+ },
+ {
+  "old": "/covid/commit-to-social-distancing/",
+  "new": "/"
+ },
+ {
+  "old": "/covid/following-good-hygiene-habits/",
+  "new": "/"
+ },
+ {
+  "old": "/covid/how-to-prevent-catching-the-covid-19/",
+  "new": "/"
+ },
+ {
+  "old": "/covid/what-is-coronavirus-covid-19/",
+  "new": "/"
+ },
+ {
+  "old": "/covid/what-we-are-doing-to-reduce-the-spread/",
+  "new": "/"
+ },
+ {
+  "old": "/covid-19-key-information/",
+  "new": "/"
+ },
+ {
+  "old": "/google-workspace/",
+  "new": "/service/google-workspace/"
+ },
+ {
+  "old": "/people/",
+  "new": "No change"
+ },
+ {
+  "old": "/photography/",
+  "new": "/service/photography/"
+ },
+ {
+  "old": "/privacy-policy/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/computer-repairs/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/copywriting/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/google-adwords/",
+  "new": "/service/google-ads/"
+ },
+ {
+  "old": "/service/google-workspace-microsoft-365/",
+  "new": "/service/google-workspace/"
+ },
+ {
+  "old": "/service/it-support/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/photography/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/seo-services/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/social-media-marketing/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/va-recruitment-services/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/web-development/",
+  "new": "No change"
+ },
+ {
+  "old": "/service/web-hosting/",
+  "new": "No change"
+ },
+ {
+  "old": "/speciality/how-we-work/",
+  "new": "/work"
+ },
+ {
+  "old": "/speciality/what-we-offer/",
+  "new": "/work"
+ },
+ {
+  "old": "/speciality/why-work-with-us/",
+  "new": "/work"
+ },
+ {
+  "old": "/team/hannah-sheila-iway/",
+  "new": "/people#bio-hannah"
+ },
+ {
+  "old": "/team/jackie-tuazon/",
+  "new": "/people#bio-jackie"
+ },
+ {
+  "old": "/team/jarrad-peters/",
+  "new": "/people#bio-jarrad"
+ },
+ {
+  "old": "/team/jeff-ernacio/",
+  "new": "/people#bio-jeff"
+ },
+ {
+  "old": "/team/richard-hensley/",
+  "new": "/people#bio-richard"
+ },
+ {
+  "old": "/team/sam-crawford/",
+  "new": "/people#bio-sam"
+ },
+ {
+  "old": "/team/thanh-le/",
+  "new": "/people#bio-thanh"
+ },
+ {
+  "old": "/team/vince-besavilla/",
+  "new": "/people#bio-vince"
+ },
+ {
+  "old": "/team/wilma-go-amposta/",
+  "new": "/people#bio-wilma"
+ },
+ {
+  "old": "/testimonial/carolyn-capelin/",
+  "new": "/"
+ },
+ {
+  "old": "/testimonial/fireside/",
+  "new": "/"
+ },
+ {
+  "old": "/testimonial/sam-crawford/",
+  "new": "/"
+ },
+ {
+  "old": "/testimonial/yalla-foods/",
+  "new": "/"
+ },
+ {
+  "old": "/video/",
+  "new": "/service/video/"
+ },
+ {
+  "old": "/work/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/a-different-brilliant/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/autismspectrum/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/bnb-school/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/brettbower/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/cheer-direct-2/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/colourful-life/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/craig-interiors-3/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/cryo-2/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/cryo-3/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/custom-neon/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/djelectricians-com-au/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/elle-j/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/fhms-4/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/luxury-heating/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/maniscalco-stone/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/nfactorial/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/shogun/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/southern-cross-automotive/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/surfrider/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/the-sand-artist/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/universal-tech-solution/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/vendilicious-2/",
+  "new": "/work"
+ },
+ {
+  "old": "/work/you-eye/",
+  "new": "/work"
+ },
+ {
+  "old": "/10-common-blogging-mistakes-to-avoid-for-your-business-blog/",
+  "new": "/blog/10-common-blogging-mistakes-to-avoid-for-your-business-blog"
+ },
+ {
+  "old": "/10-effective-brand-awareness-strategies/",
+  "new": "/blog/10-effective-brand-awareness-strategies"
+ },
+ {
+  "old": "/10-signs-your-business-needs-a-google-ads-expert/",
+  "new": "/blog/10-signs-your-business-needs-a-google-ads-expert"
+ },
+ {
+  "old": "/2019-seo-predictions-trends-to-look-out-for/",
+  "new": "/blog/2019-seo-predictions-trends-to-look-out-for"
+ },
+ {
+  "old": "/2025-video-marketing-tips/",
+  "new": "/blog/2025-video-marketing-tips"
+ },
+ {
+  "old": "/2026-social-media-strategy-whats-next-with-ai/",
+  "new": "/blog/2026-social-media-strategy-whats-next-with-ai"
+ },
+ {
+  "old": "/5-futuristic-technology-trends-in-ecommerce-industry/",
+  "new": "/blog/5-futuristic-technology-trends-in-ecommerce-industry"
+ },
+ {
+  "old": "/5-must-have-copywriting-trends-for-2022/",
+  "new": "/blog/5-must-have-copywriting-trends-for-2022"
+ },
+ {
+  "old": "/5-web-design-blunders-to-avoid-in-ecommerce-website/",
+  "new": "/blog/5-web-design-blunders-to-avoid-in-ecommerce-website"
+ },
+ {
+  "old": "/6-tags-that-influence-seo-and-website-rankings/",
+  "new": "/blog/6-tags-that-influence-seo-and-website-rankings"
+ },
+ {
+  "old": "/8-reasons-google-workspace-is-worth-the-upgrade-for-your-business/",
+  "new": "/blog/8-reasons-google-workspace-is-worth-the-upgrade-for-your-business"
+ },
+ {
+  "old": "/8-tips-for-successful-virtual-collaboration/",
+  "new": "/blog/8-tips-for-successful-virtual-collaboration"
+ },
+ {
+  "old": "/adblock-blocker-acquired-but-the-rumored-purchaser-has-denied/",
+  "new": "/blog/adblock-blocker-acquired-but-the-rumored-purchaser-has-denied"
+ },
+ {
+  "old": "/ai-search-content-writing-guide/",
+  "new": "/blog/ai-search-content-writing-guide"
+ },
+ {
+  "old": "/apps-you-need-to-make-working-from-home-easier/",
+  "new": "/blog/apps-you-need-to-make-working-from-home-easier"
+ },
+ {
+  "old": "/benefits-of-it-support-to-small-businesses-in-sydney/",
+  "new": "/blog/benefits-of-it-support-to-small-businesses-in-sydney"
+ },
+ {
+  "old": "/benefits-of-outsourcing-website-maintenance/",
+  "new": "/blog/benefits-of-outsourcing-website-maintenance"
+ },
+ {
+  "old": "/best-ways-to-protect-your-business-website-from-cyber-attacks/",
+  "new": "/blog/best-ways-to-protect-your-business-website-from-cyber-attacks"
+ },
+ {
+  "old": "/blending-ai-and-human-content-for-seo/",
+  "new": "/blog/blending-ai-and-human-content-for-seo"
+ },
+ {
+  "old": "/boost-brand-awareness-with-seo/",
+  "new": "/blog/boost-brand-awareness-with-seo"
+ },
+ {
+  "old": "/boost-local-visibility-with-seo-and-ppc-together/",
+  "new": "/blog/boost-local-visibility-with-seo-and-ppc-together"
+ },
+ {
+  "old": "/business-rebranding-tips/",
+  "new": "/blog/business-rebranding-tips"
+ },
+ {
+  "old": "/choosing-the-right-web-hosting-for-your-business/",
+  "new": "/blog/choosing-the-right-web-hosting-for-your-business"
+ },
+ {
+  "old": "/common-google-ads-mistakes/",
+  "new": "/blog/common-google-ads-mistakes"
+ },
+ {
+  "old": "/compelling-visuals-importance-for-social-media-marketing-success/",
+  "new": "/blog/compelling-visuals-importance-for-social-media-marketing-success"
+ },
+ {
+  "old": "/computer-running-slow-causes-and-how-to-fix/",
+  "new": "/blog/computer-running-slow-causes-and-how-to-fix"
+ },
+ {
+  "old": "/consider-running-search-engine-marketing-campaigns/",
+  "new": "/blog/consider-running-search-engine-marketing-campaigns"
+ },
+ {
+  "old": "/difference-between-managed-service-provider-and-it-support/",
+  "new": "/blog/difference-between-managed-service-provider-and-it-support"
+ },
+ {
+  "old": "/do-search-engines-think-your-content-is-relevant-to-their-users/",
+  "new": "/blog/do-search-engines-think-your-content-is-relevant-to-their-users"
+ },
+ {
+  "old": "/do-you-need-new-website-or-just-redesign/",
+  "new": "/blog/do-you-need-new-website-or-just-redesign"
+ },
+ {
+  "old": "/effective-ways-to-grow-your-blog-audience/",
+  "new": "/blog/effective-ways-to-grow-your-blog-audience"
+ },
+ {
+  "old": "/eight-essential-computer-maintenance-tips/",
+  "new": "/blog/eight-essential-computer-maintenance-tips"
+ },
+ {
+  "old": "/eight-latest-web-design-trends-for-2022/",
+  "new": "/blog/eight-latest-web-design-trends-for-2022"
+ },
+ {
+  "old": "/five-copywriting-tips-increase-website-conversion/",
+  "new": "/blog/five-copywriting-tips-increase-website-conversion"
+ },
+ {
+  "old": "/google-ads-vs-facebook-ads/",
+  "new": "/blog/google-ads-vs-facebook-ads"
+ },
+ {
+  "old": "/google-adwords-an-excellent-way-to-promote-your-business/",
+  "new": "/blog/google-adwords-an-excellent-way-to-promote-your-business"
+ },
+ {
+  "old": "/google-adwords-tips-for-small-business-owners/",
+  "new": "/blog/google-adwords-tips-for-small-business-owners"
+ },
+ {
+  "old": "/google-ai-overviews-local-businesses/",
+  "new": "/blog/google-ai-overviews-local-businesses"
+ },
+ {
+  "old": "/google-ppc-is-more-important-than-ever-for-your-business/",
+  "new": "/blog/google-ppc-is-more-important-than-ever-for-your-business"
+ },
+ {
+  "old": "/heres-why-you-need-an-it-disaster-recovery-plan-for-your-business/",
+  "new": "/blog/heres-why-you-need-an-it-disaster-recovery-plan-for-your-business"
+ },
+ {
+  "old": "/hidden-costs-of-ignoring-it-support-for-your-business/",
+  "new": "/blog/hidden-costs-of-ignoring-it-support-for-your-business"
+ },
+ {
+  "old": "/how-can-a-virtual-assistant-help-you-focus-on-the-core-of-your-business/",
+  "new": "/blog/how-can-a-virtual-assistant-help-you-focus-on-the-core-of-your-business"
+ },
+ {
+  "old": "/how-ecommerce-website-boosts-your-local-business/",
+  "new": "/blog/how-ecommerce-website-boosts-your-local-business"
+ },
+ {
+  "old": "/how-facebook-videos-can-help-to-promote-your-business/",
+  "new": "/blog/how-facebook-videos-can-help-to-promote-your-business"
+ },
+ {
+  "old": "/how-google-workspace-helps-your-business-stay-secure/",
+  "new": "/blog/how-google-workspace-helps-your-business-stay-secure"
+ },
+ {
+  "old": "/how-investment-in-seo-can-be-the-best-step-for-your-business/",
+  "new": "/blog/how-investment-in-seo-can-be-the-best-step-for-your-business"
+ },
+ {
+  "old": "/how-social-media-helps-with-seo/",
+  "new": "/blog/how-social-media-helps-with-seo"
+ },
+ {
+  "old": "/how-team-photos-can-build-trust-with-your-clients/",
+  "new": "/blog/how-team-photos-can-build-trust-with-your-clients"
+ },
+ {
+  "old": "/how-to-build-a-high-converting-landing-page/",
+  "new": "/blog/how-to-build-a-high-converting-landing-page"
+ },
+ {
+  "old": "/how-to-build-a-strong-online-presence-for-business-success/",
+  "new": "/blog/how-to-build-a-strong-online-presence-for-business-success"
+ },
+ {
+  "old": "/how-to-capture-great-images-for-websites-6-tips-you-just-cant-ignore/",
+  "new": "/blog/how-to-capture-great-images-for-websites-6-tips-you-just-cant-ignore"
+ },
+ {
+  "old": "/how-to-create-a-successful-business-blog/",
+  "new": "/blog/how-to-create-a-successful-business-blog"
+ },
+ {
+  "old": "/how-to-create-a-successful-facebook-ad-campaign/",
+  "new": "/blog/how-to-create-a-successful-facebook-ad-campaign"
+ },
+ {
+  "old": "/how-to-generate-traffic-through-facebook-marketing/",
+  "new": "/blog/how-to-generate-traffic-through-facebook-marketing"
+ },
+ {
+  "old": "/how-to-get-more-blog-readers-on-your-website/",
+  "new": "/blog/how-to-get-more-blog-readers-on-your-website"
+ },
+ {
+  "old": "/how-to-maintain-security-when-employees-work-remotely/",
+  "new": "/blog/how-to-maintain-security-when-employees-work-remotely"
+ },
+ {
+  "old": "/how-to-make-an-easy-approach-in-seo/",
+  "new": "/blog/how-to-make-an-easy-approach-in-seo"
+ },
+ {
+  "old": "/how-to-optimize-your-website-for-voice-search-in-2022/",
+  "new": "/blog/how-to-optimize-your-website-for-voice-search-in-2022"
+ },
+ {
+  "old": "/how-to-prepare-your-website-for-the-holidays/",
+  "new": "/blog/how-to-prepare-your-website-for-the-holidays"
+ },
+ {
+  "old": "/how-to-promote-your-website-by-spending-some-money/",
+  "new": "/blog/how-to-promote-your-website-by-spending-some-money"
+ },
+ {
+  "old": "/how-to-recover-after-major-google-algorithm-update/",
+  "new": "/blog/how-to-recover-after-major-google-algorithm-update"
+ },
+ {
+  "old": "/how-to-write-for-digital-marketing-and-website-content-that-converts/",
+  "new": "/blog/how-to-write-for-digital-marketing-and-website-content-that-converts"
+ },
+ {
+  "old": "/importance-of-data-privacy-and-security-for-businesses/",
+  "new": "/blog/importance-of-data-privacy-and-security-for-businesses"
+ },
+ {
+  "old": "/importance-of-updating-your-professional-headshot/",
+  "new": "/blog/importance-of-updating-your-professional-headshot"
+ },
+ {
+  "old": "/increase-sales-with-optimised-google-my-business-listing/",
+  "new": "/blog/increase-sales-with-optimised-google-my-business-listing"
+ },
+ {
+  "old": "/increase-your-social-media-reach-in-2020/",
+  "new": "/blog/increase-your-social-media-reach-in-2020"
+ },
+ {
+  "old": "/in-house-vs-agency-google-ads-management/",
+  "new": "/blog/in-house-vs-agency-google-ads-management"
+ },
+ {
+  "old": "/it-support-tips-to-avoid-downtime-business-owners/",
+  "new": "/blog/it-support-tips-to-avoid-downtime-business-owners"
+ },
+ {
+  "old": "/jump-start-the-new-year-with-a-new-promotional-video/",
+  "new": "/blog/jump-start-the-new-year-with-a-new-promotional-video"
+ },
+ {
+  "old": "/long-form-vs-short-form-content/",
+  "new": "/blog/long-form-vs-short-form-content"
+ },
+ {
+  "old": "/marketing-tactics-to-avoid-these-days/",
+  "new": "/blog/marketing-tactics-to-avoid-these-days"
+ },
+ {
+  "old": "/migrator-for-google-apps-the-ultimate-weapon-to-transfer-data/",
+  "new": "/blog/migrator-for-google-apps-the-ultimate-weapon-to-transfer-data"
+ },
+ {
+  "old": "/mobile-search-a-continuous-rise-in-2015/",
+  "new": "/blog/mobile-search-a-continuous-rise-in-2015"
+ },
+ {
+  "old": "/online-consulting-weve-made-sense-of-the-web-for-10-years/",
+  "new": "/blog/online-consulting-weve-made-sense-of-the-web-for-10-years"
+ },
+ {
+  "old": "/online-marketing-the-common-mistakes-you-make/",
+  "new": "/blog/online-marketing-the-common-mistakes-you-make"
+ },
+ {
+  "old": "/organic-vs-paid-social-media/",
+  "new": "/blog/organic-vs-paid-social-media"
+ },
+ {
+  "old": "/pros-of-outsourcing-video-production-for-your-business/",
+  "new": "/blog/pros-of-outsourcing-video-production-for-your-business"
+ },
+ {
+  "old": "/reach-business-goals-using-youtube/",
+  "new": "/blog/reach-business-goals-using-youtube"
+ },
+ {
+  "old": "/reasons-why-your-business-still-needs-facebook/",
+  "new": "/blog/reasons-why-your-business-still-needs-facebook"
+ },
+ {
+  "old": "/reasons-why-your-windows-computer-keeps-crashing/",
+  "new": "/blog/reasons-why-your-windows-computer-keeps-crashing"
+ },
+ {
+  "old": "/security-tips-for-online-holiday-shopping/",
+  "new": "/blog/security-tips-for-online-holiday-shopping"
+ },
+ {
+  "old": "/shared-vs-dedicated-hosting-which-is-right-for-your-website/",
+  "new": "/blog/shared-vs-dedicated-hosting-which-is-right-for-your-website"
+ },
+ {
+  "old": "/signs-its-time-to-hire-a-virtual-assistant-for-your-business/",
+  "new": "/blog/signs-its-time-to-hire-a-virtual-assistant-for-your-business"
+ },
+ {
+  "old": "/small-business-guide-web-hosting-common-questions/",
+  "new": "/blog/small-business-guide-web-hosting-common-questions"
+ },
+ {
+  "old": "/small-business-video-marketing-tips-for-success/",
+  "new": "/blog/small-business-video-marketing-tips-for-success"
+ },
+ {
+  "old": "/successful-virtual-assistant-onboarding/",
+  "new": "/blog/successful-virtual-assistant-onboarding"
+ },
+ {
+  "old": "/the-benefits-of-using-a-professional-photographer-for-your-website/",
+  "new": "/blog/the-benefits-of-using-a-professional-photographer-for-your-website"
+ },
+ {
+  "old": "/the-benefits-to-redesigning-your-website/",
+  "new": "/blog/the-benefits-to-redesigning-your-website"
+ },
+ {
+  "old": "/the-social-media-trends-that-are-set-to-dominate-2019/",
+  "new": "/blog/the-social-media-trends-that-are-set-to-dominate-2019"
+ },
+ {
+  "old": "/things-to-do-before-launching-your-website/",
+  "new": "/blog/things-to-do-before-launching-your-website"
+ },
+ {
+  "old": "/things-to-do-to-help-your-business-survive-during-coronavirus/",
+  "new": "/blog/things-to-do-to-help-your-business-survive-during-coronavirus"
+ },
+ {
+  "old": "/things-to-keep-in-mind-when-choosing-the-perfect-domain-name-for-your-business/",
+  "new": "/blog/things-to-keep-in-mind-when-choosing-the-perfect-domain-name-for-your-business"
+ },
+ {
+  "old": "/things-to-look-for-when-buying-a-new-computer/",
+  "new": "/blog/things-to-look-for-when-buying-a-new-computer"
+ },
+ {
+  "old": "/three-reasons-why-digital-marketing-fails/",
+  "new": "/blog/three-reasons-why-digital-marketing-fails"
+ },
+ {
+  "old": "/tips-to-improve-website-conversions-with-help-of-quality-content/",
+  "new": "/blog/tips-to-improve-website-conversions-with-help-of-quality-content"
+ },
+ {
+  "old": "/tips-to-stand-out-on-social-media-and-beat-competitors/",
+  "new": "/blog/tips-to-stand-out-on-social-media-and-beat-competitors"
+ },
+ {
+  "old": "/top-10-advantages-of-social-media-marketing-for-your-small-business/",
+  "new": "/blog/top-10-advantages-of-social-media-marketing-for-your-small-business"
+ },
+ {
+  "old": "/top-10-signs-your-website-is-outdated/",
+  "new": "/blog/top-10-signs-your-website-is-outdated"
+ },
+ {
+  "old": "/top-benefits-of-hiring-a-virtual-assistant-for-your-business/",
+  "new": "/blog/top-benefits-of-hiring-a-virtual-assistant-for-your-business"
+ },
+ {
+  "old": "/top-cloud-storage-providers-for-businesses-in-2024/",
+  "new": "/blog/top-cloud-storage-providers-for-businesses-in-2024"
+ },
+ {
+  "old": "/top-videos-every-growing-business-should-create/",
+  "new": "/blog/top-videos-every-growing-business-should-create"
+ },
+ {
+  "old": "/top-website-fails-and-how-to-avoid-them/",
+  "new": "/blog/top-website-fails-and-how-to-avoid-them"
+ },
+ {
+  "old": "/troubleshooting-common-web-hosting-issues/",
+  "new": "/blog/troubleshooting-common-web-hosting-issues"
+ },
+ {
+  "old": "/user-friendly-websites-characteristics/",
+  "new": "/blog/user-friendly-websites-characteristics"
+ },
+ {
+  "old": "/warning-signs-that-your-macbook-needs-repair-service/",
+  "new": "/blog/warning-signs-that-your-macbook-needs-repair-service"
+ },
+ {
+  "old": "/web-design-best-practices-for-2019/",
+  "new": "/blog/web-design-best-practices-for-2019"
+ },
+ {
+  "old": "/web-development-trends-for-2018/",
+  "new": "/blog/web-development-trends-for-2018"
+ },
+ {
+  "old": "/what-should-you-look-for-in-an-it-company/",
+  "new": "/blog/what-should-you-look-for-in-an-it-company"
+ },
+ {
+  "old": "/when-should-you-upgrade-your-hosting-plan/",
+  "new": "/blog/when-should-you-upgrade-your-hosting-plan"
+ },
+ {
+  "old": "/when-to-upgrade-vs-replace-your-hard-drive/",
+  "new": "/blog/when-to-upgrade-vs-replace-your-hard-drive"
+ },
+ {
+  "old": "/why-clickbait-is-bad-for-your-website/",
+  "new": "/blog/why-clickbait-is-bad-for-your-website"
+ },
+ {
+  "old": "/why-graphic-design-is-important-for-any-business/",
+  "new": "/blog/why-graphic-design-is-important-for-any-business"
+ },
+ {
+  "old": "/why-it-is-important-to-have-great-photos-on-your-website/",
+  "new": "/blog/why-it-is-important-to-have-great-photos-on-your-website"
+ },
+ {
+  "old": "/why-seo-the-top-5-reasons-you-should-invest-in-seo/",
+  "new": "/blog/why-seo-the-top-5-reasons-you-should-invest-in-seo"
+ },
+ {
+  "old": "/why-your-business-needs-a-digital-marketing-strategy/",
+  "new": "/blog/why-your-business-needs-a-digital-marketing-strategy"
+ },
+ {
+  "old": "/why-your-business-needs-g-suite/",
+  "new": "/blog/why-your-business-needs-g-suite"
+ },
+ {
+  "old": "/why-your-website-is-the-most-important-business-asset-you-own/",
+  "new": "/blog/why-your-website-is-the-most-important-business-asset-you-own"
+ },
+ {
+  "old": "/why-your-website-will-fail-without-responsive-web-design/",
+  "new": "/blog/why-your-website-will-fail-without-responsive-web-design"
+ }
+]
