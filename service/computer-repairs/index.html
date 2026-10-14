@@ -526,7 +526,10 @@ button{font-family:inherit;cursor:pointer;}
 .hero--page .stat__num{color:#fff;}
 .hero--page .stat__label{color:rgba(255,255,255,.58);margin-left:0;max-width:20ch;}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.02em;color:rgba(255,255,255,.5);margin-bottom:24px;}
-.crumbs a{color:rgba(255,255,255,.78);}
+.crumbs a{color:rgba(255,255,255,.78);
+  /* padding + matching negative margin: a ~44px tall tap target
+     without changing how the breadcrumb row looks or sits */
+  display:inline-block;padding:11px 3px;margin:-11px -3px;}
 .crumbs a:hover{color:#fff;}
 .crumbs i{font-style:normal;opacity:.4;}
 

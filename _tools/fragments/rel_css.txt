@@ -20,7 +20,7 @@
   transition:transform .5s var(--ease),filter .5s var(--ease);}
 .bl-card:hover .bl-card__media img{transform:scale(1.06);
   filter:grayscale(1) brightness(.44) contrast(1.06);}
-.bl-card__date{position:absolute;left:14px;top:14px;z-index:2;font-size:11px;font-weight:600;
+.bl-card__date{position:absolute;left:14px;top:14px;z-index:2;font-size:12px;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:rgba(255,255,255,.93);
   border-radius:100px;padding:6px 12px;backdrop-filter:blur(6px);}
 .bl-card h3{margin-top:18px;font-size:19px;font-weight:600;line-height:1.28;letter-spacing:-.015em;}

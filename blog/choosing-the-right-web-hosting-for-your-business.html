@@ -522,7 +522,10 @@ button{font-family:inherit;cursor:pointer;}
 .hero--book h1{max-width:none;white-space:nowrap;line-height:1.04;font-size:clamp(21px,7vw,88px);}
 .hero--book .hero__sub{color:rgba(255,255,255,.74);max-width:1280px;margin-top:24px;}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:9px;font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:22px;}
-.crumbs a{color:rgba(255,255,255,.78);}
+.crumbs a{color:rgba(255,255,255,.78);
+  /* padding + matching negative margin: a ~44px tall tap target
+     without changing how the breadcrumb row looks or sits */
+  display:inline-block;padding:11px 3px;margin:-11px -3px;}
 .crumbs a:hover{color:#fff;}
 .crumbs i{font-style:normal;opacity:.4;}
 
@@ -773,6 +776,15 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
 .post-content table{width:100%;border-collapse:collapse;margin:0 0 28px;font-size:15.5px;}
 .post-content table th,.post-content table td{border:1px solid var(--line);padding:12px 14px;text-align:left;}
 .post-content table th{background:var(--paper);font-weight:600;color:var(--navy);}
+/* tables: honour the WP fixed-layout class, and never let a wide table
+   push the page sideways on a phone - it scrolls inside its own figure */
+.post-content .has-fixed-layout{table-layout:fixed;}
+.post-content .wp-block-table{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 28px;}
+.post-content .wp-block-table table{margin:0;}
+@media (max-width:600px){
+  .post-content table{font-size:14.5px;}
+  .post-content table th,.post-content table td{padding:10px 11px;}
+}
 .post-content iframe{max-width:100%;border-radius:16px;}
 .post-content figure{margin:8px 0 28px;}
 .post-content figure img{margin:0;}
@@ -839,7 +851,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
   transition:transform .5s var(--ease),filter .5s var(--ease);}
 .bl-card:hover .bl-card__media img{transform:scale(1.06);
   filter:grayscale(1) brightness(.44) contrast(1.06);}
-.bl-card__date{position:absolute;left:14px;top:14px;z-index:2;font-size:11px;font-weight:600;
+.bl-card__date{position:absolute;left:14px;top:14px;z-index:2;font-size:12px;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:rgba(255,255,255,.93);
   border-radius:100px;padding:6px 12px;backdrop-filter:blur(6px);}
 .bl-card h3{margin-top:18px;font-size:19px;font-weight:600;line-height:1.28;letter-spacing:-.015em;}

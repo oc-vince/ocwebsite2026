@@ -524,7 +524,10 @@ button{font-family:inherit;cursor:pointer;}
 .hero--book h1{max-width:none;white-space:nowrap;line-height:1.04;font-size:clamp(21px,7vw,88px);}
 .hero--book .hero__sub{color:rgba(255,255,255,.74);max-width:1280px;margin-top:24px;}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:9px;font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:22px;}
-.crumbs a{color:rgba(255,255,255,.78);}
+.crumbs a{color:rgba(255,255,255,.78);
+  /* padding + matching negative margin: a ~44px tall tap target
+     without changing how the breadcrumb row looks or sits */
+  display:inline-block;padding:11px 3px;margin:-11px -3px;}
 .crumbs a:hover{color:#fff;}
 .crumbs i{font-style:normal;opacity:.4;}
 
@@ -841,7 +844,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
   transition:transform .5s var(--ease),filter .5s var(--ease);}
 .bl-card:hover .bl-card__media img{transform:scale(1.06);
   filter:grayscale(1) brightness(.44) contrast(1.06);}
-.bl-card__date{position:absolute;left:14px;top:14px;z-index:2;font-size:11px;font-weight:600;
+.bl-card__date{position:absolute;left:14px;top:14px;z-index:2;font-size:12px;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:rgba(255,255,255,.93);
   border-radius:100px;padding:6px 12px;backdrop-filter:blur(6px);}
 .bl-card h3{margin-top:18px;font-size:19px;font-weight:600;line-height:1.28;letter-spacing:-.015em;}

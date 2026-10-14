@@ -57,6 +57,13 @@
 .post-content table{width:100%;border-collapse:collapse;margin:0 0 28px;font-size:15.5px;}
 .post-content table th,.post-content table td{border:1px solid var(--line);padding:12px 14px;text-align:left;}
 .post-content table th{background:var(--paper);font-weight:600;color:var(--navy);}
+.post-content .has-fixed-layout{table-layout:fixed;}
+.post-content .wp-block-table{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 28px;}
+.post-content .wp-block-table table{margin:0;}
+@media (max-width:600px){
+  .post-content table{font-size:14.5px;}
+  .post-content table th,.post-content table td{padding:10px 11px;}
+}
 .post-content iframe{max-width:100%;border-radius:16px;}
 .post-content figure{margin:8px 0 28px;}
 .post-content figure img{margin:0;}
