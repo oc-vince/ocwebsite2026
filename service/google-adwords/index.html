@@ -1810,19 +1810,19 @@ var count = document.getElementById('preCount');
 var progress = { v: 0 };
 
 function startPage(){
-  gsap.to(pre, { yPercent: -100, duration: 0.9, ease: 'power4.inOut', onComplete: function(){ pre.style.display = 'none'; }});
+  gsap.to(pre, { yPercent: -100, duration: 0.5, ease: 'power4.inOut', onComplete: function(){ pre.style.display = 'none'; }});
   document.getElementById('header').classList.add('is-visible');
   // hero entrance
-  animateLines(document.getElementById('heroTitle'), 0.35);
+  animateLines(document.getElementById('heroTitle'), 0.05);
   gsap.to('.hero [data-reveal]', {
-    opacity: 1, y: 0, duration: 1, ease: 'power3.out',
-    stagger: 0.12, delay: 0.55
+    opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+    stagger: 0.08, delay: 0.1
   });
   // counters
   document.querySelectorAll('[data-count]').forEach(function(el){
     var target = parseInt(el.getAttribute('data-count'), 10);
     var obj = { v: 0 };
-    gsap.to(obj, { v: target, duration: 1.6, delay: 0.9, ease: 'power2.out',
+    gsap.to(obj, { v: target, duration: 1.6, delay: 0.5, ease: 'power2.out',
       onUpdate: function(){ el.textContent = Math.round(obj.v); }});
   });
 }
@@ -1832,9 +1832,9 @@ if (reduced) {
   document.getElementById('header').classList.add('is-visible');
   document.querySelectorAll('.reveal-lines .w > span').forEach(function(s){ s.style.transform = 'none'; });
 } else {
-  gsap.to('.preloader__logo', { opacity: 1, duration: 0.6, ease: 'power2.out' });
+  gsap.to('.preloader__logo', { opacity: 1, duration: 0.3, ease: 'power2.out' });
   gsap.to(progress, {
-    v: 100, duration: 1.4, ease: 'power2.inOut',
+    v: 100, duration: 0.45, ease: 'power2.inOut',
     onUpdate: function(){
       fill.style.width = progress.v + '%';
       count.textContent = Math.round(progress.v) + '%';
