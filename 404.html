@@ -22,7 +22,9 @@
 <link rel="icon" href="/images/FAVICON.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
 <style>
 :root{
   --white:#ffffff;
@@ -34,8 +36,8 @@
   --blue-soft:#e3f1fb;
   --grey:#5c6b7a;
   --gutter:clamp(20px, 4vw, 48px);
-  --font-display:'Sora', sans-serif;
-  --font-body:'Inter', sans-serif;
+  --font-display:'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
