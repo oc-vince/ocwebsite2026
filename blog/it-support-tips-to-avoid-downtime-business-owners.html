@@ -23,6 +23,8 @@
 <link rel="apple-touch-icon" href="/images/FAVICON.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
@@ -392,6 +394,10 @@ button{font-family:inherit;cursor:pointer;}
 .footer ul{display:flex;flex-direction:column;align-items:flex-start;gap:17px;}
 .footer ul li{margin:0;font-size:15px;line-height:1.5;}
 .footer ul a{font-size:15px;line-height:1.5;color:rgba(255,255,255,.86);transition:color .2s;}
+/* footer link columns: padding plus a matching negative margin gives a
+   comfortable tap target without moving anything visually */
+.footer__row--links ul{gap:20px;}
+.footer__row--links ul a{display:inline-block;padding:9px 10px;margin:-9px -10px;}
 .footer ul a:hover{color:#7cc3ef;}
 .footer__brand-logo img{height:46px;width:auto;}
 .footer__col--brand p{margin-top:22px;font-size:15px;line-height:1.5;color:rgba(255,255,255,.84);}
