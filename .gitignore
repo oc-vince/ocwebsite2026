@@ -21,3 +21,7 @@ dump/
 .netlify/
 # leftover from a failed first git init in the sandbox - safe to delete
 .git-broken/
+
+# screenshots and files Claude delivers into the chat - the desktop app drops
+# copies here, they are not part of the site
+Claude outputs/
