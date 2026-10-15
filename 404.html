@@ -3,6 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="84FgG3uXO6a-Ufy8KBmK4zqt8HIWRhsUfki3v39TUyM">
+<meta name="google-site-verification" content="SwNn5vt4o3KciLJw4RmawIZmAtKv9dReC1r37TMzMf4">
+
+<!-- Google tag (gtag.js) - G-P8XEFMCHX2, live site only so local and preview
+     browsing stays out of the GA4 property. Remove the hostname guard to track
+     every environment. -->
+<script>
+(function(){
+  var h = location.hostname;
+  if (h !== 'onlineconsulting.com.au' && h !== 'www.onlineconsulting.com.au') return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', 'G-P8XEFMCHX2');
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-P8XEFMCHX2';
+  document.head.appendChild(s);
+})();
+</script>
 <title>Page not found | Online Consulting</title>
 <meta name="robots" content="noindex, follow">
 <meta name="description" content="The page you were looking for isn't here. Head back to the homepage or jump straight to what you need.">
@@ -135,7 +157,7 @@ h1{
 
 <header class="masthead">
   <div class="wrap">
-    <a href="/index.html" aria-label="Online Consulting — home">
+    <a href="/" aria-label="Online Consulting — home">
       <img src="/images/OC-Logo.webp" alt="Online Consulting" width="288" height="58">
     </a>
   </div>
@@ -150,8 +172,8 @@ h1{
       <p class="lede">The link may be out of date, or the page may have moved when we rebuilt the site. Nothing is broken on your end &mdash; head back to the homepage and you&rsquo;ll find your way from there.</p>
 
       <div class="cta">
-        <a class="btn btn--primary" href="/index.html"><span>Back to homepage</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn--ghost" href="/contact/index.html"><span>Contact us</span></a>
+        <a class="btn btn--primary" href="/"><span>Back to homepage</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn--ghost" href="/contact/"><span>Contact us</span></a>
       </div>
     </div>
   </div>

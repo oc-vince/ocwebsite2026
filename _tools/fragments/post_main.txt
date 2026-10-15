@@ -4,7 +4,7 @@
 <section class="hero hero--page hero--book hero--blog">
   <div class="container hero__inner">
     <nav class="crumbs" aria-label="Breadcrumb" data-reveal>
-      <a href="../index.html">Home</a><i>&rsaquo;</i><a href="../blog.html">Blog</a><i>&rsaquo;</i><span>__TITLE__</span>
+      <a href="../">Home</a><i>&rsaquo;</i><a href="../blog/">Blog</a><i>&rsaquo;</i><span>__TITLE__</span>
     </nav>
     <p class="hero__eyebrow" data-reveal><span class="eyebrow-seg">__DATELONG__</span></p>
     <h1 class="reveal-lines" id="heroTitle">__TITLE__</h1>

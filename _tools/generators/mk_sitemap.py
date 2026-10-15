@@ -10,13 +10,14 @@ def clean(rel):
     if rel.endswith('/index.html'): return '/' + rel[:-len('index.html')]
     return '/' + rel[:-5] + '/'
 
+# Every page is a folder with an index.html; 404.html is Netlify's error
+# handler and has no public URL.
 pages = []
 for dp, dn, fn in os.walk('.'):
-    dn[:] = [d for d in dn if d != 'dump']
-    for f in fn:
-        if not f.endswith('.html'): continue
-        rel = os.path.relpath(os.path.join(dp, f), '.').replace(os.sep, '/')
-        pages.append(rel)
+    dn[:] = [d for d in dn if d not in ('dump', '_tools', '.git')]
+    if 'index.html' not in fn: continue
+    rel = os.path.relpath(os.path.join(dp, 'index.html'), '.').replace(os.sep, '/')
+    pages.append(rel)
 
 # thank-you pages are conversion end-points, not search landing pages
 pages = [p for p in pages if 'thank-you' not in p]

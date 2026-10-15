@@ -12,7 +12,7 @@
     <h1 class="reveal-lines" id="heroTitle">__H1__</h1>
     <p class="hero__sub" data-reveal>__SUB__</p>
     <div class="hero__cta ty-hero__cta" data-reveal>
-      <a class="btn btn--light" href="../index.html" data-magnetic><span>Return to homepage</span><span class="arrow">&rarr;</span></a>
+      <a class="btn btn--light" href="../" data-magnetic><span>Return to homepage</span><span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -48,19 +48,19 @@ __NEXTSECTION__
       <h2>A few things worth a look.</h2>
     </div>
     <div class="ty-explore">
-      <a class="ty-card" href="../work.html" data-reveal>
+      <a class="ty-card" href="../work/" data-reveal>
         <span class="ty-card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="4.6" width="17.6" height="13" rx="2"/><path d="M3.2 8.4h17.6"/><path d="M8 20.4h8"/></svg></span>
         <b>Our work</b>
         <p>Case studies and a gallery of the websites, branding and video we&rsquo;ve produced for Australian businesses.</p>
         <span class="go">See the work <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></span>
       </a>
-      <a class="ty-card" href="../one-partner.html" data-reveal>
+      <a class="ty-card" href="../one-partner/" data-reveal>
         <span class="ty-card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
         <b>Why one partner</b>
         <p>Why keeping your IT, your website and your marketing with one Sydney team costs less and breaks less often.</p>
         <span class="go">Read the case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></span>
       </a>
-      <a class="ty-card" href="../blog.html" data-reveal>
+      <a class="ty-card" href="../blog/" data-reveal>
         <span class="ty-card__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 3.6h9.2l4 4v12.8H5.4z"/><path d="M14.6 3.6v4h4"/><path d="M8.4 12h7.2M8.4 15.6h7.2"/></svg></span>
         <b>The blog</b>
         <p>Practical notes on managed IT, cyber security, hosting and digital marketing &mdash; written for business owners.</p>

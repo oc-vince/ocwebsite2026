@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
 ROOT = os.path.expanduser('~/mnt/public')
-slugs = sorted(f[:-5] for f in os.listdir(os.path.join(ROOT, 'blog'))
-                if f.endswith('.html') and f != 'index.html')  # index.html is the blog listing, not a post
+# Every post is a folder with an index.html, so the slug is the folder name.
+slugs = sorted(d for d in os.listdir(os.path.join(ROOT, 'blog'))
+               if os.path.isdir(os.path.join(ROOT, 'blog', d))
+               and os.path.exists(os.path.join(ROOT, 'blog', d, 'index.html')))
 
 L = []
 def sec(t): L.append(''); L.append('# ' + t)
@@ -10,50 +12,36 @@ def sec(t): L.append(''); L.append('# ' + t)
 L.append('# Online Consulting - Netlify redirects')
 L.append('# Generated for the 2026 rebuild. First matching rule wins, so order matters.')
 L.append('#')
-L.append('# Every page ships as a real .html file so the site can be browsed straight')
-L.append('# from disk on a local server. On the live server the .html paths 301 to the')
-L.append('# clean URL, so only the clean URL is ever visible or indexed.')
-L.append('# Trailing slashes are normalised before these rules run: a rule written /foo')
-L.append('# also matches /foo/. The ! flag forces a redirect even when a file matches.')
+L.append('# Every page is a folder with an index.html, so its canonical URL ends in a')
+L.append('# trailing slash and the server needs no rewrite to produce one. The legacy')
+L.append('# .html paths 301 to that URL. The ! flag forces a redirect even when a file')
+L.append('# matches. Trailing slashes are normalised before these rules run: a rule')
+L.append('# written /foo also matches /foo/.')
 
 sec('Build tooling lives in the repo but must not be served')
 L.append('/_tools/*                                 /_not-found                  404')
 
-# ---- .html <-> clean URL, generated from what is actually on disk ----
-htmls = []
+# ---- clean URLs, generated from what is actually on disk ----
+pages = []
 for dp, dn, fn in os.walk(ROOT):
     dn[:] = [d for d in dn if d not in ('_tools', '.git', 'dump')]
-    for f in fn:
-        if f.endswith('.html'):
-            rel = os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, '/')
-            if rel == '404.html':
-                continue   # Netlify serves this internally; it has no clean URL
-            htmls.append(rel)
-htmls.sort()
-
-def clean_of(rel):
-    if rel == 'index.html':
-        return '/'
-    if rel.endswith('/index.html'):
-        return '/' + rel[:-len('index.html')]
-    return '/' + rel[:-5] + '/'
-
-sec('Canonical URLs: the .html file the local server uses 301s to the clean URL')
-L.append('# /index.html is deliberately absent: a forced rule on it can loop, and Netlify')
-L.append('# already 301s /index.html -> / on its own.')
-for rel in htmls:
-    if rel == 'index.html':
+    if 'index.html' not in fn:
         continue
-    L.append('/%-78s %-78s 301!' % (rel, clean_of(rel)))
+    rel = os.path.relpath(dp, ROOT).replace(os.sep, '/')
+    pages.append('/' if rel == '.' else '/' + rel + '/')
+pages.sort()
 
-sec('And the clean URL serves that same file, without changing the address bar')
-L.append('# Netlify Pretty URLs does this on its own; spelled out so the site does not')
-L.append('# depend on that setting staying on.')
-for rel in htmls:
-    c = clean_of(rel)
+sec('Legacy .html paths 301 to the folder URL the page now lives at')
+L.append('# The pages used to be flat .html files; they are folders now. These cover any')
+L.append('# bookmark, backlink or old internal link still pointing at the file path.')
+L.append('# / is deliberately absent: a forced rule on /index.html can loop, and Netlify')
+L.append('# already 301s /index.html -> / on its own.')
+for c in pages:
     if c == '/':
-        continue          # / already serves index.html natively
-    L.append('%-79s /%-78s 200' % (c, rel))
+        continue
+    stem = c[:-1]                      # /about/ -> /about
+    L.append('%-78s %-78s 301!' % (stem + '.html', c))
+    L.append('%-78s %-78s 301!' % (c + 'index.html', c))
 
 sec('Blog posts: the old site published these at the root, the new site nests them under /blog/')
 for s in slugs:
@@ -110,8 +98,10 @@ L.append('/testimonial/:slug                        /work/                      
 #     Google Ads page to a 404
 #   * query-string variants (/buy-now/?plan=...) - a source without a query
 #     already matches the request whatever its query string
-#   * /about/ -> /about and /work/ -> /work : Netlify normalises the trailing
-#     slash before rules run, so both sides are the same path
+#   * /about/ -> /about and /work/ -> /work : the same page either way, since
+#     trailing slashes are normalised before rules run
+# Destinations are normalised to end in a trailing slash, because that is the
+# canonical form of every page on this site.
 import json as _json
 _sheet = os.path.join(ROOT, '_tools/content-2026-09/redirects_sheet.json')
 if os.path.exists(_sheet):
@@ -122,6 +112,16 @@ if os.path.exists(_sheet):
             _have.add(_l.split()[0].rstrip('/') or '/')
     _SKIP = {'/service/google-adwords/'}
     _norm = lambda x: (x.rstrip('/') or '/')
+
+    def _slash(u):
+        # every page on this site lives at a folder URL, so a destination ends
+        # in '/' - before any #anchor, and never for an off-site or file target
+        if u.startswith('http') or '.' in u.rsplit('/', 1)[-1]:
+            return u
+        _p, _h, _a = u.partition('#')
+        if not _p.endswith('/'):
+            _p += '/'
+        return _p + _h + _a
     _extra = []
     for _r in _rows:
         _o, _n = _r['Old'] if 'Old' in _r else _r['old'], _r['new']
@@ -131,7 +131,7 @@ if os.path.exists(_sheet):
             continue
         if _norm(_o) in _have:
             continue
-        _extra.append('%-56s %-46s 301' % (_o, _n))
+        _extra.append('%-56s %-46s 301' % (_o, _slash(_n)))
         _have.add(_norm(_o))
     if _extra:
         # These must sit BEFORE the /work/:slug, /team/:slug, /speciality/:slug
