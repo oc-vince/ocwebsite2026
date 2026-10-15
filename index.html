@@ -366,6 +366,9 @@ button{font-family:inherit;cursor:pointer;}
 .testi p{font-size:clamp(16px,1.25vw,18px);color:var(--ink);font-weight:400;}
 .testi footer{margin-top:28px;display:flex;align-items:center;gap:14px;}
 .testi__avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:15px;flex-shrink:0;}
+/* the avatar is a photo now; the gradient stays as the backdrop while it
+   loads and for any testimonial that has no portrait */
+img.testi__avatar{display:block;object-fit:cover;}
 .testi cite{font-style:normal;}
 .testi cite b{display:block;font-family:var(--font-display);font-size:15px;color:var(--navy);}
 .testi cite span{font-size:13.5px;color:var(--grey);}
@@ -1452,7 +1455,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>Sam is a reliable and knowledgeable IT consultant who has a clear understanding of the needs of small businesses … Sam can explain IT security and software in terms that anyone can understand, and is proactive in suggesting how to avoid problems in the future … we've been very happy with him and his team.</p>
         <footer>
-          <span class="testi__avatar">CC</span>
+          <img class="testi__avatar" src="/images/testimonials/Cathy-Curtis.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Cathy Curtis</b><span>Owner, You &amp; Eye Optical</span></cite>
         </footer>
       </blockquote>
@@ -1460,7 +1463,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>Few people have the opportunity to manage contractors that seem like full-time onsite staff … I've had the pleasure of working with Sam and his team for five years now and over this time the level of service has been constant … his team go above and beyond desktop support.</p>
         <footer>
-          <span class="testi__avatar">ME</span>
+          <img class="testi__avatar" src="/images/testimonials/Mark-Eels.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Mark Eels</b><span>Assistant Dean of Students, NYU Shanghai</span></cite>
         </footer>
       </blockquote>
@@ -1468,7 +1471,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>All my issues are solved quickly first time … I'm glad you are always there to help.</p>
         <footer>
-          <span class="testi__avatar">SH</span>
+          <img class="testi__avatar" src="/images/testimonials/Simon-Hardaker.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Simon Hardaker</b><span>Business Owner, Astemi Property</span></cite>
         </footer>
       </blockquote>
@@ -1476,7 +1479,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>I thoroughly recommend Online Consulting for all small business owners. They are fast, reliable and affordable. They take away all the IT growing pains so that I as a small business owner can focus on what I do best and continue to grow my business. Thank you Sam and team!</p>
         <footer>
-          <span class="testi__avatar">AH</span>
+          <img class="testi__avatar" src="/images/testimonials/Anthony-Hartcher.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Anthony Hartcher</b><span>Me&amp;My Wellness</span></cite>
         </footer>
       </blockquote>
@@ -1484,7 +1487,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>Sam took the time to listen to what I wanted and work out what I needed. Excellent service and price. Highly recommend!</p>
         <footer>
-          <span class="testi__avatar">RS</span>
+          <img class="testi__avatar" src="/images/testimonials/Rae-Stagbouer.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Rae Stagbouer</b></cite>
         </footer>
       </blockquote>
@@ -1492,7 +1495,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>I've been working with Online Consulting on a web site which has multiple people with their unique offerings. The team is patiently helping us navigate the intricacies while we often change our minds … amazing, thank you. I'm confident in the end the result will be fantastic.</p>
         <footer>
-          <span class="testi__avatar">KM</span>
+          <img class="testi__avatar" src="/images/testimonials/Kathryn-McConville.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Kathryn McConville</b></cite>
         </footer>
       </blockquote>
@@ -1500,7 +1503,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>There are many reasons to recommend Online Consulting, but I would like to highlight the incredible work they do for not for profit organisations. The work enables education, fundraising, event promotion, and community engagement. The experience Online Consulting has in this area makes them the perfect online developer to choose.</p>
         <footer>
-          <span class="testi__avatar">WL</span>
+          <img class="testi__avatar" src="/images/testimonials/Wendy-Lloyd-Curley.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Wendy Lloyd Curley</b><span>BNI Sydney North East</span></cite>
         </footer>
       </blockquote>
@@ -1508,7 +1511,7 @@ button{font-family:inherit;cursor:pointer;}
         <span class="testi__mark" aria-hidden="true">“</span>
         <p>Extremely happy with the work Online Consulting has done building my website and continues to do with SEO and Adwords. Sam is great to work with and his team is super responsive. My site not only looks and works amazingly, it converts! Thanks OC Team!</p>
         <footer>
-          <span class="testi__avatar">AC</span>
+          <img class="testi__avatar" src="/images/testimonials/Andrew-Crabtree.webp" width="92" height="92" alt="" loading="lazy">
           <cite><b>Andrew Crabtree</b><span>Southern Cross Automotive Repairs</span></cite>
         </footer>
       </blockquote>
