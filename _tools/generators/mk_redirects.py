@@ -93,7 +93,7 @@ L.append('/testimonial/:slug                        /work/                      
 # ---- rows from "Blog Post Meta Tags.xlsx" / 301 mapping that are not already
 # covered above. Skipped deliberately:
 #   * "No change" rows - nothing to redirect
-#   * /service/google-adwords/ -> /service/google-ads/ : the target page does
+#   * /service/google-ads/ -> /service/google-ads/ : the target page does
 #     not exist, and the source is a live page, so the rule would 301 the
 #     Google Ads page to a 404
 #   * query-string variants (/buy-now/?plan=...) - a source without a query
@@ -110,7 +110,7 @@ if os.path.exists(_sheet):
     for _l in L:
         if _l and not _l.startswith('#'):
             _have.add(_l.split()[0].rstrip('/') or '/')
-    _SKIP = {'/service/google-adwords/'}
+    _SKIP = {'/service/google-ads/'}
     _norm = lambda x: (x.rstrip('/') or '/')
 
     def _slash(u):

@@ -273,8 +273,8 @@
 /service/computer-repairs/index.html                                           /service/computer-repairs/                                                     301!
 /service/copywriting.html                                                      /service/copywriting/                                                          301!
 /service/copywriting/index.html                                                /service/copywriting/                                                          301!
-/service/google-adwords.html                                                   /service/google-adwords/                                                       301!
-/service/google-adwords/index.html                                             /service/google-adwords/                                                       301!
+/service/google-ads.html                                                       /service/google-ads/                                                           301!
+/service/google-ads/index.html                                                 /service/google-ads/                                                           301!
 /service/google-workspace.html                                                 /service/google-workspace/                                                     301!
 /service/google-workspace/index.html                                           /service/google-workspace/                                                     301!
 /service/it-support.html                                                       /service/it-support/                                                           301!
@@ -472,6 +472,7 @@
 /covid/how-to-prevent-catching-the-covid-19/             /                                              301
 /covid/what-is-coronavirus-covid-19/                     /                                              301
 /covid/what-we-are-doing-to-reduce-the-spread/           /                                              301
+/service/google-adwords/                                 /service/google-ads/                           301
 /speciality/how-we-work/                                 /work/                                         301
 /speciality/what-we-offer/                               /work/                                         301
 /speciality/why-work-with-us/                            /work/                                         301

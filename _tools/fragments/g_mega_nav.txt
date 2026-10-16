@@ -78,7 +78,7 @@
                   <span class="mega__ico"><img src="/images/submenus/SEO-Services.svg" alt="" width="46" height="38" loading="lazy" decoding="async"></span>
                   <span><b>SEO Services</b><span>Improve your search visibility, rankings, and organic traffic with proven SEO strategies.</span></span>
                 </a>
-                <a class="mega__item" href="/service/google-adwords/">
+                <a class="mega__item" href="/service/google-ads/">
                   <span class="mega__ico"><img src="/images/submenus/Google-Ads.svg" alt="" width="46" height="44" loading="lazy" decoding="async"></span>
                   <span><b>Google Ads</b><span>Reach the right customers with targeted Google Ads campaigns built to drive results.</span></span>
                 </a>

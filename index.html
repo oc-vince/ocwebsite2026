@@ -361,6 +361,18 @@ button{font-family:inherit;cursor:pointer;}
 /* ---------- testimonials ---------- */
 .testimonials{overflow:hidden;}
 .testi-wrap{display:flex;gap:26px;will-change:transform;padding:10px 0 30px;}
+/* carousel: the track slides, the dots steer it. 0.5s per slide. */
+.testi-wrap{transition:transform .5s cubic-bezier(.4,.0,.2,1);}
+.testi-wrap.is-instant{transition:none;}
+/* the team section below tucks up by -5em and paints an opaque band; the
+   dots need that much clearance or it covers them and eats the taps */
+.testi-dots{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:4px;margin-bottom:5em;position:relative;z-index:2;}
+.testi-dot{position:relative;width:9px;height:9px;padding:0;border:0;border-radius:50%;background:var(--line);cursor:pointer;transition:width .4s var(--ease),background .3s;}
+/* invisible 44px-tall hit area so the dots are tappable on touch devices */
+.testi-dot::before{content:'';position:absolute;top:-17px;bottom:-17px;left:-5px;right:-5px;}
+.testi-dot:hover{background:var(--grey-light);}
+.testi-dot.is-active{width:32px;border-radius:100px;background:var(--blue);}
+@media (prefers-reduced-motion: reduce){.testi-wrap{transition:none;}}
 .testi{flex:0 0 min(560px,86vw);background:#fff;border:1px solid var(--line);border-radius:calc(var(--radius) + 4px);padding:clamp(30px,3vw,46px);position:relative;box-shadow:0 20px 50px -35px rgba(12,27,42,.25);}
 .testi__mark{font-family:var(--font-display);font-size:88px;line-height:.6;color:var(--blue);opacity:.18;display:block;margin-bottom:20px;}
 .testi p{font-size:clamp(16px,1.25vw,18px);color:var(--ink);font-weight:400;}
@@ -958,7 +970,7 @@ img.testi__avatar{display:block;object-fit:cover;}
                   <span class="mega__ico"><img src="/images/submenus/SEO-Services.svg" alt="" width="46" height="38" loading="lazy" decoding="async"></span>
                   <span><b>SEO Services</b><span>Improve your search visibility, rankings, and organic traffic with proven SEO strategies.</span></span>
                 </a>
-                <a class="mega__item" href="/service/google-adwords/">
+                <a class="mega__item" href="/service/google-ads/">
                   <span class="mega__ico"><img src="/images/submenus/Google-Ads.svg" alt="" width="46" height="44" loading="lazy" decoding="async"></span>
                   <span><b>Google Ads</b><span>Reach the right customers with targeted Google Ads campaigns built to drive results.</span></span>
                 </a>
@@ -1134,7 +1146,7 @@ img.testi__avatar{display:block;object-fit:cover;}
       <button class="mmenu__toggle" aria-expanded="false">Digital Marketing <i class="chev"></i></button>
       <div class="mmenu__sub">
         <a href="/service/seo-services/">SEO Services</a>
-        <a href="/service/google-adwords/">Google Ads</a>
+        <a href="/service/google-ads/">Google Ads</a>
         <a href="/service/social-media-marketing/">Social Media Marketing</a>
         <a href="/service/copywriting/">Content &amp; Copywriting</a>
       </div>
@@ -1316,7 +1328,7 @@ img.testi__avatar{display:block;object-fit:cover;}
               <span class="svc-link__ico"><img src="/images/submenus/SEO-Services.svg" alt="" width="46" height="38" loading="lazy" decoding="async"></span>
               <span class="svc-link__label">SEO Services</span>
             </a>
-            <a class="svc-link" href="/service/google-adwords/">
+            <a class="svc-link" href="/service/google-ads/">
               <span class="svc-link__ico"><img src="/images/submenus/Google-Ads.svg" alt="" width="46" height="44" loading="lazy" decoding="async"></span>
               <span class="svc-link__label">Google Ads</span>
             </a>
@@ -1399,8 +1411,7 @@ img.testi__avatar{display:block;object-fit:cover;}
     </div>
 
     <div class="why__one" data-reveal>
-      <span><em>One</em> partner.</span><i class="sep"></i>
-      <span><em>One</em> invoice.</span><i class="sep"></i>
+      <span><em>One</em> partner. <em>One</em> invoice.</span>
       <span><em>One</em> team that already knows your business.</span>
     </div>
 
@@ -1516,6 +1527,7 @@ img.testi__avatar{display:block;object-fit:cover;}
         </footer>
       </blockquote>
     </div>
+    <div class="testi-dots" id="testiDots" role="tablist" aria-label="Choose a testimonial"></div>
   </div>
 </section>
 
@@ -1794,7 +1806,7 @@ img.testi__avatar{display:block;object-fit:cover;}
         <div class="footer__head"><span class="footer__bar" aria-hidden="true"></span><h4>Digital Marketing</h4></div>
         <ul>
           <li><a href="/service/seo-services/">SEO Services</a></li>
-          <li><a href="/service/google-adwords/">Google Ads</a></li>
+          <li><a href="/service/google-ads/">Google Ads</a></li>
           <li><a href="/service/social-media-marketing/">Social Media Marketing</a></li>
           <li><a href="/service/copywriting/">Content &amp; Copywriting</a></li>
         </ul>
@@ -2012,25 +2024,6 @@ gsap.utils.toArray('.step__track i').forEach(function(bar, i){
     scrollTrigger: { trigger: '.process__grid', start: 'top 75%' }
   });
 });
-
-/* ---------- testimonials horizontal drift ---------- */
-var testiWrap = document.getElementById('testiWrap');
-if (testiWrap && !reduced) {
-  ScrollTrigger.create({
-    trigger: '.testimonials',
-    start: 'top top',
-    end: function(){
-      return '+=' + Math.max(300, testiWrap.scrollWidth - testiWrap.parentElement.clientWidth + 200);
-    },
-    pin: true,
-    scrub: 0.6,
-    invalidateOnRefresh: true,
-    onUpdate: function(self){
-      var drift = Math.max(0, testiWrap.scrollWidth - testiWrap.parentElement.clientWidth);
-      gsap.set(testiWrap, { x: -drift * self.progress });
-    }
-  });
-}
 
 /* ---------- big background word parallax ---------- */
 gsap.to('.bg-word', {
@@ -2563,5 +2556,106 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
   });
 })();
 </script>
+
+<script>
+/* ---------- testimonials carousel ----------
+   Auto-advances one card every 4s, right to left, 0.5s per slide. Dots only,
+   no arrows, and no scroll-driven movement. The cards are duplicated once so
+   the loop can run forever: when the track reaches the start of the copy it
+   snaps back to 0 with the transition off, which lands on an identical frame
+   and so is invisible. */
+(function(){
+  var track = document.getElementById('testiWrap');
+  var dotsBox = document.getElementById('testiDots');
+  if (!track || !dotsBox) return;
+
+  var cards = Array.prototype.slice.call(track.children);
+  var COUNT = cards.length;
+  if (COUNT < 2) return;
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DELAY = 4000;
+  var i = 0, timer = null, step = 0;
+
+  // one duplicate set, hidden from assistive tech, so the wrap-around is seamless
+  cards.forEach(function(c){
+    var clone = c.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('img').forEach(function(img){ img.setAttribute('alt',''); });
+    track.appendChild(clone);
+  });
+
+  var dots = cards.map(function(c, n){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'testi-dot' + (n === 0 ? ' is-active' : '');
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', 'Testimonial ' + (n + 1) + ' of ' + COUNT);
+    b.setAttribute('aria-selected', n === 0 ? 'true' : 'false');
+    b.addEventListener('click', function(){ go(n); restart(); });
+    dotsBox.appendChild(b);
+    return b;
+  });
+
+  function measure(){
+    step = COUNT > 1 ? (cards[1].offsetLeft - cards[0].offsetLeft) : cards[0].offsetWidth;
+    place(false);
+  }
+
+  function place(animate){
+    track.classList.toggle('is-instant', !animate);
+    track.style.transform = 'translate3d(' + (-i * step) + 'px,0,0)';
+    if (!animate) { void track.offsetWidth; track.classList.remove('is-instant'); }
+  }
+
+  function paint(){
+    var active = i % COUNT;
+    dots.forEach(function(d, n){
+      d.classList.toggle('is-active', n === active);
+      d.setAttribute('aria-selected', n === active ? 'true' : 'false');
+    });
+  }
+
+  function go(n){
+    i = n;
+    place(true);
+    paint();
+    if (i >= COUNT) {
+      // landed on the first card of the duplicate set - same picture, so
+      // jumping back to the real one once the slide ends is not visible
+      window.setTimeout(function(){ i = 0; place(false); }, 520);
+    }
+  }
+
+  function tick(){ go(i + 1); }
+  function stop(){ if (timer) { window.clearInterval(timer); timer = null; } }
+  function start(){ if (!timer && !reduced) timer = window.setInterval(tick, DELAY); }
+  function restart(){ stop(); start(); }
+
+  measure();
+  paint();
+  start();
+
+  // pause while someone is reading or tabbing through, and while the tab is hidden
+  ['mouseenter','focusin','touchstart'].forEach(function(e){
+    track.addEventListener(e, stop, {passive:true});
+    dotsBox.addEventListener(e, stop, {passive:true});
+  });
+  ['mouseleave','focusout','touchend'].forEach(function(e){
+    track.addEventListener(e, start, {passive:true});
+    dotsBox.addEventListener(e, start, {passive:true});
+  });
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) stop(); else start();
+  });
+
+  var rt;
+  window.addEventListener('resize', function(){
+    window.clearTimeout(rt);
+    rt = window.setTimeout(measure, 150);
+  });
+})();
+</script>
+
 </body>
 </html>
