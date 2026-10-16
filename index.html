@@ -2671,12 +2671,15 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
   paint();
   start();
 
-  // pause while someone is reading or tabbing through, and while the tab is hidden
-  ['mouseenter','focusin','touchstart'].forEach(function(e){
+  // Keeps sliding under the mouse. It still pauses for a keyboard user tabbing
+  // through the cards - otherwise the track would move the focused link out
+  // from under them - and for a finger on the track, and while the tab is
+  // hidden.
+  ['focusin','touchstart'].forEach(function(e){
     track.addEventListener(e, stop, {passive:true});
     dotsBox.addEventListener(e, stop, {passive:true});
   });
-  ['mouseleave','focusout','touchend'].forEach(function(e){
+  ['focusout','touchend'].forEach(function(e){
     track.addEventListener(e, start, {passive:true});
     dotsBox.addEventListener(e, start, {passive:true});
   });
