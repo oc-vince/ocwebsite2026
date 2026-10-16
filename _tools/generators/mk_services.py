@@ -71,13 +71,13 @@ build(TPL,'service/copywriting/index.html',
  ]),'svc_css.txt','cw_main.html')
 
 # --- GOOGLE ADS ---
-build(TPL,'service/google-adwords/index.html',
+build(TPL,'service/google-ads/index.html',
  'Google Ads Sydney | AdWords Management &amp; PPC Experts | Online Consulting',
  'Professional Google Ads (AdWords) services in Sydney from a Google Partner &mdash; PPC campaign setup, keyword targeting and careful budget management that drives results.',
- BASE+'service/google-adwords/',
+ BASE+'service/google-ads/',
  'Google Ads Sydney | Online Consulting',
  'Drive results with professional Google Ads services in Sydney. A Google Partner running PPC campaigns that win traffic, reach your audience and increase sales.',
- ld('Google Ads','google-adwords',
+ ld('Google Ads','google-ads',
     'Google Ads (AdWords) management services in Sydney from a Google Partner - PPC campaign setup, keyword research, budget management and performance reporting.',
     'Pay Per Click Advertising',[
    ("How much do Google Ads cost?","It depends on what you're advertising. With Google Ads you only pay when someone clicks on your ad, and the cost per click varies depending on the keywords you target - some terms and industries are much more competitive than others. Management costs depend on your goals."),

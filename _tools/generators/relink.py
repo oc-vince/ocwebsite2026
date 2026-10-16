@@ -2,7 +2,7 @@ import os, glob, re
 ROOT = os.path.expanduser('~/mnt/public')
 MAP = {
  '/digital-marketing/seo/':                ('service/seo-services/index.html',            '../seo-services/index.html'),
- '/digital-marketing/google-ads/':         ('service/google-adwords/index.html',          '../google-adwords/index.html'),
+ '/digital-marketing/google-ads/':         ('service/google-ads/index.html',          '../google-ads/index.html'),
  '/digital-marketing/social-media/':       ('service/social-media-marketing/index.html',  '../social-media-marketing/index.html'),
  '/digital-marketing/content-copywriting/':('service/copywriting/index.html',             '../copywriting/index.html'),
  '/about/':                                ('about.html',                                 '../../about.html'),

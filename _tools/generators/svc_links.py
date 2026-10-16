@@ -75,7 +75,7 @@ IT = [
 ]
 DM = [
  ('service/seo-services/index.html','SEO-Services.svg',46,38,'SEO Services'),
- ('service/google-adwords/index.html','Google-Ads.svg',46,44,'Google Ads'),
+ ('service/google-ads/index.html','Google-Ads.svg',46,44,'Google Ads'),
  ('service/social-media-marketing/index.html','Social-Media-Marketing.svg',43,46,'Social Media Marketing'),
  ('service/copywriting/index.html','Content-Copywriting.svg',46,44,'Content &amp; Copywriting'),
 ]
