@@ -523,15 +523,50 @@ img.testi__avatar{display:block;object-fit:cover;}
 .no-js [data-reveal], .reduced [data-reveal]{opacity:1;transform:none;}
 
 /* ---------- responsive ---------- */
+/* Laptop widths, 1081-1440. The nav is nowrap inside a 1fr grid column, so
+   once the links need more room than the column has they spill over the phone
+   number instead of wrapping. These four tiers shrink the logo, the nav, the
+   phone and the CTA together so the row always fits. The logo column used to
+   stay pinned at 288px while the logo itself shrank - reclaiming that dead
+   space is most of the fix. Nav text never drops below 12px. */
 @media (max-width:1440px){
-  .header__logo img{width:218px;}
+  .header__inner{grid-template-columns:224px 1fr auto;}
+  .header__logo img{width:224px;}
   /* keep the scrolled logo smaller than the resting one at this width too */
-  .header.is-scrolled .header__logo img{width:176px;}
+  .header.is-scrolled .header__logo img{width:188px;}
+}
+@media (max-width:1366px){
+  .header__inner{padding:0 1.4em;gap:14px;}
+  .nav{gap:0;}
+  .nav__link{padding:9px 8px;font-size:13px;gap:5px;}
+  .header.is-scrolled .nav__link{padding:8px 7px;font-size:12.5px;}
+  .header__actions{gap:14px;}
+  .header__phone{font-size:13px;}
+  .header__cta{padding:12px 19px;font-size:13px;}
+  .header.is-scrolled .header__cta{padding:10px 16px;font-size:12.5px;}
 }
 @media (max-width:1300px){
-  .header__inner{padding:0 1.4em;gap:14px;}
-  .header__logo img{width:220px;}
-  .nav__link{padding:9px 9px;font-size:13px;gap:4px;}
+  .header__inner{grid-template-columns:200px 1fr auto;padding:0 1.1em;gap:10px;}
+  .header__logo img{width:200px;}
+  .header.is-scrolled .header__logo img{width:172px;}
+  .nav__link{padding:8px 7px;font-size:12.5px;gap:4px;}
+  .header.is-scrolled .nav__link{padding:7px 6px;font-size:12px;}
+  .nav__link .chev{width:8px;height:8px;}
+  .header__actions{gap:10px;}
+  .header__phone{font-size:12.5px;}
+  .header__cta{padding:10px 15px;font-size:12.5px;}
+  .header.is-scrolled .header__cta{padding:9px 13px;font-size:12px;}
+}
+@media (max-width:1160px){
+  .header__inner{grid-template-columns:178px 1fr auto;padding:0 .9em;gap:8px;}
+  .header__logo img{width:178px;}
+  .header.is-scrolled .header__logo img{width:158px;}
+  .nav__link{padding:7px 5px;font-size:12px;gap:3px;}
+  .header.is-scrolled .nav__link{padding:6px 5px;font-size:12px;}
+  .header__actions{gap:8px;}
+  .header__phone{font-size:12px;}
+  .header__cta{padding:9px 13px;font-size:12px;}
+  .header.is-scrolled .header__cta{padding:8px 12px;font-size:12px;}
 }
 @media (max-width:1080px){
   .header__inner{display:flex;align-items:center;justify-content:space-between;padding:0 1em;height:76px;}
