@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 TEAM = [
- dict(slug='sam', ini='SC', name='Sam Crawford', role='Managing Director',
+ dict(slug='sam', ini='SC', name='Sam Crawford', role='Principal',
   motto='Imagination is reality.',
   bio=[
    "Sam's favourite animal would have to be the seal: fun-loving, slow and enduring on land &mdash; yet fast, sleek and graceful under water. And that pretty much sums Sam up. When he's with a client or when he's socialising, he is like a seal out of water &mdash; friendly, unassuming, funny. But when he gets into the studio, he's lightning-fast, expert and focused on the job at hand.",
@@ -10,7 +10,7 @@ TEAM = [
    "Sam has built an international team that is able to deliver the &lsquo;big picture dream&rsquo; he sees for his clients. The fact that the team stretches from Australia to Vietnam and on to the Philippines is testament to Sam's ability to share that vision with others.",
    "When Sam isn't performing for and with Online Consulting, his real passion is his family. He spends as much time with his wife Cassie and their children, Layla and Ted, as he possibly can. And if there's a spare moment left after all that &mdash; then it's off down the beach for a sneaky surf.",
   ]),
- dict(slug='wilma', ini='WA', name='Wilma Amposta', role='General Manager',
+ dict(slug='wilma', ini='WA', name='Wilma Amposta', role='General Manager, Client Delivery',
   motto='To infinity and beyond&hellip;',
   bio=[
    "Wilma loves superheroes. When she and her girlfriends head out to the movies there's normally an argument. While they prefer romance films, Wilma will always choose &lsquo;Spiderman&rsquo; and &lsquo;The Avengers&rsquo; over &lsquo;Endless Love&rsquo;. But her favourite character is Superman. If she were to become a superhero herself, that's who she'd choose. &lsquo;But as the suit wouldn't fit, I'd have to be Superwoman,&rsquo; she joked. And that speaks volumes about Wilma.",
@@ -20,7 +20,7 @@ TEAM = [
    "Wilma's goal is to enhance OC's web development and copy output, to ensure it meets the highest standards. Then she liaises with clients to make sure it meets their needs. All in a day's work for a Superhero!",
    "Apart from socialising with her girlfriends and catching the occasional adventure movie, Wilma's passion is basketball and wrestling. While girls at school were busy playing with make up, she'd be wrestling with the boys. So next time you're chatting to Wilma about your web project, make sure you ask her about what it's like to be a superhero!",
   ]),
- dict(slug='jackie', ini='JT', name='Jackie Tuazon', role='Digital Marketing Manager',
+ dict(slug='jackie', ini='JT', name='Jackie Tuazon', role='Performance Marketing Manager',
   motto='Believe you can and you&rsquo;re halfway there.',
   bio=[
    "Carpe Diem sums up Jackie perfectly &mdash; she's always ready to take on a new challenge and it doesn't seem to matter what time of day it is. &lsquo;Bring it on&rsquo; could also be her motto, but she chose seize the day, perfect in her role as Digital Marketing Specialist.",
@@ -28,28 +28,28 @@ TEAM = [
    "Jackie takes her inspiration from the wise words of her mum who worked hard, was kind hearted and encouraged Jackie to do what she loves, and from her nephew, Elrond, who fills her days with warm hugs and butterfly kisses.",
    "When Jackie's not working, she loves to travel. That's why she wouldn't mind being able to teleport, just like Blink in the Marvel Universe. That way she could visit new places around the world and take her friends with her. You see, Jackie would much rather have her family and friends along to share in the wonders she sees on her travels. She's the kind of friend who wants to share the fun times but is always there to lend a helping hand or a sympathetic ear over a cup of coffee.",
   ]),
- dict(slug='jeff', ini='JE', name='Jeff Ernacio', role='Help Desk Manager',
+ dict(slug='jeff', ini='JE', name='Jeff Ernacio', role='Service Desk Manager',
   motto='Life is like riding a bicycle, to keep your balance you must keep moving. &mdash; Albert Einstein',
   bio=[
    "Jeff is someone you can depend on, responsible and very trustworthy. &lsquo;Engineer&rsquo; to his friends, he is a Jack of all trades. Always ready with a pocketful of practical advice and full of wisdom, you can talk to him about anything under the sun and always get an answer to your questions. It can be about fishes or cats (which he is very fond of) or the newest gadgets and latest technology. He is enthusiastic, accessible, and full of great ideas!",
-   "He is our Help Desk Manager, oversees the IT Help Desk ensuring our clients get the support they need as quickly as possible. Jeff uses his experience and foresight to proactively address details before they become a problem. His analytical ability and excellent communication skills makes it easy for him to effectively manage clients' concerns and perform new things that will be assigned to him.",
+   "He is our Service Desk Manager, oversees the IT Service Desk ensuring our clients get the support they need as quickly as possible. Jeff uses his experience and foresight to proactively address details before they become a problem. His analytical ability and excellent communication skills makes it easy for him to effectively manage clients' concerns and perform new things that will be assigned to him.",
    "Time is important to Jeff, that's why he makes sure to make the most out it. He loves to be outdoors &mdash; so biking is at the top of the list. He rides his mountain bike on weekends and goes somewhere peaceful and far from the busy city. He brings his camera sometimes to take beautiful photos. For Jeff, having a good work-life balance is the key to being a successful person.",
   ]),
- dict(slug='vince', ini='VB', name='Vince Besavilla', role='Head of Front-End Development',
+ dict(slug='vince', ini='VB', name='Vince Besavilla', role='Head of Web &amp; Digital Experience',
   motto='Superamus Non Vi Sed Arte &mdash; Overcome by Art, Not by Force.',
   bio=[
    "Vince is fueled by his passion for understanding the nuances of design and web architecture. His vast background in brand strategy, visual design, and web development strengthen his thoughtful, yet competitive approach on every project and case study he tackles. His hunger for knowledge and eagerness to learn more about the latest web design and digital industry trends is reflected in how he considers himself, as a &lsquo;tenacious learner&rsquo; who is always ready to tackle any challenge.",
    "He genuinely cares about the outcome of every project and always serves Online Consulting clients with &lsquo;red carpet&rsquo; assistance. When there are technical issues, Vince is one of the first to jump into action and get to the bottom of it as soon as possible for a swift resolution. Vince is also a team player and believes that team collaboration is the key to success, while maintaining work-life balance in the company.",
    "In his spare time, he enjoys playing airsoft, online video games, collecting and customising diecast cars, mixing music, cooking, watching movies, and travelling. He is also a &ldquo;gadget-freak&rdquo; and PC enthusiast, with a keen interest in technology and the latest gadgets.",
   ]),
- dict(slug='hannah', ini='HI', name='Hannah Sheila Iway', role='SEO Specialist',
+ dict(slug='hannah', ini='HI', name='Hannah Sheila Iway', role='Senior SEO Specialist (Search &amp; AI Visibility)',
   motto='However difficult life may seem, there is always something you can do and succeed at. &mdash; Stephen Hawking',
   bio=[
    "Hannah has been working in the SEO industry for a decade now. She never stops learning, always aiming to provide good results to clients. She thinks in advance and always clear with her recommendations. Any questions about website's SEO status, she's more than willing to answer and do research if needed.",
    "Hannah is also a mommy blogger and a brand influencer. She loves to write about motherhood, the struggles and adventures. While she's focused on building her own brand, she also supports local brands and attractions by writing about them for free. Apart from blogging, she recently started her Vlogging journey, not only to record her family's experiences but also to learn and improve her video editing skills.",
    "When Hannah's not working and blogging, she simply spends her free time with family, trying new places and activities worth featuring on her blog.",
   ]),
- dict(slug='jarrad', ini='JP', name='Jarrad Peters', role='Account Manager',
+ dict(slug='jarrad', ini='JP', name='Jarrad Peters', role='Client Success Manager',
   motto='Love what you do and you&rsquo;ll never have to work a day in your life.',
   bio=[
    "There's no stopping Jarrad &mdash; he's the jack rabbit of the team, always moving forward. He thrives under pressure, and loves being thrown in at the deep end, never giving up til he's got the right result.",
@@ -58,14 +58,14 @@ TEAM = [
    "His attention to detail is legendary. He once spent two hours moving a product a few millimetres back and forth before exclaiming, &lsquo;Hang on, there's a bit of empty space here.&rsquo; Yet the outcome of the shoot made it all worth while &mdash; the viewer is drawn to the product, the light glistens in the background, and the slow pan lures you in to the product.",
    "Hobbies? Jarrad loves to surf, but frankly he's too busy getting up at the crack of dawn shooting video and photography to catch the best waves.",
   ]),
- dict(slug='richard', ini='RH', name='Richard Hensley', role='Copywriter &amp; Content Strategist',
+ dict(slug='richard', ini='RH', name='Richard Hensley', role='Content &amp; Social Strategist',
   motto='Me, we. &mdash; one of the world&rsquo;s shortest poems, authored by Muhammad Ali',
   bio=[
    "Richard chooses his words carefully and says what needs to be said in as few words as possible. It's the same when he writes. Richard understands that the audience want their information in snackable portions and clear and concise language.",
    "If Richard had the option of being an animal then he'd be a Meerkat. Meerkats like hot climates, they're methodical and they perform their role for the communal benefit of the Meerkat community. Meerkats also have a natural immunity to the venom of scorpions that scour the Kalahari Desert, which Richard thinks is a good thing if you happen to find yourself in the Kalahari Desert.",
    "Richard's role is to advance your organisation's identity; to promote its core competencies, values, products and services and to focus your audience through imaginative and compelling content. Richard likes to work closely and collaboratively with clients to craft a content and social media strategy as the foundation for value creation.",
   ]),
- dict(slug='thanh', ini='TL', name='Thanh Le', role='Web Developer',
+ dict(slug='thanh', ini='TL', name='Thanh Le', role='Senior Web Developer',
   motto='When everything seems to be going against you, remember the aeroplane takes off against the wind. Not with it! &mdash; Henry Ford',
   bio=[
    "Thanh's experience and passion as a web developer are reflected in his long history in the industry. He always aims to improve his expertise by tackling any challenge that stands in his way. He has the patience to see the tiny details to create the perfect result for his clients.",
