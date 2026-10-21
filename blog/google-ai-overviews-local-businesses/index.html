@@ -129,6 +129,10 @@ button{font-family:inherit;cursor:pointer;}
 .header__logo img{transition:width .4s var(--ease),opacity .3s ease;}
 .header.is-scrolled .header__logo--light{opacity:0;}
 .header.is-scrolled .header__logo--dark{opacity:1;}
+/* the mobile panel is solid white, so the light mark would disappear on it.
+   Listed after the scrolled rules so it wins whenever both apply. */
+.header.is-menu-open .header__logo--light{opacity:0;}
+.header.is-menu-open .header__logo--dark{opacity:1;}
 .header__logo img{width:288px;height:auto;display:block;transition:width .4s var(--ease);}
 .header.is-scrolled .header__logo img{width:230px;}
 .nav{display:flex;align-items:center;justify-content:center;gap:2px;white-space:nowrap;min-width:0;}
@@ -2523,6 +2527,22 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
       if (sub) sub.style.maxHeight = '0px';
     });
   });
+})();
+</script>
+<script>
+/* Mirror the mobile panel's open state onto the header, so the logo can swap
+   to the dark mark while the white panel is up. The panel is a sibling of the
+   header, not a child, so CSS cannot reach up to it - and it is closed from
+   three different places (the burger, the anchor-scroll handler and the
+   menu-link handler), so watching the class is more reliable than patching
+   each one. */
+(function(){
+  var header = document.getElementById('header');
+  var menu   = document.getElementById('mobileMenu');
+  if (!header || !menu || !window.MutationObserver) return;
+  function sync(){ header.classList.toggle('is-menu-open', menu.classList.contains('is-open')); }
+  new MutationObserver(sync).observe(menu, { attributes: true, attributeFilter: ['class'] });
+  sync();
 })();
 </script>
 </body>
