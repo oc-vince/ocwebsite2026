@@ -143,7 +143,7 @@ for p in posts[lo:hi]:
     "@type": "Organization",
     "name": "Online Consulting",
     "url": "https://onlineconsulting.com.au/",
-    "logo": { "@type": "ImageObject", "url": "https://onlineconsulting.com.au/images/OC-Logo.png" }
+    "logo": { "@type": "ImageObject", "url": "https://onlineconsulting.com.au/images/OC-Logo-2026-Dark.png" }
   }
 }
 </script>''' % (html.unescape(title).replace('"', '\\"'), p['plain'].replace('"', '\\"'),

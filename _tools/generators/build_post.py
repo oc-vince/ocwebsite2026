@@ -75,7 +75,7 @@ ld = '''<script type="application/ld+json">
     "@type": "Organization",
     "name": "Online Consulting",
     "url": "https://onlineconsulting.com.au/",
-    "logo": { "@type": "ImageObject", "url": "https://onlineconsulting.com.au/images/OC-Logo.png" }
+    "logo": { "@type": "ImageObject", "url": "https://onlineconsulting.com.au/images/OC-Logo-2026-Dark.png" }
   }
 }
 </script>''' % (html.unescape(title).replace('"', '\\"'), plain.replace('"', '\\"'), imgbase, date, date, canon)

@@ -40,9 +40,9 @@
 <meta name="twitter:title" content="8 Reasons Google Workspace is Worth the Upgrade For Your Business">
 <meta name="twitter:description" content="Google Workspace is a cloud-based solutions designed to streamline communication, boost productivity, and keep your data safe. Here's why it's worth the upgrade!">
 <meta name="twitter:image" content="/blog/featured-images/bar-621033_1280.jpg">
-<link rel="icon" type="image/png" href="/images/FAVICON.png">
-<link rel="shortcut icon" type="image/png" href="/images/FAVICON.png">
-<link rel="apple-touch-icon" href="/images/FAVICON.png">
+<link rel="icon" type="image/png" href="/images/FAVICON-2026.png">
+<link rel="shortcut icon" type="image/png" href="/images/FAVICON-2026.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-2026.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -121,7 +121,14 @@ button{font-family:inherit;cursor:pointer;}
 .header.is-hidden{transform:translateY(-100%);}
 .header__inner{width:100%;margin:0;padding:0 2em;height:84px;display:grid;grid-template-columns:288px 1fr auto;align-items:center;gap:24px;transition:height .4s var(--ease),padding .4s var(--ease);}
 .header.is-scrolled .header__inner{height:67px;}
-.header__logo{flex-shrink:0;}
+.header__logo{flex-shrink:0;position:relative;}
+/* two stacked marks, cross-faded: the light one reads over the dark hero,
+   the dark one over the white scrolled bar. Both ship with the page so the
+   swap cannot flash. */
+.header__logo--dark{position:absolute;top:0;left:0;opacity:0;}
+.header__logo img{transition:width .4s var(--ease),opacity .3s ease;}
+.header.is-scrolled .header__logo--light{opacity:0;}
+.header.is-scrolled .header__logo--dark{opacity:1;}
 .header__logo img{width:288px;height:auto;display:block;transition:width .4s var(--ease);}
 .header.is-scrolled .header__logo img{width:230px;}
 .nav{display:flex;align-items:center;justify-content:center;gap:2px;white-space:nowrap;min-width:0;}
@@ -1067,7 +1074,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
     "@type": "Organization",
     "name": "Online Consulting",
     "url": "https://onlineconsulting.com.au/",
-    "logo": { "@type": "ImageObject", "url": "https://onlineconsulting.com.au/images/OC-Logo.png" }
+    "logo": { "@type": "ImageObject", "url": "https://onlineconsulting.com.au/images/OC-Logo-2026-Dark.png" }
   }
 }
 </script>
@@ -1078,7 +1085,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
 
 <!-- Preloader -->
 <div class="preloader" id="preloader" aria-hidden="true">
-  <img class="preloader__logo" src="/images/OC-Logo.webp" alt="" width="582" height="147">
+  <img class="preloader__logo" src="/images/OC-Logo-2026-Dark.webp" alt="" width="1316" height="231">
   <div class="preloader__bar"><div class="preloader__fill" id="preFill"></div></div>
   <div class="preloader__count" id="preCount">0%</div>
 </div>
@@ -1091,7 +1098,8 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
 <header class="header" id="header">
   <div class="header__inner">
     <a class="header__logo" href="/" aria-label="Online Consulting — home">
-      <img src="/images/OC-Logo.webp" alt="Online Consulting" width="582" height="147">
+      <img class="header__logo--light" src="/images/OC-Logo-2026-Light.webp" alt="Online Consulting" width="1316" height="231">
+      <img class="header__logo--dark" src="/images/OC-Logo-2026-Dark.webp" alt="" aria-hidden="true" width="1316" height="231">
     </a>
     <nav class="nav" aria-label="Main navigation">
       <div class="nav__item nav__item--mega">
@@ -1645,7 +1653,7 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
     <div class="footer__row footer__row--info">
 
       <div class="footer__col footer__col--brand">
-        <a class="footer__brand-logo" href="/" aria-label="Online Consulting &mdash; home"><img src="/images/OC-Logo-white.webp" alt="Online Consulting" width="582" height="147"></a>
+        <a class="footer__brand-logo" href="/" aria-label="Online Consulting &mdash; home"><img src="/images/OC-Logo-2026-Light.webp" alt="Online Consulting" width="1316" height="231"></a>
         <p>Sydney-based IT services &amp; support <br>&mdash; Northern Beaches to the CBD.</p>
         <a class="footer__cta" href="/one-partner/" data-magnetic><span>Why One Partner</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h13M12 6.6l5.5 5.4-5.5 5.4"/></svg></a>
       </div>
