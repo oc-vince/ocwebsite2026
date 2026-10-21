@@ -1242,20 +1242,6 @@ img.testi__avatar{display:block;object-fit:cover;}
       <a class="btn btn--primary" href="/book/" data-magnetic><span>Book a Free IT Review</span><span class="arrow">→</span></a>
       <a class="btn btn--ghost" href="/service/it-support/" data-magnetic><span>Explore Managed IT Services</span></a>
     </div>
-    <div class="hero__stats">
-      <div class="stat" data-reveal>
-        <div class="stat__num"><span data-count="18">0</span></div>
-        <div class="stat__label">years supporting Sydney businesses</div>
-      </div>
-      <div class="stat" data-reveal>
-        <div class="stat__num"><span data-count="500">0</span><span class="plus">+</span></div>
-        <div class="stat__label">endpoints under management</div>
-      </div>
-      <div class="stat" data-reveal>
-        <div class="stat__num"><span data-count="2">0</span><span class="plus">-hour</span></div>
-        <div class="stat__label">response in business hours — our own helpdesk team</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -2010,13 +1996,6 @@ function startPage(){
   gsap.to('.hero [data-reveal]', {
     opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
     stagger: 0.08, delay: 0.1
-  });
-  // counters
-  document.querySelectorAll('[data-count]').forEach(function(el){
-    var target = parseInt(el.getAttribute('data-count'), 10);
-    var obj = { v: 0 };
-    gsap.to(obj, { v: target, duration: 1.6, delay: 0.5, ease: 'power2.out',
-      onUpdate: function(){ el.textContent = Math.round(obj.v); }});
   });
 }
 
