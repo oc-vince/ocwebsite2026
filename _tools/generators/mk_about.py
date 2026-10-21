@@ -11,7 +11,7 @@ ld = {"@context":"https://schema.org","@graph":[
   {"@type":"Organization","name":"Online Consulting","url":"https://onlineconsulting.com.au/",
    "foundingDate":"2007","telephone":"+61 2 8459 7882","email":"info@onlineconsulting.com.au",
    "founder":{"@type":"Person","name":"Sam Crawford"},
-   "address":{"@type":"PostalAddress","streetAddress":"Level 2/35 Clarence St","addressLocality":"Sydney","addressRegion":"NSW","postalCode":"2000","addressCountry":"AU"},
+   "address":{"@type":"PostalAddress","streetAddress":"Level 15, 1 Farrer Place","addressLocality":"Sydney","addressRegion":"NSW","postalCode":"2000","addressCountry":"AU"},
    "areaServed":"Sydney, Australia"},
   {"@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://onlineconsulting.com.au/"},
