@@ -65,6 +65,14 @@ TEAM = [
    "If Richard had the option of being an animal then he'd be a Meerkat. Meerkats like hot climates, they're methodical and they perform their role for the communal benefit of the Meerkat community. Meerkats also have a natural immunity to the venom of scorpions that scour the Kalahari Desert, which Richard thinks is a good thing if you happen to find yourself in the Kalahari Desert.",
    "Richard's role is to advance your organisation's identity; to promote its core competencies, values, products and services and to focus your audience through imaginative and compelling content. Richard likes to work closely and collaboratively with clients to craft a content and social media strategy as the foundation for value creation.",
   ]),
+ dict(slug='charm', ini='CC', name='Charmaine Ann Canaynay', role='Service Desk Analyst',
+  motto='Keep learning, keep growing, and keep moving forward.',
+  bio=[
+   "I&rsquo;m a mother, a survivor, a teacher at heart, and a goal-driven woman who believes there is always something new to learn.",
+   "I work in the world of IT, where every day brings a different challenge to solve. I see my work much like cooking &mdash; you start with different ingredients, figure out what works, adjust when something doesn&rsquo;t go as planned, and create something better in the end. I enjoy both the problem-solving and the learning that comes with it.",
+   "Being a mother has taught me patience, understanding, and the importance of celebrating small wins. Life has taught me resilience, and my goals keep me moving forward.",
+   "Whether I&rsquo;m working, cooking for the people I love, learning something new, or simply taking on another day, I believe in doing things with purpose, patience, and heart.",
+  ]),
  dict(slug='thanh', ini='TL', name='Thanh Le', role='Senior Web Developer',
   motto='When everything seems to be going against you, remember the aeroplane takes off against the wind. Not with it! &mdash; Henry Ford',
   bio=[
