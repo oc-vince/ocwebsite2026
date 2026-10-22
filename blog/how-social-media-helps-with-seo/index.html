@@ -1018,6 +1018,20 @@ a.op-chip:hover{border-color:var(--blue);background:var(--blue-soft);color:var(-
   transition:background .28s var(--ease),transform .5s var(--ease),opacity .4s var(--ease);}
 .nav__item--mega:hover .mega__item,
 .nav__item--mega:focus-within .mega__item{transform:none;opacity:1;}
+
+/* Tablet widths still show the full desktop nav, but hover is the wrong model
+   on a touch screen: a tap opens a panel the user then cannot dismiss by
+   moving the pointer away. Between 1081 and 1366 the panel opens on click
+   instead. The handler focuses the trigger and :focus-within does the rest,
+   so every open-state rule above - including the staggered item reveal -
+   keeps working untouched, and only one panel can be open at a time because
+   focus only ever lives in one place. These three rules suppress the
+   hover-only path; the specificity (0,3,0) beats the 0,2,0 rules above. */
+@media (min-width:1081px) and (max-width:1366px){
+  .nav__item--mega:hover:not(:focus-within) .mega{opacity:0;visibility:hidden;pointer-events:none;}
+  .nav__item--mega:hover:not(:focus-within) .mega__panel{transform:translateY(-14px) scale(.985);opacity:0;}
+  .nav__item--mega:hover:not(:focus-within) .mega__item{transform:translateY(10px);opacity:0;}
+}
 .mega__item:hover{background:rgba(0,0,0,.8);}
 .mega__ico{width:46px;height:46px;display:grid;place-items:center;flex:0 0 auto;
   transition:transform .35s var(--ease);}
@@ -2451,6 +2465,67 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
   function sync(){ header.classList.toggle('is-menu-open', menu.classList.contains('is-open')); }
   new MutationObserver(sync).observe(menu, { attributes: true, attributeFilter: ['class'] });
   sync();
+})();
+</script>
+<script>
+/* Tap-to-open mega menu for tablet widths (1081-1366), paired with the
+   :hover suppression in the stylesheet. Opening is done by focusing the
+   trigger rather than by setting a class, so the existing :focus-within
+   rules drive the panel and the staggered reveal. Focus is exclusive, which
+   is what guarantees two panels can never be open over each other.
+   The listener is on document in the CAPTURE phase so it runs before the
+   trigger's own click handler, which closes the panel on desktop; a capture
+   listener on the trigger itself would not, since listeners on the target
+   fire in registration order regardless of the capture flag. */
+(function(){
+  var mq = window.matchMedia('(min-width:1081px) and (max-width:1366px)');
+  var SEL = '.nav__item--mega > .nav__link[role="button"]';
+
+  function blurNav(){
+    var a = document.activeElement;
+    if (a && a.blur && a.closest && a.closest('.nav__item--mega')) a.blur();
+  }
+  function setAria(item, open){
+    var t = item.querySelector('.nav__link[role="button"]');
+    if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  document.addEventListener('click', function(e){
+    if (!mq.matches) return;
+    var el = e.target;
+    if (!el || !el.closest) return;
+    var trigger = el.closest(SEL);
+    if (!trigger) {
+      /* a link inside a panel keeps working and closes on its own; a click
+         anywhere else dismisses whatever is open */
+      if (!el.closest('.nav__item--mega')) blurNav();
+      return;
+    }
+    e.preventDefault();
+    e.stopPropagation();
+    var item = trigger.parentElement;
+    if (item.contains(document.activeElement)) {
+      trigger.blur();
+      setAria(item, false);
+    } else {
+      item.classList.remove('is-dismissed');
+      trigger.focus();
+      setAria(item, true);
+    }
+  }, true);
+
+  /* keep aria-expanded honest however the panel was closed */
+  document.addEventListener('focusout', function(e){
+    var item = e.target && e.target.closest ? e.target.closest('.nav__item--mega') : null;
+    if (!item) return;
+    window.setTimeout(function(){
+      if (!item.contains(document.activeElement)) setAria(item, false);
+    }, 0);
+  });
+
+  function reset(){ blurNav(); }
+  if (mq.addEventListener) mq.addEventListener('change', reset);
+  else if (mq.addListener) mq.addListener(reset);
 })();
 </script>
 </body>
