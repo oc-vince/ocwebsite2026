@@ -1053,6 +1053,16 @@ button{font-family:inherit;cursor:pointer;}
   .nav__item--mega:hover:not(:focus-within) .mega{opacity:0;visibility:hidden;pointer-events:none;}
   .nav__item--mega:hover:not(:focus-within) .mega__panel{transform:translateY(-14px) scale(.985);opacity:0;}
   .nav__item--mega:hover:not(:focus-within) .mega__item{transform:translateY(10px);opacity:0;}
+  /* the open panel is driven by focus here, not hover, so dress the active
+     trigger in the hover style - pill, navy text, flipped chevron. */
+  .nav__item--mega > .nav__link[role="button"]:focus{background:var(--blue-soft);color:var(--navy);}
+  .nav__item--mega:focus-within .chev{transform:rotate(-135deg) translateY(-1px);}
+  /* and drop the focus ring, but only when the panel was opened by pointer.
+     The ring cannot be keyed off :focus-visible: the handler focuses the
+     trigger programmatically, and Chrome then matches :focus-visible even
+     for a mouse click or a tap. The handler sets .is-tapped instead, so a
+     keyboard user tabbing to the trigger still gets a visible ring. */
+  .nav__item--mega.is-tapped > .nav__link[role="button"]:focus{outline:none;}
 }
 .mega__item:hover{background:rgba(0,0,0,.8);}
 .mega__ico{width:46px;height:46px;display:grid;place-items:center;flex:0 0 auto;
@@ -2618,9 +2628,11 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
     var item = trigger.parentElement;
     if (item.contains(document.activeElement)) {
       trigger.blur();
+      item.classList.remove('is-tapped');
       setAria(item, false);
     } else {
       item.classList.remove('is-dismissed');
+      item.classList.add('is-tapped');
       trigger.focus();
       setAria(item, true);
     }
@@ -2631,7 +2643,10 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
     var item = e.target && e.target.closest ? e.target.closest('.nav__item--mega') : null;
     if (!item) return;
     window.setTimeout(function(){
-      if (!item.contains(document.activeElement)) setAria(item, false);
+      if (!item.contains(document.activeElement)) {
+        item.classList.remove('is-tapped');
+        setAria(item, false);
+      }
     }, 0);
   });
 
