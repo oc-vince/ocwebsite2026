@@ -212,6 +212,7 @@ button{font-family:inherit;cursor:pointer;}
 .hero h1 .accent{color:var(--blue);}
 .hero__sub{max-width:68ch;font-size:clamp(16px,1.4vw,16px);color:var(--grey);margin-top:30px;}
 .hero__cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:42px;}
+.hero__sub--lead{font-weight:700;}
 .hero__sub--note{margin-top:20px;}
 .hero__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter);margin-top:clamp(48px,7vh,90px);padding-top:34px;border-top:1px solid var(--line);max-width:900px;justify-items:center;text-align:center;}
 .stat__num{font-family:var(--font-display);font-size:clamp(30px,3.4vw,46px);font-weight:700;color:var(--navy);}
@@ -596,6 +597,13 @@ img.testi__avatar{display:block;object-fit:cover;}
   .faq__layout{grid-template-columns:1fr;gap:clamp(30px,4vw,46px);}
   .faq__aside{position:static;}
   .faq__aside h2,.faq__aside p{max-width:52ch;}
+  /* object-fit:cover crops the hero video hard, so a bright frame can leave
+     the white type unreadable. Runs to 1080 so iPad Pro portrait (1024) is
+     covered. Sits above the video (z-index 0), below .hero__inner (z-index 2). */
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,20,34,.72) 0%,rgba(8,20,34,.56) 45%,rgba(8,20,34,.78) 100%);}
+  /* slate grey would disappear into the scrim */
+  .hero__sub{color:#fff;}
 }
 @media (max-width:640px){
   .faq__num{display:none;}
@@ -622,12 +630,7 @@ img.testi__avatar{display:block;object-fit:cover;}
   .eyebrow-sep{display:none;}
   .eyebrow-seg{display:block;}
   #heroTitle{text-align:center;}
-  .hero__sub{text-align:center;margin-left:auto;margin-right:auto;color:#fff;}
-  /* object-fit:cover crops the hero video hard on a narrow viewport, so a
-     bright frame can leave the white type unreadable. Scrim sits above the
-     video (z-index 0) and below .hero__inner (z-index 2). */
-  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg,rgba(8,20,34,.72) 0%,rgba(8,20,34,.56) 45%,rgba(8,20,34,.78) 100%);}
+  .hero__sub{text-align:center;margin-left:auto;margin-right:auto;}
   /* the stat captions are slate grey by default, which the scrim swallows */
   .hero .stat__label{color:rgba(255,255,255,.78);}
   .hero__stats{border-top-color:rgba(255,255,255,.22);}
@@ -1239,8 +1242,8 @@ img.testi__avatar{display:block;object-fit:cover;}
   <video class="hero__video" src="/video/hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="container hero__inner">
     <p class="hero__eyebrow" data-reveal><span class="eyebrow-seg">Managed IT Services &amp; Support</span><span class="eyebrow-sep"> · </span><span class="eyebrow-seg">Sydney</span></p>
-    <h1 class="reveal-lines" id="heroTitle">All your technology. <span class="accent">One trusted</span> Sydney partner.</h1>
-    <p class="hero__sub" data-reveal>Online Consulting manages your IT, secures your systems, builds your website and runs your marketing — one accountable, in-house team instead of five disconnected vendors.</p>
+    <h1 class="reveal-lines" id="heroTitle"><span class="accent">One team</span> for your IT, security, web and marketing.</h1>
+    <p class="hero__sub hero__sub--lead" data-reveal>No more chasing separate vendors. One in-house team that owns the result.</p>
     <p class="hero__sub hero__sub--note" data-reveal>Online Consulting is an IT consulting company in Sydney, and managed IT services and support are what we do every day — helpdesk, cybersecurity, networking, cloud and everything in between. As your IT consultants in Sydney, we also handle web development, hosting and digital marketing under the same roof, so your technology never gets split across providers who don't talk to each other.</p>
     <div class="hero__cta" data-reveal>
       <a class="btn btn--primary" href="/book/" data-magnetic><span>Book a Free IT Review</span><span class="arrow">→</span></a>
