@@ -356,11 +356,26 @@ button{font-family:inherit;cursor:pointer;}
 .advisory__sub{color:#7cc3ef;font-family:var(--font-display);font-weight:600;
   font-size:clamp(15px,1.3vw,17px);margin-top:14px;}
 .advisory__copy{margin-top:28px;}
-.advisory__copy p{color:rgba(255,255,255,.72);font-size:clamp(15px,1.15vw,16.5px);max-width:64ch;}
-.advisory__copy p + p{margin-top:16px;}
-.advisory__copy h3{color:#fff;font-size:clamp(18px,1.7vw,22px);margin-top:36px;}
-.advisory__copy h3 + p{margin-top:16px;}
-.advisory__list{display:grid;gap:15px;margin-top:20px;max-width:64ch;}
+.advisory__copy > p{color:rgba(255,255,255,.72);font-size:clamp(15px,1.15vw,16.5px);max-width:64ch;}
+.advisory__copy > p + p{margin-top:16px;}
+.advisory__outro{margin-top:30px;}
+/* the two headings are accordions, built on the FAQ machinery so the
+   collapse transition, keyboard nav and aria wiring are shared. Only the
+   colours change for the dark band. */
+.advisory__acc{margin-top:36px;}
+.advisory .faq__list{border-top-color:rgba(255,255,255,.16);}
+.advisory .faq__item{border-bottom-color:rgba(255,255,255,.16);}
+.advisory .faq__item::before{background:linear-gradient(90deg,#7cc3ef,rgba(124,195,239,0));}
+.advisory .faq__btn{color:#fff;}
+.advisory .faq__btn:hover,.advisory .faq__item.is-open .faq__btn{color:#7cc3ef;}
+.advisory .faq__btn:focus-visible{outline-color:#7cc3ef;}
+.advisory .faq__num{color:#7cc3ef;}
+.advisory .faq__icon{border-color:rgba(255,255,255,.24);}
+.advisory .faq__btn:hover .faq__icon{border-color:#7cc3ef;background:rgba(124,195,239,.16);}
+.advisory .faq__item.is-open .faq__icon{background:#7cc3ef;border-color:#7cc3ef;color:var(--navy-deep);}
+.advisory .faq__a-body p{color:rgba(255,255,255,.72);font-size:clamp(15px,1.15vw,16.5px);max-width:64ch;}
+.advisory .faq__a-body p + p{margin-top:16px;}
+.advisory__list{display:grid;gap:15px;max-width:64ch;}
 .advisory__list li{position:relative;padding-left:30px;
   color:rgba(255,255,255,.72);font-size:clamp(15px,1.15vw,16.5px);}
 .advisory__list li::before{content:"";position:absolute;left:0;top:.6em;
@@ -1375,20 +1390,50 @@ img.testi__avatar{display:block;object-fit:cover;}
           <p data-reveal>On 21 October 2026, the PHP project released fixes for two critical vulnerabilities. Both are rated CVSS 9.2 and could let an attacker run code on a server without logging in. PHP powers WordPress and most custom web applications.</p>
           <p data-reveal>Patched versions are 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP 8.1 and older are no longer supported, but limited fixes are available for 7.4, 8.0 and 8.1.</p>
 
-          <h3 data-reveal>What Online Consulting has done</h3>
-          <ul class="advisory__list">
-            <li data-reveal><b>Temporary protection:</b> On 21 October, before patches were available, we turned off a PHP feature known to be one route to exploitation. We did this on every PHP server we manage.</li>
-            <li data-reveal><b>Patching:</b> On 22 October we updated all managed servers to the patched releases. We checked each website before and after the update. There was no downtime.</li>
-            <li data-reveal><b>Older PHP versions:</b> A few sites still run on unsupported PHP versions. We’ve applied the available fixes and are moving these sites to a current version one at a time. If we need anything from the site owners, we’ll contact them directly.</li>
-          </ul>
+          <div class="faq__list js-faq advisory__acc" id="advisoryAcc" data-reveal>
+            <div class="faq__item">
+              <h3 class="faq__q">
+                <button class="faq__btn" type="button" id="adv-q1" aria-expanded="false" aria-controls="adv-a1">
+                  <span class="faq__num">01</span>
+                  <span class="faq__label">What Online Consulting has done</span>
+                  <span class="faq__icon" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="faq__a" id="adv-a1" role="region" aria-labelledby="adv-q1">
+                <div class="faq__a-inner">
+                  <div class="faq__a-body">
+                    <ul class="advisory__list">
+                      <li><b>Temporary protection:</b> On 21 October, before patches were available, we turned off a PHP feature known to be one route to exploitation. We did this on every PHP server we manage.</li>
+                      <li><b>Patching:</b> On 22 October we updated all managed servers to the patched releases. We checked each website before and after the update. There was no downtime.</li>
+                      <li><b>Older PHP versions:</b> A few sites still run on unsupported PHP versions. We’ve applied the available fixes and are moving these sites to a current version one at a time. If we need anything from the site owners, we’ll contact them directly.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3 class="faq__q">
+                <button class="faq__btn" type="button" id="adv-q2" aria-expanded="false" aria-controls="adv-a2">
+                  <span class="faq__num">02</span>
+                  <span class="faq__label">What you need to do</span>
+                  <span class="faq__icon" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="faq__a" id="adv-a2" role="region" aria-labelledby="adv-q2">
+                <div class="faq__a-inner">
+                  <div class="faq__a-body">
+                    <p>If Online Consulting manages your website, you don’t need to do anything.</p>
+                    <p>If you run PHP on a server we don’t manage, update to one of the patched versions above as soon as possible, or ask your hosting provider to do it. If you’re on PHP 8.1 or older, plan an upgrade to a supported version.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h3 data-reveal>What you need to do</h3>
-          <p data-reveal>If Online Consulting manages your website, you don’t need to do anything.</p>
-          <p data-reveal>If you run PHP on a server we don’t manage, update to one of the patched versions above as soon as possible, or ask your hosting provider to do it. If you’re on PHP 8.1 or older, plan an upgrade to a supported version.</p>
-          <p data-reveal>If you have any questions, please reach out.</p>
+          <p class="advisory__outro" data-reveal>If you have any questions, please reach out.</p>
         </div>
 
-        <a class="btn btn--light" href="/contact/" data-magnetic data-reveal><span>Contact Us Now</span><span class="arrow">→</span></a>
+        <a class="btn btn--light" href="/contact/" data-magnetic data-reveal><span>Contact Us For More Info</span><span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -2357,9 +2402,15 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 <script>
 /* ============ FAQ ACCORDION ============ */
+/* Runs over any .faq__list given an id: the Common Questions block and the
+   PHP advisory block share the same markup, so they share this behaviour.
+   hashPrefix is the deep-link prefix for that list's panels. */
 (function(){
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var list = document.getElementById('faqList');
+  initAccordion(document.getElementById('faqList'), '#faq-a');
+  initAccordion(document.getElementById('advisoryAcc'), '#adv-a');
+
+  function initAccordion(list, hashPrefix){
   if (!list) return;
   var items = [].slice.call(list.querySelectorAll('.faq__item'));
   if (!items.length) return;
@@ -2408,7 +2459,7 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
   /* deep link: #faq-a3 opens and scrolls to that question */
   function fromHash(){
     var h = location.hash;
-    if (!h || h.indexOf('#faq-a') !== 0) return;
+    if (!h || h.indexOf(hashPrefix) !== 0) return;
     var panel = document.querySelector(h);
     if (!panel) return;
     var item = panel.closest('.faq__item');
@@ -2418,6 +2469,7 @@ window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
   }
   window.addEventListener('hashchange', fromHash);
   fromHash();
+  }
 })();
 </script>
 <script>
