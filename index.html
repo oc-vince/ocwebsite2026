@@ -224,8 +224,14 @@ button{font-family:inherit;cursor:pointer;}
   .hero__sub{max-width:68ch;text-wrap:balance;}
 }
 
+/* object-fit:cover crops the hero video hard, so a bright frame can leave the
+   white type unreadable. The scrim runs at every width - desktop, tablet and
+   phone - and sits above the video (z-index 0), below .hero__inner (z-index 2). */
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(8,20,34,.72) 0%,rgba(8,20,34,.56) 45%,rgba(8,20,34,.78) 100%);}
 /* white type over the hero video (accent words keep the brand blue) */
 .hero h1{color:#fff;}
+.hero__sub{color:#fff;}
 .hero .stat__num,.hero .stat__num .plus{color:#fff;}
 .hero .btn--ghost{color:#fff;}
 .hero .btn--ghost:hover{color:var(--navy);}
@@ -332,6 +338,44 @@ button{font-family:inherit;cursor:pointer;}
 .tlink:hover{color:var(--blue);}
 .tlink .arrow{transition:transform .35s var(--ease);}
 .tlink:hover .arrow{transform:translateX(5px);}
+
+/* ---------- security advisory (full-width dark) ---------- */
+.advisory{background:var(--navy-deep);color:#fff;overflow:hidden;position:relative;}
+.advisory::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(900px 520px at 12% 0%, rgba(20,135,216,.16), transparent 62%),
+  radial-gradient(760px 600px at 96% 100%, rgba(20,135,216,.10), transparent 60%);}
+.advisory .container{position:relative;z-index:2;}
+.advisory__grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);
+  gap:clamp(32px,4vw,64px);align-items:start;}
+.advisory__media{margin:0;position:sticky;top:124px;}
+.advisory__media img{width:100%;height:auto;border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.12);box-shadow:0 36px 70px -34px rgba(0,0,0,.72);}
+.advisory .section__kicker{color:#7cc3ef;}
+.advisory .section__kicker::before{background:#7cc3ef;}
+.advisory h2{color:#fff;font-size:clamp(28px,3.4vw,46px);font-weight:700;max-width:19ch;}
+.advisory__sub{color:#7cc3ef;font-family:var(--font-display);font-weight:600;
+  font-size:clamp(15px,1.3vw,17px);margin-top:14px;}
+.advisory__copy{margin-top:28px;}
+.advisory__copy p{color:rgba(255,255,255,.72);font-size:clamp(15px,1.15vw,16.5px);max-width:64ch;}
+.advisory__copy p + p{margin-top:16px;}
+.advisory__copy h3{color:#fff;font-size:clamp(18px,1.7vw,22px);margin-top:36px;}
+.advisory__copy h3 + p{margin-top:16px;}
+.advisory__list{display:grid;gap:15px;margin-top:20px;max-width:64ch;}
+.advisory__list li{position:relative;padding-left:30px;
+  color:rgba(255,255,255,.72);font-size:clamp(15px,1.15vw,16.5px);}
+.advisory__list li::before{content:"";position:absolute;left:0;top:.6em;
+  width:9px;height:9px;border-radius:50%;background:#7cc3ef;}
+.advisory__list b{color:#fff;font-weight:600;}
+.advisory .btn{margin-top:40px;}
+@media (max-width:1080px){
+  .advisory__grid{grid-template-columns:minmax(0,320px) minmax(0,1fr);}
+  .advisory__media{top:104px;}
+}
+@media (max-width:900px){
+  /* one column: the card reads as a lead image above the advisory */
+  .advisory__grid{grid-template-columns:1fr;}
+  .advisory__media{position:static;max-width:460px;margin-inline:auto;}
+}
 
 /* ---------- why one partner (full-width dark) ---------- */
 .why{background:var(--navy-deep);color:#fff;overflow:hidden;position:relative;}
@@ -597,13 +641,6 @@ img.testi__avatar{display:block;object-fit:cover;}
   .faq__layout{grid-template-columns:1fr;gap:clamp(30px,4vw,46px);}
   .faq__aside{position:static;}
   .faq__aside h2,.faq__aside p{max-width:52ch;}
-  /* object-fit:cover crops the hero video hard, so a bright frame can leave
-     the white type unreadable. Runs to 1080 so iPad Pro portrait (1024) is
-     covered. Sits above the video (z-index 0), below .hero__inner (z-index 2). */
-  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg,rgba(8,20,34,.72) 0%,rgba(8,20,34,.56) 45%,rgba(8,20,34,.78) 100%);}
-  /* slate grey would disappear into the scrim */
-  .hero__sub{color:#fff;}
 }
 @media (max-width:640px){
   .faq__num{display:none;}
@@ -1315,6 +1352,43 @@ img.testi__avatar{display:block;object-fit:cover;}
         <span class="marquee__item"><img src="/images/Ubiquiti.webp" alt="Ubiquiti UniFi" width="231" height="76" loading="eager" decoding="async"></span>
         <span class="marquee__item"><img src="/images/Adobe.webp" alt="Adobe" width="288" height="76" loading="eager" decoding="async"></span>
         <span class="marquee__item"><img src="/images/Shopify.webp" alt="Shopify" width="265" height="76" loading="eager" decoding="async"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHP SECURITY ADVISORY (full-width dark) ============ -->
+<section class="section advisory" id="php-advisory" aria-labelledby="advisoryTitle">
+  <div class="container">
+    <div class="advisory__grid">
+      <figure class="advisory__media" data-reveal>
+        <img src="/images/CriticalPHP.webp" width="1080" height="1080" loading="lazy" decoding="async"
+             alt="Security advisory: critical PHP vulnerabilities patched — CVE-2026-109618 and CVE-2026-109619, CVSS 9.2. All managed servers updated, no downtime, no action needed for managed sites.">
+      </figure>
+
+      <div class="advisory__body">
+        <p class="section__kicker" data-reveal>PHP Security Advisory</p>
+        <h2 id="advisoryTitle" class="reveal-lines">Remote Code Execution Vulnerabilities</h2>
+        <p class="advisory__sub" data-reveal>(CVE-2026-109618 and CVE-2026-109619)</p>
+
+        <div class="advisory__copy">
+          <p data-reveal>On 21 October 2026, the PHP project released fixes for two critical vulnerabilities. Both are rated CVSS 9.2 and could let an attacker run code on a server without logging in. PHP powers WordPress and most custom web applications.</p>
+          <p data-reveal>Patched versions are 8.5.12, 8.4.27, 8.3.36 and 8.2.35. PHP 8.1 and older are no longer supported, but limited fixes are available for 7.4, 8.0 and 8.1.</p>
+
+          <h3 data-reveal>What Online Consulting has done</h3>
+          <ul class="advisory__list">
+            <li data-reveal><b>Temporary protection:</b> On 21 October, before patches were available, we turned off a PHP feature known to be one route to exploitation. We did this on every PHP server we manage.</li>
+            <li data-reveal><b>Patching:</b> On 22 October we updated all managed servers to the patched releases. We checked each website before and after the update. There was no downtime.</li>
+            <li data-reveal><b>Older PHP versions:</b> A few sites still run on unsupported PHP versions. We’ve applied the available fixes and are moving these sites to a current version one at a time. If we need anything from the site owners, we’ll contact them directly.</li>
+          </ul>
+
+          <h3 data-reveal>What you need to do</h3>
+          <p data-reveal>If Online Consulting manages your website, you don’t need to do anything.</p>
+          <p data-reveal>If you run PHP on a server we don’t manage, update to one of the patched versions above as soon as possible, or ask your hosting provider to do it. If you’re on PHP 8.1 or older, plan an upgrade to a supported version.</p>
+          <p data-reveal>If you have any questions, please reach out.</p>
+        </div>
+
+        <a class="btn btn--light" href="/contact/" data-magnetic data-reveal><span>Contact Us Now</span><span class="arrow">→</span></a>
       </div>
     </div>
   </div>
