@@ -11,10 +11,10 @@ ld={"@context":"https://schema.org","@graph":[
   "telephone":"+61 2 8459 7882","email":"info@onlineconsulting.com.au",
   "contactPoint":[{"@type":"ContactPoint","telephone":"+61 2 8459 7882","email":"info@onlineconsulting.com.au",
                    "contactType":"customer support","areaServed":"AU","availableLanguage":"English"}],
-  "address":{"@type":"PostalAddress","streetAddress":"Level 15, 1 Farrer Place","addressLocality":"Sydney",
+  "address":{"@type":"PostalAddress","streetAddress":"Level 30, 264 George Street","addressLocality":"Sydney",
              "addressRegion":"NSW","postalCode":"2000","addressCountry":"AU"},
   "location":[
-    {"@type":"Place","name":"Head Office","address":{"@type":"PostalAddress","streetAddress":"Level 15, 1 Farrer Place","addressLocality":"Sydney","addressRegion":"NSW","postalCode":"2000","addressCountry":"AU"}},
+    {"@type":"Place","name":"Head Office","address":{"@type":"PostalAddress","streetAddress":"Level 30, 264 George Street","addressLocality":"Sydney","addressRegion":"NSW","postalCode":"2000","addressCountry":"AU"}},
     {"@type":"Place","name":"Northern Beaches Studio","address":{"@type":"PostalAddress","streetAddress":"30 Smith Avenue","addressLocality":"Allambie Heights","addressRegion":"NSW","postalCode":"2100","addressCountry":"AU"}}]},
  {"@type":"BreadcrumbList","itemListElement":[
    {"@type":"ListItem","position":1,"name":"Home","item":BASE},
@@ -23,5 +23,5 @@ build('one-partner.html','contact.html',
  'Contact Us | Sydney CBD &amp; Northern Beaches | Online Consulting',
  'Contact Online Consulting &mdash; call +61 2 8459 7882, email info@onlineconsulting.com.au, or visit our Sydney CBD head office or Northern Beaches studio.',
  BASE+'contact.html','Contact Online Consulting',
- 'Call, email or message us. Two Sydney offices &mdash; Level 15, 1 Farrer Place in the CBD and 30 Smith Avenue, Allambie Heights.',
+ 'Call, email or message us. Two Sydney offices &mdash; Level 30, 264 George Street in the CBD and 30 Smith Avenue, Allambie Heights.',
  ld,'contact_css.txt','contact_main.html')
