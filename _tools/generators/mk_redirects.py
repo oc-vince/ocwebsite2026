@@ -21,6 +21,11 @@ L.append('# written /foo also matches /foo/.')
 sec('Build tooling lives in the repo but must not be served')
 L.append('/_tools/*                                 /_not-found                  404')
 
+sec('WordPress leftovers from the old site')
+L.append('# The 2026 site is static and has no REST API, so this endpoint only ever')
+L.append('# 404s. Send it home rather than leaving a dead URL in the index.')
+L.append('/wp-json/oembed/1.0/embed                 /                            301')
+
 # ---- clean URLs, generated from what is actually on disk ----
 pages = []
 for dp, dn, fn in os.walk(ROOT):

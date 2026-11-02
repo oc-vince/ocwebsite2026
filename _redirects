@@ -10,6 +10,11 @@
 # Build tooling lives in the repo but must not be served
 /_tools/*                                 /_not-found                  404
 
+# WordPress leftovers from the old site
+# The 2026 site is static and has no REST API, so this endpoint only ever
+# 404s. Send it home rather than leaving a dead URL in the index.
+/wp-json/oembed/1.0/embed                 /                            301
+
 # Legacy .html paths 301 to the folder URL the page now lives at
 # The pages used to be flat .html files; they are folders now. These cover any
 # bookmark, backlink or old internal link still pointing at the file path.
